@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ihospital.mapper.PatientMapper" >
+  <resultMap id="BaseResultMap" type="com.ihospital.pojo.Patient" >
+    <id column="patient_id" property="patientId" jdbcType="BIGINT" />
+    <result column="patient_name" property="patientName" jdbcType="VARCHAR" />
+    <result column="patient_age" property="patientAge" jdbcType="INTEGER" />
+    <result column="patient_gender" property="patientGender" jdbcType="BIT" />
+    <result column="utype" property="utype" jdbcType="VARCHAR" />
+    <result column="user_avatar" property="userAvatar" jdbcType="VARCHAR" />
+    <result column="idcard" property="idcard" jdbcType="CHAR" />
+    <result column="phone_number" property="phoneNumber" jdbcType="VARCHAR" />
+    <result column="uid" property="uid" jdbcType="VARCHAR" />
+    <result column="pwd" property="pwd" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    patient_id, patient_name, patient_age, patient_gender, utype, user_avatar, idcard, 
+    phone_number, uid, pwd
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.ihospital.pojo.PatientExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from patient
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from patient
+    where patient_id = #{patientId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from patient
+    where patient_id = #{patientId,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.ihospital.pojo.PatientExample" >
+    delete from patient
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.ihospital.pojo.Patient" >
+    insert into patient (patient_id, patient_name, patient_age, 
+      patient_gender, utype, user_avatar, 
+      idcard, phone_number, uid, 
+      pwd)
+    values (#{patientId,jdbcType=BIGINT}, #{patientName,jdbcType=VARCHAR}, #{patientAge,jdbcType=INTEGER}, 
+      #{patientGender,jdbcType=BIT}, #{utype,jdbcType=VARCHAR}, #{userAvatar,jdbcType=VARCHAR}, 
+      #{idcard,jdbcType=CHAR}, #{phoneNumber,jdbcType=VARCHAR}, #{uid,jdbcType=VARCHAR}, 
+      #{pwd,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ihospital.pojo.Patient" >
+    insert into patient
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="patientId != null" >
+        patient_id,
+      </if>
+      <if test="patientName != null" >
+        patient_name,
+      </if>
+      <if test="patientAge != null" >
+        patient_age,
+      </if>
+      <if test="patientGender != null" >
+        patient_gender,
+      </if>
+      <if test="utype != null" >
+        utype,
+      </if>
+      <if test="userAvatar != null" >
+        user_avatar,
+      </if>
+      <if test="idcard != null" >
+        idcard,
+      </if>
+      <if test="phoneNumber != null" >
+        phone_number,
+      </if>
+      <if test="uid != null" >
+        uid,
+      </if>
+      <if test="pwd != null" >
+        pwd,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="patientId != null" >
+        #{patientId,jdbcType=BIGINT},
+      </if>
+      <if test="patientName != null" >
+        #{patientName,jdbcType=VARCHAR},
+      </if>
+      <if test="patientAge != null" >
+        #{patientAge,jdbcType=INTEGER},
+      </if>
+      <if test="patientGender != null" >
+        #{patientGender,jdbcType=BIT},
+      </if>
+      <if test="utype != null" >
+        #{utype,jdbcType=VARCHAR},
+      </if>
+      <if test="userAvatar != null" >
+        #{userAvatar,jdbcType=VARCHAR},
+      </if>
+      <if test="idcard != null" >
+        #{idcard,jdbcType=CHAR},
+      </if>
+      <if test="phoneNumber != null" >
+        #{phoneNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="uid != null" >
+        #{uid,jdbcType=VARCHAR},
+      </if>
+      <if test="pwd != null" >
+        #{pwd,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.ihospital.pojo.PatientExample" resultType="java.lang.Integer" >
+    select count(*) from patient
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update patient
+    <set >
+      <if test="record.patientId != null" >
+        patient_id = #{record.patientId,jdbcType=BIGINT},
+      </if>
+      <if test="record.patientName != null" >
+        patient_name = #{record.patientName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.patientAge != null" >
+        patient_age = #{record.patientAge,jdbcType=INTEGER},
+      </if>
+      <if test="record.patientGender != null" >
+        patient_gender = #{record.patientGender,jdbcType=BIT},
+      </if>
+      <if test="record.utype != null" >
+        utype = #{record.utype,jdbcType=VARCHAR},
+      </if>
+      <if test="record.userAvatar != null" >
+        user_avatar = #{record.userAvatar,jdbcType=VARCHAR},
+      </if>
+      <if test="record.idcard != null" >
+        idcard = #{record.idcard,jdbcType=CHAR},
+      </if>
+      <if test="record.phoneNumber != null" >
+        phone_number = #{record.phoneNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="record.uid != null" >
+        uid = #{record.uid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.pwd != null" >
+        pwd = #{record.pwd,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update patient
+    set patient_id = #{record.patientId,jdbcType=BIGINT},
+      patient_name = #{record.patientName,jdbcType=VARCHAR},
+      patient_age = #{record.patientAge,jdbcType=INTEGER},
+      patient_gender = #{record.patientGender,jdbcType=BIT},
+      utype = #{record.utype,jdbcType=VARCHAR},
+      user_avatar = #{record.userAvatar,jdbcType=VARCHAR},
+      idcard = #{record.idcard,jdbcType=CHAR},
+      phone_number = #{record.phoneNumber,jdbcType=VARCHAR},
+      uid = #{record.uid,jdbcType=VARCHAR},
+      pwd = #{record.pwd,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ihospital.pojo.Patient" >
+    update patient
+    <set >
+      <if test="patientName != null" >
+        patient_name = #{patientName,jdbcType=VARCHAR},
+      </if>
+      <if test="patientAge != null" >
+        patient_age = #{patientAge,jdbcType=INTEGER},
+      </if>
+      <if test="patientGender != null" >
+        patient_gender = #{patientGender,jdbcType=BIT},
+      </if>
+      <if test="utype != null" >
+        utype = #{utype,jdbcType=VARCHAR},
+      </if>
+      <if test="userAvatar != null" >
+        user_avatar = #{userAvatar,jdbcType=VARCHAR},
+      </if>
+      <if test="idcard != null" >
+        idcard = #{idcard,jdbcType=CHAR},
+      </if>
+      <if test="phoneNumber != null" >
+        phone_number = #{phoneNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="uid != null" >
+        uid = #{uid,jdbcType=VARCHAR},
+      </if>
+      <if test="pwd != null" >
+        pwd = #{pwd,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where patient_id = #{patientId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ihospital.pojo.Patient" >
+    update patient
+    set patient_name = #{patientName,jdbcType=VARCHAR},
+      patient_age = #{patientAge,jdbcType=INTEGER},
+      patient_gender = #{patientGender,jdbcType=BIT},
+      utype = #{utype,jdbcType=VARCHAR},
+      user_avatar = #{userAvatar,jdbcType=VARCHAR},
+      idcard = #{idcard,jdbcType=CHAR},
+      phone_number = #{phoneNumber,jdbcType=VARCHAR},
+      uid = #{uid,jdbcType=VARCHAR},
+      pwd = #{pwd,jdbcType=VARCHAR}
+    where patient_id = #{patientId,jdbcType=BIGINT}
+  </update>
+</mapper>
