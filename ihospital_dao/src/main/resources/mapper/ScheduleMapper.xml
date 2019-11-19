@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ihospital.mapper.ScheduleMapper" >
+  <resultMap id="BaseResultMap" type="com.ihospital.pojo.Schedule" >
+    <id column="schedule_id" property="scheduleId" jdbcType="BIGINT" />
+    <result column="physician_id" property="physicianId" jdbcType="BIGINT" />
+    <result column="date" property="date" jdbcType="TIMESTAMP" />
+    <result column="start_time" property="startTime" jdbcType="TIME" />
+    <result column="end_time" property="endTime" jdbcType="TIME" />
+    <result column="day_schedule_type" property="dayScheduleType" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    schedule_id, physician_id, date, start_time, end_time, day_schedule_type
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.ihospital.pojo.ScheduleExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from schedule
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from schedule
+    where schedule_id = #{scheduleId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from schedule
+    where schedule_id = #{scheduleId,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.ihospital.pojo.ScheduleExample" >
+    delete from schedule
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.ihospital.pojo.Schedule" >
+    insert into schedule (schedule_id, physician_id, date, 
+      start_time, end_time, day_schedule_type
+      )
+    values (#{scheduleId,jdbcType=BIGINT}, #{physicianId,jdbcType=BIGINT}, #{date,jdbcType=TIMESTAMP}, 
+      #{startTime,jdbcType=TIME}, #{endTime,jdbcType=TIME}, #{dayScheduleType,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.ihospital.pojo.Schedule" >
+    insert into schedule
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="scheduleId != null" >
+        schedule_id,
+      </if>
+      <if test="physicianId != null" >
+        physician_id,
+      </if>
+      <if test="date != null" >
+        date,
+      </if>
+      <if test="startTime != null" >
+        start_time,
+      </if>
+      <if test="endTime != null" >
+        end_time,
+      </if>
+      <if test="dayScheduleType != null" >
+        day_schedule_type,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="scheduleId != null" >
+        #{scheduleId,jdbcType=BIGINT},
+      </if>
+      <if test="physicianId != null" >
+        #{physicianId,jdbcType=BIGINT},
+      </if>
+      <if test="date != null" >
+        #{date,jdbcType=TIMESTAMP},
+      </if>
+      <if test="startTime != null" >
+        #{startTime,jdbcType=TIME},
+      </if>
+      <if test="endTime != null" >
+        #{endTime,jdbcType=TIME},
+      </if>
+      <if test="dayScheduleType != null" >
+        #{dayScheduleType,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.ihospital.pojo.ScheduleExample" resultType="java.lang.Integer" >
+    select count(*) from schedule
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update schedule
+    <set >
+      <if test="record.scheduleId != null" >
+        schedule_id = #{record.scheduleId,jdbcType=BIGINT},
+      </if>
+      <if test="record.physicianId != null" >
+        physician_id = #{record.physicianId,jdbcType=BIGINT},
+      </if>
+      <if test="record.date != null" >
+        date = #{record.date,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.startTime != null" >
+        start_time = #{record.startTime,jdbcType=TIME},
+      </if>
+      <if test="record.endTime != null" >
+        end_time = #{record.endTime,jdbcType=TIME},
+      </if>
+      <if test="record.dayScheduleType != null" >
+        day_schedule_type = #{record.dayScheduleType,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update schedule
+    set schedule_id = #{record.scheduleId,jdbcType=BIGINT},
+      physician_id = #{record.physicianId,jdbcType=BIGINT},
+      date = #{record.date,jdbcType=TIMESTAMP},
+      start_time = #{record.startTime,jdbcType=TIME},
+      end_time = #{record.endTime,jdbcType=TIME},
+      day_schedule_type = #{record.dayScheduleType,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ihospital.pojo.Schedule" >
+    update schedule
+    <set >
+      <if test="physicianId != null" >
+        physician_id = #{physicianId,jdbcType=BIGINT},
+      </if>
+      <if test="date != null" >
+        date = #{date,jdbcType=TIMESTAMP},
+      </if>
+      <if test="startTime != null" >
+        start_time = #{startTime,jdbcType=TIME},
+      </if>
+      <if test="endTime != null" >
+        end_time = #{endTime,jdbcType=TIME},
+      </if>
+      <if test="dayScheduleType != null" >
+        day_schedule_type = #{dayScheduleType,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where schedule_id = #{scheduleId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ihospital.pojo.Schedule" >
+    update schedule
+    set physician_id = #{physicianId,jdbcType=BIGINT},
+      date = #{date,jdbcType=TIMESTAMP},
+      start_time = #{startTime,jdbcType=TIME},
+      end_time = #{endTime,jdbcType=TIME},
+      day_schedule_type = #{dayScheduleType,jdbcType=VARCHAR}
+    where schedule_id = #{scheduleId,jdbcType=BIGINT}
+  </update>
+</mapper>

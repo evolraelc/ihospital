@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ihospital.mapper.DiseasesMapper" >
+  <resultMap id="BaseResultMap" type="com.ihospital.pojo.Diseases" >
+    <id column="disease_id" property="diseaseId" jdbcType="BIGINT" />
+    <result column="disease_name" property="diseaseName" jdbcType="VARCHAR" />
+    <result column="depart_id" property="departId" jdbcType="BIGINT" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    disease_id, disease_name, depart_id
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.ihospital.pojo.DiseasesExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from diseases
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from diseases
+    where disease_id = #{diseaseId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from diseases
+    where disease_id = #{diseaseId,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.ihospital.pojo.DiseasesExample" >
+    delete from diseases
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.ihospital.pojo.Diseases" >
+    insert into diseases (disease_id, disease_name, depart_id
+      )
+    values (#{diseaseId,jdbcType=BIGINT}, #{diseaseName,jdbcType=VARCHAR}, #{departId,jdbcType=BIGINT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.ihospital.pojo.Diseases" >
+    insert into diseases
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="diseaseId != null" >
+        disease_id,
+      </if>
+      <if test="diseaseName != null" >
+        disease_name,
+      </if>
+      <if test="departId != null" >
+        depart_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="diseaseId != null" >
+        #{diseaseId,jdbcType=BIGINT},
+      </if>
+      <if test="diseaseName != null" >
+        #{diseaseName,jdbcType=VARCHAR},
+      </if>
+      <if test="departId != null" >
+        #{departId,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.ihospital.pojo.DiseasesExample" resultType="java.lang.Integer" >
+    select count(*) from diseases
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update diseases
+    <set >
+      <if test="record.diseaseId != null" >
+        disease_id = #{record.diseaseId,jdbcType=BIGINT},
+      </if>
+      <if test="record.diseaseName != null" >
+        disease_name = #{record.diseaseName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.departId != null" >
+        depart_id = #{record.departId,jdbcType=BIGINT},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update diseases
+    set disease_id = #{record.diseaseId,jdbcType=BIGINT},
+      disease_name = #{record.diseaseName,jdbcType=VARCHAR},
+      depart_id = #{record.departId,jdbcType=BIGINT}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ihospital.pojo.Diseases" >
+    update diseases
+    <set >
+      <if test="diseaseName != null" >
+        disease_name = #{diseaseName,jdbcType=VARCHAR},
+      </if>
+      <if test="departId != null" >
+        depart_id = #{departId,jdbcType=BIGINT},
+      </if>
+    </set>
+    where disease_id = #{diseaseId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ihospital.pojo.Diseases" >
+    update diseases
+    set disease_name = #{diseaseName,jdbcType=VARCHAR},
+      depart_id = #{departId,jdbcType=BIGINT}
+    where disease_id = #{diseaseId,jdbcType=BIGINT}
+  </update>
+</mapper>

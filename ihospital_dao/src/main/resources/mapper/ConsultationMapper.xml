@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ihospital.mapper.ConsultationMapper" >
+  <resultMap id="BaseResultMap" type="com.ihospital.pojo.Consultation" >
+    <id column="consult_id" property="consultId" jdbcType="BIGINT" />
+    <result column="patient_id" property="patientId" jdbcType="BIGINT" />
+    <result column="physician_id" property="physicianId" jdbcType="BIGINT" />
+    <result column="body" property="body" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="last_edit_time" property="lastEditTime" jdbcType="TIMESTAMP" />
+    <result column="reply_count" property="replyCount" jdbcType="INTEGER" />
+    <result column="last_reply_id" property="lastReplyId" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    consult_id, patient_id, physician_id, body, create_time, last_edit_time, reply_count, 
+    last_reply_id
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.ihospital.pojo.ConsultationExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from consultation
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from consultation
+    where consult_id = #{consultId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from consultation
+    where consult_id = #{consultId,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.ihospital.pojo.ConsultationExample" >
+    delete from consultation
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.ihospital.pojo.Consultation" >
+    insert into consultation (consult_id, patient_id, physician_id, 
+      body, create_time, last_edit_time, 
+      reply_count, last_reply_id)
+    values (#{consultId,jdbcType=BIGINT}, #{patientId,jdbcType=BIGINT}, #{physicianId,jdbcType=BIGINT}, 
+      #{body,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{lastEditTime,jdbcType=TIMESTAMP}, 
+      #{replyCount,jdbcType=INTEGER}, #{lastReplyId,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ihospital.pojo.Consultation" >
+    insert into consultation
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="consultId != null" >
+        consult_id,
+      </if>
+      <if test="patientId != null" >
+        patient_id,
+      </if>
+      <if test="physicianId != null" >
+        physician_id,
+      </if>
+      <if test="body != null" >
+        body,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="lastEditTime != null" >
+        last_edit_time,
+      </if>
+      <if test="replyCount != null" >
+        reply_count,
+      </if>
+      <if test="lastReplyId != null" >
+        last_reply_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="consultId != null" >
+        #{consultId,jdbcType=BIGINT},
+      </if>
+      <if test="patientId != null" >
+        #{patientId,jdbcType=BIGINT},
+      </if>
+      <if test="physicianId != null" >
+        #{physicianId,jdbcType=BIGINT},
+      </if>
+      <if test="body != null" >
+        #{body,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastEditTime != null" >
+        #{lastEditTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="replyCount != null" >
+        #{replyCount,jdbcType=INTEGER},
+      </if>
+      <if test="lastReplyId != null" >
+        #{lastReplyId,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.ihospital.pojo.ConsultationExample" resultType="java.lang.Integer" >
+    select count(*) from consultation
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update consultation
+    <set >
+      <if test="record.consultId != null" >
+        consult_id = #{record.consultId,jdbcType=BIGINT},
+      </if>
+      <if test="record.patientId != null" >
+        patient_id = #{record.patientId,jdbcType=BIGINT},
+      </if>
+      <if test="record.physicianId != null" >
+        physician_id = #{record.physicianId,jdbcType=BIGINT},
+      </if>
+      <if test="record.body != null" >
+        body = #{record.body,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createTime != null" >
+        create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.lastEditTime != null" >
+        last_edit_time = #{record.lastEditTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.replyCount != null" >
+        reply_count = #{record.replyCount,jdbcType=INTEGER},
+      </if>
+      <if test="record.lastReplyId != null" >
+        last_reply_id = #{record.lastReplyId,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update consultation
+    set consult_id = #{record.consultId,jdbcType=BIGINT},
+      patient_id = #{record.patientId,jdbcType=BIGINT},
+      physician_id = #{record.physicianId,jdbcType=BIGINT},
+      body = #{record.body,jdbcType=VARCHAR},
+      create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      last_edit_time = #{record.lastEditTime,jdbcType=TIMESTAMP},
+      reply_count = #{record.replyCount,jdbcType=INTEGER},
+      last_reply_id = #{record.lastReplyId,jdbcType=INTEGER}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ihospital.pojo.Consultation" >
+    update consultation
+    <set >
+      <if test="patientId != null" >
+        patient_id = #{patientId,jdbcType=BIGINT},
+      </if>
+      <if test="physicianId != null" >
+        physician_id = #{physicianId,jdbcType=BIGINT},
+      </if>
+      <if test="body != null" >
+        body = #{body,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastEditTime != null" >
+        last_edit_time = #{lastEditTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="replyCount != null" >
+        reply_count = #{replyCount,jdbcType=INTEGER},
+      </if>
+      <if test="lastReplyId != null" >
+        last_reply_id = #{lastReplyId,jdbcType=INTEGER},
+      </if>
+    </set>
+    where consult_id = #{consultId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ihospital.pojo.Consultation" >
+    update consultation
+    set patient_id = #{patientId,jdbcType=BIGINT},
+      physician_id = #{physicianId,jdbcType=BIGINT},
+      body = #{body,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      last_edit_time = #{lastEditTime,jdbcType=TIMESTAMP},
+      reply_count = #{replyCount,jdbcType=INTEGER},
+      last_reply_id = #{lastReplyId,jdbcType=INTEGER}
+    where consult_id = #{consultId,jdbcType=BIGINT}
+  </update>
+</mapper>
