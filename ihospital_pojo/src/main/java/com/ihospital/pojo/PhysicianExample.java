@@ -2,7 +2,6 @@ package com.ihospital.pojo;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class PhysicianExample implements Serializable {
@@ -496,66 +495,6 @@ public class PhysicianExample implements Serializable {
             return (Criteria) this;
         }
 
-        public Criteria andStartTimeIsNull() {
-            addCriterion("start_time is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andStartTimeIsNotNull() {
-            addCriterion("start_time is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andStartTimeEqualTo(Date value) {
-            addCriterion("start_time =", value, "startTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andStartTimeNotEqualTo(Date value) {
-            addCriterion("start_time <>", value, "startTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andStartTimeGreaterThan(Date value) {
-            addCriterion("start_time >", value, "startTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andStartTimeGreaterThanOrEqualTo(Date value) {
-            addCriterion("start_time >=", value, "startTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andStartTimeLessThan(Date value) {
-            addCriterion("start_time <", value, "startTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andStartTimeLessThanOrEqualTo(Date value) {
-            addCriterion("start_time <=", value, "startTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andStartTimeIn(List<Date> values) {
-            addCriterion("start_time in", values, "startTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andStartTimeNotIn(List<Date> values) {
-            addCriterion("start_time not in", values, "startTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andStartTimeBetween(Date value1, Date value2) {
-            addCriterion("start_time between", value1, value2, "startTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andStartTimeNotBetween(Date value1, Date value2) {
-            addCriterion("start_time not between", value1, value2, "startTime");
-            return (Criteria) this;
-        }
-
         public Criteria andDepartIdIsNull() {
             addCriterion("depart_id is null");
             return (Criteria) this;
@@ -893,76 +832,6 @@ public class PhysicianExample implements Serializable {
 
         public Criteria andBriefIntroductionNotBetween(String value1, String value2) {
             addCriterion("brief_introduction not between", value1, value2, "briefIntroduction");
-            return (Criteria) this;
-        }
-
-        public Criteria andUidIsNull() {
-            addCriterion("uid is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andUidIsNotNull() {
-            addCriterion("uid is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andUidEqualTo(String value) {
-            addCriterion("uid =", value, "uid");
-            return (Criteria) this;
-        }
-
-        public Criteria andUidNotEqualTo(String value) {
-            addCriterion("uid <>", value, "uid");
-            return (Criteria) this;
-        }
-
-        public Criteria andUidGreaterThan(String value) {
-            addCriterion("uid >", value, "uid");
-            return (Criteria) this;
-        }
-
-        public Criteria andUidGreaterThanOrEqualTo(String value) {
-            addCriterion("uid >=", value, "uid");
-            return (Criteria) this;
-        }
-
-        public Criteria andUidLessThan(String value) {
-            addCriterion("uid <", value, "uid");
-            return (Criteria) this;
-        }
-
-        public Criteria andUidLessThanOrEqualTo(String value) {
-            addCriterion("uid <=", value, "uid");
-            return (Criteria) this;
-        }
-
-        public Criteria andUidLike(String value) {
-            addCriterion("uid like", value, "uid");
-            return (Criteria) this;
-        }
-
-        public Criteria andUidNotLike(String value) {
-            addCriterion("uid not like", value, "uid");
-            return (Criteria) this;
-        }
-
-        public Criteria andUidIn(List<String> values) {
-            addCriterion("uid in", values, "uid");
-            return (Criteria) this;
-        }
-
-        public Criteria andUidNotIn(List<String> values) {
-            addCriterion("uid not in", values, "uid");
-            return (Criteria) this;
-        }
-
-        public Criteria andUidBetween(String value1, String value2) {
-            addCriterion("uid between", value1, value2, "uid");
-            return (Criteria) this;
-        }
-
-        public Criteria andUidNotBetween(String value1, String value2) {
-            addCriterion("uid not between", value1, value2, "uid");
             return (Criteria) this;
         }
 

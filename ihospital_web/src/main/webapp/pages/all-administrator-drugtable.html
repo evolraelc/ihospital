@@ -33,160 +33,17 @@
     <link rel="stylesheet" href="../plugins/ionslider/ion.rangeSlider.css">
     <link rel="stylesheet" href="../plugins/ionslider/ion.rangeSlider.skinNice.css">
     <link rel="stylesheet" href="../plugins/bootstrap-slider/slider.css">
-    <link rel="stylesheet" href="../plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.css">
-	<link rel="stylesheet" href="../plugins/bootstrap-fileinput-master/css/fileinput.min.css">
-  <script type="text/javascript" src="../plugins/angularjs/angular.min.js"></script>
+
+
   <link rel="stylesheet" href="../plugins/angularjs/pagination.css">
-  <script src="../plugins/angularjs/pagination.js"></script>
-    <script type="text/javascript">
-        var app =angular.module('ihospital',['pagination'])
-
-        //service layer
-        // app.service('medicineService',function ($http) {
-        //     this.findAll=function () {
-        //         return $http.get('../medicine/findAll.do')
-        //     }
-        //
-        //     this.findPage=function(page, size){
-        //         return $http.get('../medicine/findPage.do?page='+page+'&size='+size)
-        //
-        //     }
-        //
-        //     this.findOne=function (medicineId) {
-        //         return  $http.get('../medicine/findOne.do?medicineId='+medicineId)
-        //     }
-        //
-        //
-        //
-        //
-        // })
-
-        //controller layer
-        app.controller('medicineController',function ($scope,$http) {
 
 
-            //查询所有药
-            $scope.findAll=function () {
-                $http.get('../medicine/findAll.do').success(
-                    function (response) {
-                        $scope.list=response;
-                    }
-                )
-            }
 
-            //分页控件初始配置
-            $scope.paginationConf = {
-                //当前页
-                currentPage: 1,
-                //总记录数
-                totalItems: 10,
-                //每页记录数
-                itemsPerPage: 10,
-                //分页选项
-                perPageOptions: [10, 20, 30, 40, 50],
-                //页码变更后触发
-                onChange: function () {
-                    $scope.reloadList();
-                }
-            }
-
-
-            //刷新列表
-            $scope.reloadList = function () {
-                $scope.search($scope.paginationConf.currentPage,$scope.paginationConf.itemsPerPage);
-            };
-
-            //查询分页后的药表单
-            $scope.findPage = function (page, size) {
-                $http.get('../medicine/findPage.do?page='+page+'&size='+size).success(
-                    function (response) {
-                        //显示当前页的数据
-                        $scope.list=response.rows;
-                        //更新分页控件配置
-                        $scope.paginationConf.totalItems =response.total;
-
-                    }
-                );
-            }
-
-            //保存修改或添加
-            $scope.save=function(){
-                var methodName='addMedicine';
-                if($scope.entity.medicineId!=null){
-                    methodName='updateMedicine'
-                }
-                $http.post('../medicine/'+methodName+'.do',$scope.entity).success(
-                    function (response) {
-                        if(response.success){
-                            $scope.reloadList();
-                        }else {
-                            alert(response.message)
-                        }
-                    }
-                )
-            }
-
-            //通过id查询到药
-            $scope.findOne=function (medicineId) {
-                $http.get('../medicine/findOne.do?medicineId='+medicineId).success(
-                    function(response){
-                        $scope.entity=response;
-                    }
-                )
-            }
-
-            //用户勾选的ID集合
-            $scope.selectIds=[];
-
-            $scope.updateSelection=function ($event,medicineId) {
-                if($event.target.checked){
-                    $scope.selectIds.push(medicineId);
-                }else{
-                    //返回id的位置（从0开始
-                    var index=$scope.selectIds.indexOf(id);
-
-                    //index: 移除的位置，  1：移除的个数
-                    $scope.selectIds.splice(index,1);
-                }
-            }
-
-            //删除
-            $scope.delete=function () {
-                $http.get('../medicine/deleteMedicine.do?ids='+$scope.selectIds).success(
-                    function(response){
-                        if (response.success){
-                            $scope.reloadList();
-                        }else{
-                            alert(response.message)
-                        }
-                    }
-                )
-
-            }
-
-            //条件查询
-            $scope.searchEntity={};
-
-            $scope.search=function(page,size){
-                $http.post('../medicine/findPage.do?page='+page+'&size='+size,$scope.searchEntity).success(
-                    function (response) {
-                        //显示当前页的数据
-                        $scope.list=response.rows;
-                        //更新分页控件配置
-                        $scope.paginationConf.totalItems =response.total;
-                    }
-                );
-
-            }
-
-        })
-
-    </script>
 
 
 </head>
 
-<body class="hold-transition skin-purple-light sidebar-mini" ng-app="ihospital" ng-controller="medicineController">
+<body class="hold-transition skin-purple-light sidebar-mini" ng-app="ihospital" ng-controller="medicineController" ng-init="showLoginName()">
 
     <div class="wrapper">
 
@@ -214,7 +71,7 @@
                         <li class="dropdown user user-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
 							<img src="../img/user2-160x160.jpg" class="user-image" alt="User Image">
-							<span class="hidden-xs">Nina Mcintire</span>
+							<span class="hidden-xs">{{loginName}}</span>
 							</a>
                             <ul class="dropdown-menu">
                                 <!-- User image -->
@@ -226,27 +83,12 @@
                                         <small></small>
                                     </p>
                                 </li>
-                                <!-- Menu Body 
-                        <li class="user-body">
-                            <div class="row">
-                                <div class="col-xs-4 text-center">
-                                    <a href="#">Followers</a>
-                                </div>
-                                <div class="col-xs-4 text-center">
-                                    <a href="#">Sales</a>
-                                </div>
-                                <div class="col-xs-4 text-center">
-                                    <a href="#">Friends</a>
-                                </div>
-                            </div>
-                        </li>-->
-                                <!-- Menu Footer-->
                                 <li class="user-footer">
                                     <div class="pull-left">
                                         <a href="#" class="btn btn-default btn-flat">Setting</a>
                                     </div>
                                     <div class="pull-right">
-                                        <a href="#" class="btn btn-default btn-flat">Log out</a>
+                                        <a href="../logout" class="btn btn-default btn-flat">Log out</a>
                                     </div>
                                 </li>
                             </ul>
@@ -268,7 +110,7 @@
                         <img src="../img/user2-160x160.jpg" class="img-circle" alt="User Image">
                     </div>
                     <div class="pull-left info">
-                        <p>Nina Mcintire</p>
+                        <p>{{loginName}}</p>
                         <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                     </div>
                 </div>
@@ -319,7 +161,7 @@
                         <div class="pull-left">
                             <div class="form-group form-inline">
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-default"  data-toggle="modal" data-target="#CommonModal" ><i class="fa fa-file-o"></i> New</button>
+                                    <button type="button" class="btn btn-default"  data-toggle="modal" data-target="#CommonModal"  ng-click="initForm()"><i class="fa fa-file-o" ></i> New</button>
                                     <button type="button" class="btn btn-default"  onclick='confirm("Delete？")' ng-click="delete()"><i class="fa fa-trash-o"></i> Delete</button>
                                     <button type="button" class="btn btn-default"  onclick="window.location.reload();"><i class="fa fa-refresh"></i> Refresh</button>
                                 </div>
@@ -360,7 +202,7 @@
                                     <td>{{entity.medicinePrice}}</td>
                                     <td class="text-center">
 
-                                        <button type="button" class="btn bg-olive btn-xs" data-toggle="modal" data-target="#CommonModal" ng-click="findOne(entity.medicineId)">Edit</button>
+                                        <button type="button" class="btn bg-olive btn-xs" data-toggle="modal" data-target="#CommonModal"  ng-click="findOne(entity.medicineId)">Edit</button>
 
                                     </td>
                                 </tr>
@@ -399,9 +241,10 @@
     </footer>
     <!-- 底部导航 /-->
 
-<div class="modal fade" id="CommonModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="CommonModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" ">
   <div class="modal-dialog" >
 	<div class="modal-content">
+<form name="drugForm"  novalidate>
 		<div class="modal-header">
 			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
 			<h3 id="myModalLabel">New Drug</h3>
@@ -412,21 +255,26 @@
 				<tr>
 		      		<td>Name</td>
 		      		<td>
-		      		   <input  class="form-control" placeholder="Name" ng-model="entity.medicineName">
-		      		</td>
+		      		   <input  name="name" class="form-control" placeholder="Name" ng-model="entity.medicineName" ng-pattern="/^[\u4E00-\u9FA5A-Za-z\s]+(·[\u4E00-\u9FA5A-Za-z]+)*$/" required>
+                  <p ng-show="drugForm.name.$invalid && !drugForm.name.$pristine" class="help-block">Wrong Input</p>
+              </td>
 		      	</tr>
 		      	<tr>
 		      		<td>Price</td>
-		      		<td><input  class="form-control" placeholder="Price" ng-model="entity.medicinePrice">  </td>
+		      		<td><input name="price" class="form-control" placeholder="Price" ng-model="entity.medicinePrice" ng-pattern="/^[1-9]\d*$/" required >
+                  <p ng-show="drugForm.price.$invalid && !drugForm.price.$pristine" class="help-block">Wrong Input</p>
+              </td>
+
 		      	</tr>			  
 		      		      	
 			 </table>				
 			
 		</div>
 		<div class="modal-footer">						
-			<button class="btn btn-success" data-dismiss="modal" aria-hidden="true" ng-click="save()">Save</button>
+			<button class="btn btn-success" data-dismiss="modal" aria-hidden="true" type="submit" ng-click="save()" ng-disabled="drugForm.$invalid">Save</button>
 			<button class="btn btn-default" data-dismiss="modal" aria-hidden="true">Close</button>
 		</div>
+</form>
 	  </div>
 	</div>
 </div>
@@ -453,7 +301,7 @@
     <script src="../plugins/iCheck/icheck.min.js"></script>
     <script src="../plugins/adminLTE/js/app.min.js"></script>
     <script src="../plugins/treeTable/jquery.treetable.js"></script>
-    <script src="../plugins/select2/select2.full.min.js"></script>
+
     <script src="../plugins/colorpicker/bootstrap-colorpicker.min.js"></script>
     <script src="../plugins/bootstrap-wysihtml5/bootstrap-wysihtml5.zh-CN.js"></script>
     <script src="../plugins/bootstrap-markdown/js/bootstrap-markdown.js"></script>
@@ -478,19 +326,25 @@
 	<script src="../plugins/bootstrap-fileinput-master/js/fileinput.min.js"></script>
 	<script src="../plugins/bootstrap-fileinput-master/js/fileinput.min.js"></script>
 	<script src="../plugins/bootstrap-fileinput-master/themes/fa/theme.min.js"></script>
-   <script>
+
+    <script type="text/javascript" src="../plugins/angularjs/angular.min.js"></script>
+    <script src="../plugins/angularjs/pagination.js"></script>
+
+    <!-- angularJS引用 -->
+    <script type="text/javascript">
+        var app =angular.module('ihospital',['pagination'])
+
+    </script>
+    <script type="text/javascript" src="../js/service/medicineService.js"></script>
+    <script src="../js/service/loginService.js"></script>
+    <script type="text/javascript" src="../js/controller/medicineController.js"></script>
+
+    <script>
 		$("#file").fileinput();
             // 选择框
         $(document).ready(function() {
 		
-			$("#file").fileinput();
-            // 选择框
-            $(".select2").select2();
 
-            // WYSIHTML5编辑器
-            $(".textarea").wysihtml5({
-                locale: 'zh-CN'
-            });
         });
 
 
@@ -509,11 +363,7 @@
         });
 		$(document).ready(function() {
 
-            //Date picker
-            $('#datepicker').datepicker({
-                autoclose: true,
-                language: 'zh-CN'
-            });
+
 
             
 

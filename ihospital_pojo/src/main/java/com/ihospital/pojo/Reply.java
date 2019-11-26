@@ -3,26 +3,20 @@ package com.ihospital.pojo;
 import java.io.Serializable;
 import java.util.Date;
 
-public class Reply implements Serializable {
+public class Reply  implements Serializable {
     private Long replyId;
 
     private Long parentId;
 
-    private Long physicianId;
-
-    private Long patientId;
-
     private String body;
 
-    private Date createTime;
-
-    private Date lastEditTime;
-
-    private Integer upvotes;
+    private Date time;
 
     private Long consultId;
 
     private Long childId;
+
+    private Boolean type;
 
     public Long getReplyId() {
         return replyId;
@@ -40,22 +34,6 @@ public class Reply implements Serializable {
         this.parentId = parentId;
     }
 
-    public Long getPhysicianId() {
-        return physicianId;
-    }
-
-    public void setPhysicianId(Long physicianId) {
-        this.physicianId = physicianId;
-    }
-
-    public Long getPatientId() {
-        return patientId;
-    }
-
-    public void setPatientId(Long patientId) {
-        this.patientId = patientId;
-    }
-
     public String getBody() {
         return body;
     }
@@ -64,28 +42,12 @@ public class Reply implements Serializable {
         this.body = body == null ? null : body.trim();
     }
 
-    public Date getCreateTime() {
-        return createTime;
+    public Date getTime() {
+        return time;
     }
 
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
-    }
-
-    public Date getLastEditTime() {
-        return lastEditTime;
-    }
-
-    public void setLastEditTime(Date lastEditTime) {
-        this.lastEditTime = lastEditTime;
-    }
-
-    public Integer getUpvotes() {
-        return upvotes;
-    }
-
-    public void setUpvotes(Integer upvotes) {
-        this.upvotes = upvotes;
+    public void setTime(Date time) {
+        this.time = time;
     }
 
     public Long getConsultId() {
@@ -102,5 +64,13 @@ public class Reply implements Serializable {
 
     public void setChildId(Long childId) {
         this.childId = childId;
+    }
+
+    public Boolean getType() {
+        return type;
+    }
+
+    public void setType(Boolean type) {
+        this.type = type;
     }
 }

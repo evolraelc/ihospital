@@ -5,6 +5,7 @@
     <id column="disease_id" property="diseaseId" jdbcType="BIGINT" />
     <result column="disease_name" property="diseaseName" jdbcType="VARCHAR" />
     <result column="depart_id" property="departId" jdbcType="BIGINT" />
+    <result column="detail" property="detail" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -65,7 +66,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    disease_id, disease_name, depart_id
+    disease_id, disease_name, depart_id, detail
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.ihospital.pojo.DiseasesExample" >
     select
@@ -98,10 +99,10 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.ihospital.pojo.Diseases" >
-    insert into diseases (disease_id, disease_name, depart_id
-      )
-    values (#{diseaseId,jdbcType=BIGINT}, #{diseaseName,jdbcType=VARCHAR}, #{departId,jdbcType=BIGINT}
-      )
+    insert into diseases (disease_id, disease_name, depart_id, 
+      detail)
+    values (#{diseaseId,jdbcType=BIGINT}, #{diseaseName,jdbcType=VARCHAR}, #{departId,jdbcType=BIGINT}, 
+      #{detail,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.ihospital.pojo.Diseases" >
     insert into diseases
@@ -115,6 +116,9 @@
       <if test="departId != null" >
         depart_id,
       </if>
+      <if test="detail != null" >
+        detail,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="diseaseId != null" >
@@ -125,6 +129,9 @@
       </if>
       <if test="departId != null" >
         #{departId,jdbcType=BIGINT},
+      </if>
+      <if test="detail != null" >
+        #{detail,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -146,6 +153,9 @@
       <if test="record.departId != null" >
         depart_id = #{record.departId,jdbcType=BIGINT},
       </if>
+      <if test="record.detail != null" >
+        detail = #{record.detail,jdbcType=VARCHAR},
+      </if>
     </set>
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
@@ -155,7 +165,8 @@
     update diseases
     set disease_id = #{record.diseaseId,jdbcType=BIGINT},
       disease_name = #{record.diseaseName,jdbcType=VARCHAR},
-      depart_id = #{record.departId,jdbcType=BIGINT}
+      depart_id = #{record.departId,jdbcType=BIGINT},
+      detail = #{record.detail,jdbcType=VARCHAR}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -169,13 +180,17 @@
       <if test="departId != null" >
         depart_id = #{departId,jdbcType=BIGINT},
       </if>
+      <if test="detail != null" >
+        detail = #{detail,jdbcType=VARCHAR},
+      </if>
     </set>
     where disease_id = #{diseaseId,jdbcType=BIGINT}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.ihospital.pojo.Diseases" >
     update diseases
     set disease_name = #{diseaseName,jdbcType=VARCHAR},
-      depart_id = #{departId,jdbcType=BIGINT}
+      depart_id = #{departId,jdbcType=BIGINT},
+      detail = #{detail,jdbcType=VARCHAR}
     where disease_id = #{diseaseId,jdbcType=BIGINT}
   </update>
 </mapper>

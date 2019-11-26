@@ -6,7 +6,7 @@ import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 
-public class ScheduleExample implements Serializable {
+public class ScheduleExample  implements Serializable {
     protected String orderByClause;
 
     protected boolean distinct;

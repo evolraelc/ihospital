@@ -107,30 +107,30 @@ public class AppointmentExample implements Serializable {
             criteria.add(new Criterion(condition, value1, value2));
         }
 
-        protected void addCriterionForJDBCTime(String condition, Date value, String property) {
+        protected void addCriterionForJDBCDate(String condition, Date value, String property) {
             if (value == null) {
                 throw new RuntimeException("Value for " + property + " cannot be null");
             }
-            addCriterion(condition, new java.sql.Time(value.getTime()), property);
+            addCriterion(condition, new java.sql.Date(value.getTime()), property);
         }
 
-        protected void addCriterionForJDBCTime(String condition, List<Date> values, String property) {
+        protected void addCriterionForJDBCDate(String condition, List<Date> values, String property) {
             if (values == null || values.size() == 0) {
                 throw new RuntimeException("Value list for " + property + " cannot be null or empty");
             }
-            List<java.sql.Time> timeList = new ArrayList<java.sql.Time>();
+            List<java.sql.Date> dateList = new ArrayList<java.sql.Date>();
             Iterator<Date> iter = values.iterator();
             while (iter.hasNext()) {
-                timeList.add(new java.sql.Time(iter.next().getTime()));
+                dateList.add(new java.sql.Date(iter.next().getTime()));
             }
-            addCriterion(condition, timeList, property);
+            addCriterion(condition, dateList, property);
         }
 
-        protected void addCriterionForJDBCTime(String condition, Date value1, Date value2, String property) {
+        protected void addCriterionForJDBCDate(String condition, Date value1, Date value2, String property) {
             if (value1 == null || value2 == null) {
                 throw new RuntimeException("Between values for " + property + " cannot be null");
             }
-            addCriterion(condition, new java.sql.Time(value1.getTime()), new java.sql.Time(value2.getTime()), property);
+            addCriterion(condition, new java.sql.Date(value1.getTime()), new java.sql.Date(value2.getTime()), property);
         }
 
         public Criteria andAppointmentIdIsNull() {
@@ -253,183 +253,123 @@ public class AppointmentExample implements Serializable {
             return (Criteria) this;
         }
 
-        public Criteria andPhysicianIdIsNull() {
-            addCriterion("physician_id is null");
+        public Criteria andDeptIdIsNull() {
+            addCriterion("dept_id is null");
             return (Criteria) this;
         }
 
-        public Criteria andPhysicianIdIsNotNull() {
-            addCriterion("physician_id is not null");
+        public Criteria andDeptIdIsNotNull() {
+            addCriterion("dept_id is not null");
             return (Criteria) this;
         }
 
-        public Criteria andPhysicianIdEqualTo(Long value) {
-            addCriterion("physician_id =", value, "physicianId");
+        public Criteria andDeptIdEqualTo(Long value) {
+            addCriterion("dept_id =", value, "deptId");
             return (Criteria) this;
         }
 
-        public Criteria andPhysicianIdNotEqualTo(Long value) {
-            addCriterion("physician_id <>", value, "physicianId");
+        public Criteria andDeptIdNotEqualTo(Long value) {
+            addCriterion("dept_id <>", value, "deptId");
             return (Criteria) this;
         }
 
-        public Criteria andPhysicianIdGreaterThan(Long value) {
-            addCriterion("physician_id >", value, "physicianId");
+        public Criteria andDeptIdGreaterThan(Long value) {
+            addCriterion("dept_id >", value, "deptId");
             return (Criteria) this;
         }
 
-        public Criteria andPhysicianIdGreaterThanOrEqualTo(Long value) {
-            addCriterion("physician_id >=", value, "physicianId");
+        public Criteria andDeptIdGreaterThanOrEqualTo(Long value) {
+            addCriterion("dept_id >=", value, "deptId");
             return (Criteria) this;
         }
 
-        public Criteria andPhysicianIdLessThan(Long value) {
-            addCriterion("physician_id <", value, "physicianId");
+        public Criteria andDeptIdLessThan(Long value) {
+            addCriterion("dept_id <", value, "deptId");
             return (Criteria) this;
         }
 
-        public Criteria andPhysicianIdLessThanOrEqualTo(Long value) {
-            addCriterion("physician_id <=", value, "physicianId");
+        public Criteria andDeptIdLessThanOrEqualTo(Long value) {
+            addCriterion("dept_id <=", value, "deptId");
             return (Criteria) this;
         }
 
-        public Criteria andPhysicianIdIn(List<Long> values) {
-            addCriterion("physician_id in", values, "physicianId");
+        public Criteria andDeptIdIn(List<Long> values) {
+            addCriterion("dept_id in", values, "deptId");
             return (Criteria) this;
         }
 
-        public Criteria andPhysicianIdNotIn(List<Long> values) {
-            addCriterion("physician_id not in", values, "physicianId");
+        public Criteria andDeptIdNotIn(List<Long> values) {
+            addCriterion("dept_id not in", values, "deptId");
             return (Criteria) this;
         }
 
-        public Criteria andPhysicianIdBetween(Long value1, Long value2) {
-            addCriterion("physician_id between", value1, value2, "physicianId");
+        public Criteria andDeptIdBetween(Long value1, Long value2) {
+            addCriterion("dept_id between", value1, value2, "deptId");
             return (Criteria) this;
         }
 
-        public Criteria andPhysicianIdNotBetween(Long value1, Long value2) {
-            addCriterion("physician_id not between", value1, value2, "physicianId");
+        public Criteria andDeptIdNotBetween(Long value1, Long value2) {
+            addCriterion("dept_id not between", value1, value2, "deptId");
             return (Criteria) this;
         }
 
-        public Criteria andStartTimeIsNull() {
-            addCriterion("start_time is null");
+        public Criteria andTreatTimeIsNull() {
+            addCriterion("treat_time is null");
             return (Criteria) this;
         }
 
-        public Criteria andStartTimeIsNotNull() {
-            addCriterion("start_time is not null");
+        public Criteria andTreatTimeIsNotNull() {
+            addCriterion("treat_time is not null");
             return (Criteria) this;
         }
 
-        public Criteria andStartTimeEqualTo(Date value) {
-            addCriterionForJDBCTime("start_time =", value, "startTime");
+        public Criteria andTreatTimeEqualTo(Date value) {
+            addCriterionForJDBCDate("treat_time =", value, "treatTime");
             return (Criteria) this;
         }
 
-        public Criteria andStartTimeNotEqualTo(Date value) {
-            addCriterionForJDBCTime("start_time <>", value, "startTime");
+        public Criteria andTreatTimeNotEqualTo(Date value) {
+            addCriterionForJDBCDate("treat_time <>", value, "treatTime");
             return (Criteria) this;
         }
 
-        public Criteria andStartTimeGreaterThan(Date value) {
-            addCriterionForJDBCTime("start_time >", value, "startTime");
+        public Criteria andTreatTimeGreaterThan(Date value) {
+            addCriterionForJDBCDate("treat_time >", value, "treatTime");
             return (Criteria) this;
         }
 
-        public Criteria andStartTimeGreaterThanOrEqualTo(Date value) {
-            addCriterionForJDBCTime("start_time >=", value, "startTime");
+        public Criteria andTreatTimeGreaterThanOrEqualTo(Date value) {
+            addCriterionForJDBCDate("treat_time >=", value, "treatTime");
             return (Criteria) this;
         }
 
-        public Criteria andStartTimeLessThan(Date value) {
-            addCriterionForJDBCTime("start_time <", value, "startTime");
+        public Criteria andTreatTimeLessThan(Date value) {
+            addCriterionForJDBCDate("treat_time <", value, "treatTime");
             return (Criteria) this;
         }
 
-        public Criteria andStartTimeLessThanOrEqualTo(Date value) {
-            addCriterionForJDBCTime("start_time <=", value, "startTime");
+        public Criteria andTreatTimeLessThanOrEqualTo(Date value) {
+            addCriterionForJDBCDate("treat_time <=", value, "treatTime");
             return (Criteria) this;
         }
 
-        public Criteria andStartTimeIn(List<Date> values) {
-            addCriterionForJDBCTime("start_time in", values, "startTime");
+        public Criteria andTreatTimeIn(List<Date> values) {
+            addCriterionForJDBCDate("treat_time in", values, "treatTime");
             return (Criteria) this;
         }
 
-        public Criteria andStartTimeNotIn(List<Date> values) {
-            addCriterionForJDBCTime("start_time not in", values, "startTime");
+        public Criteria andTreatTimeNotIn(List<Date> values) {
+            addCriterionForJDBCDate("treat_time not in", values, "treatTime");
             return (Criteria) this;
         }
 
-        public Criteria andStartTimeBetween(Date value1, Date value2) {
-            addCriterionForJDBCTime("start_time between", value1, value2, "startTime");
+        public Criteria andTreatTimeBetween(Date value1, Date value2) {
+            addCriterionForJDBCDate("treat_time between", value1, value2, "treatTime");
             return (Criteria) this;
         }
 
-        public Criteria andStartTimeNotBetween(Date value1, Date value2) {
-            addCriterionForJDBCTime("start_time not between", value1, value2, "startTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andEndTimeIsNull() {
-            addCriterion("end_time is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andEndTimeIsNotNull() {
-            addCriterion("end_time is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andEndTimeEqualTo(Date value) {
-            addCriterionForJDBCTime("end_time =", value, "endTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andEndTimeNotEqualTo(Date value) {
-            addCriterionForJDBCTime("end_time <>", value, "endTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andEndTimeGreaterThan(Date value) {
-            addCriterionForJDBCTime("end_time >", value, "endTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andEndTimeGreaterThanOrEqualTo(Date value) {
-            addCriterionForJDBCTime("end_time >=", value, "endTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andEndTimeLessThan(Date value) {
-            addCriterionForJDBCTime("end_time <", value, "endTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andEndTimeLessThanOrEqualTo(Date value) {
-            addCriterionForJDBCTime("end_time <=", value, "endTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andEndTimeIn(List<Date> values) {
-            addCriterionForJDBCTime("end_time in", values, "endTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andEndTimeNotIn(List<Date> values) {
-            addCriterionForJDBCTime("end_time not in", values, "endTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andEndTimeBetween(Date value1, Date value2) {
-            addCriterionForJDBCTime("end_time between", value1, value2, "endTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andEndTimeNotBetween(Date value1, Date value2) {
-            addCriterionForJDBCTime("end_time not between", value1, value2, "endTime");
+        public Criteria andTreatTimeNotBetween(Date value1, Date value2) {
+            addCriterionForJDBCDate("treat_time not between", value1, value2, "treatTime");
             return (Criteria) this;
         }
 
@@ -490,126 +430,6 @@ public class AppointmentExample implements Serializable {
 
         public Criteria andIsValidNotBetween(Boolean value1, Boolean value2) {
             addCriterion("is_valid not between", value1, value2, "isValid");
-            return (Criteria) this;
-        }
-
-        public Criteria andQueueNumberIsNull() {
-            addCriterion("queue_number is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andQueueNumberIsNotNull() {
-            addCriterion("queue_number is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andQueueNumberEqualTo(Integer value) {
-            addCriterion("queue_number =", value, "queueNumber");
-            return (Criteria) this;
-        }
-
-        public Criteria andQueueNumberNotEqualTo(Integer value) {
-            addCriterion("queue_number <>", value, "queueNumber");
-            return (Criteria) this;
-        }
-
-        public Criteria andQueueNumberGreaterThan(Integer value) {
-            addCriterion("queue_number >", value, "queueNumber");
-            return (Criteria) this;
-        }
-
-        public Criteria andQueueNumberGreaterThanOrEqualTo(Integer value) {
-            addCriterion("queue_number >=", value, "queueNumber");
-            return (Criteria) this;
-        }
-
-        public Criteria andQueueNumberLessThan(Integer value) {
-            addCriterion("queue_number <", value, "queueNumber");
-            return (Criteria) this;
-        }
-
-        public Criteria andQueueNumberLessThanOrEqualTo(Integer value) {
-            addCriterion("queue_number <=", value, "queueNumber");
-            return (Criteria) this;
-        }
-
-        public Criteria andQueueNumberIn(List<Integer> values) {
-            addCriterion("queue_number in", values, "queueNumber");
-            return (Criteria) this;
-        }
-
-        public Criteria andQueueNumberNotIn(List<Integer> values) {
-            addCriterion("queue_number not in", values, "queueNumber");
-            return (Criteria) this;
-        }
-
-        public Criteria andQueueNumberBetween(Integer value1, Integer value2) {
-            addCriterion("queue_number between", value1, value2, "queueNumber");
-            return (Criteria) this;
-        }
-
-        public Criteria andQueueNumberNotBetween(Integer value1, Integer value2) {
-            addCriterion("queue_number not between", value1, value2, "queueNumber");
-            return (Criteria) this;
-        }
-
-        public Criteria andAppointChargeIsNull() {
-            addCriterion("appoint_charge is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andAppointChargeIsNotNull() {
-            addCriterion("appoint_charge is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andAppointChargeEqualTo(Float value) {
-            addCriterion("appoint_charge =", value, "appointCharge");
-            return (Criteria) this;
-        }
-
-        public Criteria andAppointChargeNotEqualTo(Float value) {
-            addCriterion("appoint_charge <>", value, "appointCharge");
-            return (Criteria) this;
-        }
-
-        public Criteria andAppointChargeGreaterThan(Float value) {
-            addCriterion("appoint_charge >", value, "appointCharge");
-            return (Criteria) this;
-        }
-
-        public Criteria andAppointChargeGreaterThanOrEqualTo(Float value) {
-            addCriterion("appoint_charge >=", value, "appointCharge");
-            return (Criteria) this;
-        }
-
-        public Criteria andAppointChargeLessThan(Float value) {
-            addCriterion("appoint_charge <", value, "appointCharge");
-            return (Criteria) this;
-        }
-
-        public Criteria andAppointChargeLessThanOrEqualTo(Float value) {
-            addCriterion("appoint_charge <=", value, "appointCharge");
-            return (Criteria) this;
-        }
-
-        public Criteria andAppointChargeIn(List<Float> values) {
-            addCriterion("appoint_charge in", values, "appointCharge");
-            return (Criteria) this;
-        }
-
-        public Criteria andAppointChargeNotIn(List<Float> values) {
-            addCriterion("appoint_charge not in", values, "appointCharge");
-            return (Criteria) this;
-        }
-
-        public Criteria andAppointChargeBetween(Float value1, Float value2) {
-            addCriterion("appoint_charge between", value1, value2, "appointCharge");
-            return (Criteria) this;
-        }
-
-        public Criteria andAppointChargeNotBetween(Float value1, Float value2) {
-            addCriterion("appoint_charge not between", value1, value2, "appointCharge");
             return (Criteria) this;
         }
 

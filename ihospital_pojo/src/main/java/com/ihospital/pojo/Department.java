@@ -15,8 +15,6 @@ public class Department implements Serializable {
 
     private Long directorId;
 
-    private String directorAvatar;
-
     public Long getDepartId() {
         return departId;
     }
@@ -63,13 +61,5 @@ public class Department implements Serializable {
 
     public void setDirectorId(Long directorId) {
         this.directorId = directorId;
-    }
-
-    public String getDirectorAvatar() {
-        return directorAvatar;
-    }
-
-    public void setDirectorAvatar(String directorAvatar) {
-        this.directorAvatar = directorAvatar == null ? null : directorAvatar.trim();
     }
 }

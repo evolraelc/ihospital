@@ -10,8 +10,6 @@
     <meta name="keywords" content="AdminLTE2定制版">
 
 
-
-
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.6 -->
@@ -42,15 +40,9 @@
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->
-
-
-
-
-
-
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
 
     <!-- jQuery 2.2.3 -->
@@ -113,512 +105,664 @@
     <link rel="stylesheet" href="../plugins/ionslider/ion.rangeSlider.skinNice.css">
     <link rel="stylesheet" href="../plugins/bootstrap-slider/slider.css">
     <link rel="stylesheet" href="../plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.css">
-	<link rel="stylesheet" href="../plugins/bootstrap-fileinput-master/css/fileinput.min.css">
-  <script type="text/javascript" src="../plugins/angularjs/angular.min.js"></script>
-  <link rel="stylesheet" href="../plugins/angularjs/pagination.css">
-  <script src="../plugins/angularjs/pagination.js"></script>
+    <link rel="stylesheet" href="../plugins/bootstrap-fileinput-master/css/fileinput.min.css">
+    <link rel="stylesheet" href="../plugins/angularjs/pagination.css">
+    <link rel="stylesheet" href="../plugins/angular-datepicker/css/ng-bs3-datepicker.css">
 
 
 </head>
 
-<body class="hold-transition skin-purple-light sidebar-mini">
+<body class="hold-transition skin-purple-light sidebar-mini" ng-app="ihospital" ng-controller="newsController" ng-cloak ng-init="showLoginName()">
 
-    <div class="wrapper">
+<div class="wrapper">
 
-        <!-- 页面头部 -->
-        
-		
-		
-		
-		
+    <!-- 页面头部 -->
 
-		<header class="main-header">
-            <!-- Logo -->
-            <a href="#" class="logo">
-                <!-- mini logo for sidebar mini 50x50 pixels -->
-                <span class="logo-mini"><b>OS</b></span>
-                <!-- logo for regular state and mobile devices -->
-                <span class="logo-lg"><b>Outpatient System</b></span>
+
+    <header class="main-header">
+        <!-- Logo -->
+        <a href="#" class="logo">
+            <!-- mini logo for sidebar mini 50x50 pixels -->
+            <span class="logo-mini"><b>OS</b></span>
+            <!-- logo for regular state and mobile devices -->
+            <span class="logo-lg"><b>Outpatient System</b></span>
+        </a>
+
+
+        <!-- Header Navbar: style can be found in header.less -->
+        <nav class="navbar navbar-static-top">
+
+            <!-- Sidebar toggle button-->
+            <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                <span class="sr-only">Toggle navigation</span>
             </a>
 
+            <div class="navbar-custom-menu">
+                <ul class="nav navbar-nav">
 
-            <!-- Header Navbar: style can be found in header.less -->
-            <nav class="navbar navbar-static-top">
-			
-                <!-- Sidebar toggle button-->
-                <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
-					<span class="sr-only">Toggle navigation</span>
-				</a>
 
-                <div class="navbar-custom-menu">
-                    <ul class="nav navbar-nav">
-                        
-                        
-                        <!-- User Account: style can be found in dropdown.less -->
-                        <li class="dropdown user user-menu">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-							<img src="../img/user2-160x160.jpg" class="user-image" alt="User Image">
-							<span class="hidden-xs">Nina Mcintire</span>
-							</a>
-                            <ul class="dropdown-menu">
-                                <!-- User image -->
-                                <li class="user-header">
-                                    <img src="../img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                    <!-- User Account: style can be found in dropdown.less -->
+                    <li class="dropdown user user-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <img src="../img/user2-160x160.jpg" class="user-image" alt="User Image">
+                            <span class="hidden-xs">{{loginName}}</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <!-- User image -->
+                            <li class="user-header">
+                                <img src="../img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
-                                    <p>
-                                        Administrator
-                                        <small></small>
-                                    </p>
-                                </li>
-                                <!-- Menu Body 
-                        <li class="user-body">
-                            <div class="row">
-                                <div class="col-xs-4 text-center">
-                                    <a href="#">Followers</a>
-                                </div>
-                                <div class="col-xs-4 text-center">
-                                    <a href="#">Sales</a>
-                                </div>
-                                <div class="col-xs-4 text-center">
-                                    <a href="#">Friends</a>
-                                </div>
+                                <p>
+                                    Administrator
+                                    <small></small>
+                                </p>
+                            </li>
+                            <!-- Menu Body
+                    <li class="user-body">
+                        <div class="row">
+                            <div class="col-xs-4 text-center">
+                                <a href="#">Followers</a>
                             </div>
-                        </li>-->
-                                <!-- Menu Footer-->
-                                <li class="user-footer">
-                                    <div class="pull-left">
-                                        <a href="#" class="btn btn-default btn-flat">Setting</a>
-                                    </div>
-                                    <div class="pull-right">
-                                        <a href="#" class="btn btn-default btn-flat">Log out</a>
-                                    </div>
-                                </li>
-                            </ul>
-                        </li>
-
-                    </ul>
-                </div>
-            </nav>
-		</header>
-        
-		
-		
-		
-		
-		
-        <!-- 页面头部 /-->
-
-        <!-- 导航侧栏 -->
-        <aside class="main-sidebar">
-            <!-- sidebar: style can be found in sidebar.less -->
-            <section class="sidebar">
-                <!-- Sidebar user panel -->
-                <div class="user-panel">
-                    <div class="pull-left image">
-                        <img src="../img/user2-160x160.jpg" class="img-circle" alt="User Image">
-                    </div>
-                    <div class="pull-left info">
-                        <p>Nina Mcintire</p>
-                        <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
-                    </div>
-                </div>
-                <!-- search form -->
-                <!--<form action="#" method="get" class="sidebar-form">
-            <div class="input-group">
-                <input type="text" name="q" class="form-control" placeholder="搜索...">
-                <span class="input-group-btn">
-                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
-                </button>
-              </span>
-            </div>
-        </form>-->
-                <!-- /.search form -->
-
-
-                <!-- sidebar menu: : style can be found in sidebar.less -->
-                <ul class="sidebar-menu">
-                    <li class="header">Menu</li>
-
-                    <li id="admin-index"><a href="all-administrator-departmenttable.html"><i class="fa fa-hospital-o"></i> <span>Department</span></a></li>
-					<li id="admin-index"><a href="all-administrator-doctortable.html"><i class="fa fa-user-md"></i> <span>Doctor</span></a></li>
-					<li id="admin-index"><a href="all-administrator-patienttable.html"><i class="fa fa-user"></i> <span>Patient</span></a></li>
-					<li id="admin-index"><a href="all-administrator-commenttable.html"><i class="fa fa-list"></i> <span>Comment</span></a></li>
-					<li id="admin-index"><a href="all-administrator-drugtable.html"><i class="fa fa-plus-square"></i> <span>Drug</span></a></li>
-					<li id="admin-index"><a href="all-administrator-medicalrecordtable.html"><i class="fa fa-stethoscope"></i> <span>Medical Record</span></a></li>
-					<li id="admin-index"><a href="all-administrator-newstable.html"><i class="fa fa-newspaper-o"></i> <span>News</span></a></li>
-					
-                    
-
-                    <!-- 菜单 -->
-
-
-
-                    
-
-                    <!-- 菜单 /-->
-
-                    
-
-                </ul>
-            </section>
-            <!-- /.sidebar -->
-        </aside>
-        <!-- 导航侧栏 /-->
-
-       <!-- Content Wrapper. Contains page content -->
-		<div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-        <h1>
-           News Management
-        </h1>
-        <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i>Home</a></li>
-            <li><a href="#">Administrator</a></li>
-            <li class="active">News Management</li>
-        </ol>
-    </section>
-
-    <!-- Main content -->
-    <section class="content">
-
-        <!-- .box-body -->
-        <div class="box box-primary">
-            <div class="box-header with-border">
-                <h3 class="box-title">List</h3>
-            </div>
-
-            <div class="box-body">
-
-                <!-- 数据表格 -->
-                <div class="table-box">
-
-                    <!--工具栏-->
-                    <div class="pull-left">
-                        <div class="form-group form-inline">
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-default"  onclick='location.href="all-administrator-newsinfo.html"'><i class="fa fa-trash-o"></i> New</button>
-                                <button type="button" class="btn btn-default"  onclick='confirm("Delete？")'><i class="fa fa-trash-o"></i> Delete</button>
-                                
-                                <button type="button" class="btn btn-default"  onclick="window.location.reload();"><i class="fa fa-refresh"></i> Refresh</button>
+                            <div class="col-xs-4 text-center">
+                                <a href="#">Sales</a>
+                            </div>
+                            <div class="col-xs-4 text-center">
+                                <a href="#">Friends</a>
                             </div>
                         </div>
-                    </div>
-                    <div class="box-tools pull-right">
-					<div class="form-group form-inline">
-					
-					
-                                <div class="input-group">
-                                    <div class="input-group-addon">
-                                        <i class="fa fa-calendar"></i>
-                                    </div>
-                                    <input type="text" class="form-control pull-right" id="datepicker">
+                    </li>-->
+                            <!-- Menu Footer-->
+                            <li class="user-footer">
+                                <div class="pull-left">
+                                    <a href="#" class="btn btn-default btn-flat">Setting</a>
                                 </div>
-                          
-							
-							<input type="text" class="form-control input" placeholder="search News">
-							
-							
-					
-                            
-					<button type="button" class="btn btn-default">Go</button>
-                         
-                            
-                            
-                       </div>
-						
-                    </div>
-					
-				
-                    
-				
-                    <!--工具栏/-->
+                                <div class="pull-right">
+                                    <a href="../logout" class="btn btn-default btn-flat">Log out</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
 
-                    <!--数据列表-->
-                    <table id="dataList" class="table table-bordered table-striped table-hover dataTable">
-                        <thead>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+
+    <!-- 页面头部 /-->
+
+    <!-- 导航侧栏 -->
+    <aside class="main-sidebar">
+        <!-- sidebar: style can be found in sidebar.less -->
+        <section class="sidebar">
+            <!-- Sidebar user panel -->
+            <div class="user-panel">
+                <div class="pull-left image">
+                    <img src="../img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                </div>
+                <div class="pull-left info">
+                    <p>{{loginName}}</p>
+                    <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                </div>
+            </div>
+            <!-- search form -->
+            <!--<form action="#" method="get" class="sidebar-form">
+        <div class="input-group">
+            <input type="text" name="q" class="form-control" placeholder="搜索...">
+            <span class="input-group-btn">
+            <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+            </button>
+          </span>
+        </div>
+    </form>-->
+            <!-- /.search form -->
+
+
+            <!-- sidebar menu: : style can be found in sidebar.less -->
+            <ul class="sidebar-menu">
+                <li class="header">Menu</li>
+
+                <li id="admin-index"><a href="all-administrator-departmenttable.html"><i class="fa fa-hospital-o"></i>
+                    <span>Department</span></a></li>
+                <li id="admin-index"><a href="all-administrator-doctortable.html"><i class="fa fa-user-md"></i> <span>Doctor</span></a>
+                </li>
+                <li id="admin-index"><a href="all-administrator-patienttable.html"><i class="fa fa-user"></i> <span>Patient</span></a>
+                </li>
+                <li id="admin-index"><a href="all-administrator-commenttable.html"><i class="fa fa-list"></i> <span>Comment</span></a>
+                </li>
+                <li id="admin-index"><a href="all-administrator-drugtable.html"><i class="fa fa-plus-square"></i> <span>Drug</span></a>
+                </li>
+                <li id="admin-index"><a href="all-administrator-medicalrecordtable.html"><i
+                        class="fa fa-stethoscope"></i> <span>Medical Record</span></a></li>
+                <li id="admin-index"><a href="all-administrator-newstable.html"><i class="fa fa-newspaper-o"></i> <span>News</span></a>
+                </li>
+
+
+                <!-- 菜单 -->
+
+
+                <!-- 菜单 /-->
+
+
+            </ul>
+        </section>
+        <!-- /.sidebar -->
+    </aside>
+    <!-- 导航侧栏 /-->
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <h1>
+                News Management
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="#"><i class="fa fa-dashboard"></i>Home</a></li>
+                <li><a href="#">Administrator</a></li>
+                <li class="active">News Management</li>
+            </ol>
+        </section>
+
+        <!-- Main content -->
+        <section class="content">
+
+            <!-- .box-body -->
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title">List</h3>
+                </div>
+
+                <div class="box-body">
+
+                    <!-- 数据表格 -->
+                    <div class="table-box">
+
+                        <!--工具栏-->
+                        <div class="pull-left">
+                            <div class="form-group form-inline">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-default"
+                                            onclick='location.href="all-administrator-newsinfo.html"'
+                                            ng-click="entity={}"><i class="fa fa-trash-o"></i> New
+                                    </button>
+                                    <button type="button" class="btn btn-default" onclick='confirm("Delete？"),window.location.reload();'
+                                            ng-click="dele()"><i class="fa fa-trash-o"></i> Delete
+                                    </button>
+
+                                    <button type="button" class="btn btn-default" onclick="window.location.reload();"><i
+                                            class="fa fa-refresh"></i> Refresh
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box-tools pull-right">
+                            <div class="form-group form-inline">
+
+
+                                <div class="input-group">
+                                    <!--  <div class="input-group-addon">
+                                          <i class="fa fa-calendar"></i>
+                                      </div>-->
+                                    <!--<input type="text" class="form-control pull-right" id="datepicker" data-date-format="yyyy-mm-dd" ng-model="searchEntity.time" placeholder="seach data">-->
+                                    <ng-bs3-datepicker ng-model="searchEntity.time" language="en"
+                                                       date-format="YYYY-MM-DD">
+
+                                </div>
+
+
+                                <input type="text" class="form-control input" ng-model="searchEntity.title"
+                                       placeholder="search title">
+
+                                <button type="button" class="btn btn-default" ng-click="reloadList()">Go</button>
+
+
+                            </div>
+
+                        </div>
+
+
+                        <!--工具栏/-->
+
+                        <!--数据列表-->
+                        <table id="dataList" class="table table-bordered table-striped table-hover dataTable">
+                            <thead>
                             <tr>
                                 <th class="" style="padding-right:0px;">
-                                    <input id="selall" type="checkbox" class="icheckbox_square-blue">
+                                    <input id="selall" type="checkbox" class="icheckbox_square-blue" name="checkbox_v1"
+                                           onclick="allSelect('checkbox_v1', 'checkbox1')"
+                                           ng-click="selectsAll($event)">
                                 </th>
                                 <th class=>Id</th>
-								<th class=>Title</th>
+                                <th class=>Title</th>
                                 <th class=>Time</th>
-                                
+
 
                                 <th class="text-center">Operation</th>
                             </tr>
-                        </thead>
-                        <tbody>
+                            </thead>
 
-
-
-                            <tr>
-                                <td><input name="ids" type="checkbox"></td>
+                            <tbody>
+                            <!-- https://blog.csdn.net/u012396955/article/details/72793906  动态改样式  -->
+                            <tr ng-repeat="entity in list">
+                                <!--  <td><input  type="checkbox" ng-click="updateSelection($event ,entity.patientId)"></td>-->
+                                <td><input type="checkbox" name="checkbox1"
+                                           ng-click="updateSelection($event,entity.newsId)"></td>
                                 <td>
-                                    1
+                                    {{entity.newsId}}
                                 </td>
-								<td>
-                                    落实全民医保
-                                </td>
-                                
-                                <td>2017-03-09 13:51:26</td>
-                                
+                                <td>{{entity.title}}</td>
+                                <td>{{entity.time }}</td>
 
                                 <td class="text-center">
-                                    
-                                   
-                                    <button type="button" class="btn bg-olive btn-xs" onclick='location.href="all-administrator-newsinfo.html"'>Edit</button>
+                                    <!--  <button type="button" class="btn bg-olive btn-xs"
+                                              onclick='location.href="all-administrator-newsinfo.html?id={{entity.newsId}}"'
+                                      >Edit
+                                      </button>-->
+                                    <a class="btn bg-olive btn-xs"
+                                       href="all-administrator-newsinfo.html?id={{entity.newsId}}"
+                                    >Edit
+                                    </a>
                                 </td>
                             </tr>
-							 <tr>
-                                <td><input name="ids" type="checkbox"></td>
-                                <td>
-                                    1
-                                </td>
-								<td>
-                                    落实全民医保
-                                </td>
-                                
-                                <td>2017-03-09 13:51:26</td>
-                                
-
-                                <td class="text-center">
-                                    
-                                   
-                                    <button type="button" class="btn bg-olive btn-xs" onclick='location.href="all-administrator-newsinfo.html"'>Edit</button>
-                                </td>
-                            </tr>
-							   
-							     
-							 
 
 
-
-                            
-
-
-
-
-                        </tbody>
-                        <!--
-                            <tfoot>
-                            <tr>
-                            <th>Rendering engine</th>
-                            <th>Browser</th>
-                            <th>Platform(s)</th>
-                            <th>Engine version</th>
-                            <th>CSS grade</th>
-                            </tr>
-                            </tfoot>-->
-                    </table>
-                    <!--数据列表/-->
-
-
-                </div>
-                <!-- 数据表格 /-->
-
-
-            </div>
-            <!-- /.box-body -->
-
-            <!-- .box-footer-->
-            <div class="box-footer">
-                <div class="pull-left">
-                    <div class="form-group form-inline">
-                        Show
-                        <select class="form-control">
-                            <option>10</option>
-                            <option>15</option>
-                            <option>20</option>
-                            <option>50</option>
-                            <option>80</option>
-                        </select> entries
+                            </tbody>
+                            <!--
+                                <tfoot>
+                                <tr>
+                                <th>Rendering engine</th>
+                                <th>Browser</th>
+                                <th>Platform(s)</th>
+                                <th>Engine version</th>
+                                <th>CSS grade</th>
+                                </tr>
+                                </tfoot>-->
+                        </table>
+                        <!--数据列表/-->
+                        <tm-pagination conf="paginationConf"></tm-pagination>
+                    <!--    <div ng-repeat="id in selectIds">
+                            <p>
+                                {{id}}
+                            </p>
+                        </div>
+                        <div>{{searchEntity.title}}</div>
+                        <div>{{searchEntity.time}}</div>-->
                     </div>
-                </div>
+                    <!-- 数据表格 /-->
 
-                <div class="box-tools pull-right">
-                    <ul class="pagination">
-                        
-                        <li><a href="#">Previous</a></li>
-                        <li><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">5</a></li>
-                        <li><a href="#">Next</a></li>
-                       
-                    </ul>
+
                 </div>
+                <!-- /.box-body -->
+
+                <!-- .box-footer-->
+
+        <!--        <div class="box-footer">
+                    <div class="pull-left">
+                        <div class="form-group form-inline">
+                            Show
+                            <select class="form-control">
+                                <option>10</option>
+                                <option>15</option>
+                                <option>20</option>
+                                <option>50</option>
+                                <option>80</option>
+                            </select> entries
+                        </div>
+                    </div>
+
+                    <div class="box-tools pull-right">
+                        <ul class="pagination">
+
+                            <li><a href="#">Previous</a></li>
+                            <li><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                            <li><a href="#">Next</a></li>
+
+                        </ul>
+                    </div>
+
+                </div>-->
+                <!-- /.box-footer-->
+
 
             </div>
-            <!-- /.box-footer-->
 
+        </section>
+        <!-- /.content -->
 
-        </div>
-
-    </section>
-    <!-- /.content -->
-	
-	
-	
-	
-		</div>
-<!-- /.content-wrapper -->
-
-
-
-			<!-- 底部导航 -->
-			<footer class="main-footer">
-				<div class="pull-right hidden-xs">
-                <b>Version</b> 1.0.0
-				</div>
-				<strong>Copyright &copy; 2019 Team Nine </a>.</strong> All rights reserved.
-			</footer>
-        <!-- 底部导航 /-->
 
     </div>
+    <!-- /.content-wrapper -->
+
+
+    <!-- 底部导航 -->
+    <footer class="main-footer">
+        <div class="pull-right hidden-xs">
+            <b>Version</b> 1.0.0
+        </div>
+        <strong>Copyright &copy; 2019 Team Nine </a>.</strong> All rights reserved.
+    </footer>
+    <!-- 底部导航 /-->
+
+</div>
 
 <div class="modal fade" id="NewModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog" >
-	<div class="modal-content">
-		<div class="modal-header">
-			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-			<h3 id="myModalLabel">New Department</h3>
-		</div>
-		<div class="modal-body">							
-			
-			<table class="table table-bordered table-striped"  width="800px">
-				<tr>
-		      		<td>Name</td>
-		      		<td>
-		      		   <input  class="form-control" placeholder="Department Name">
-		      		</td>
-		      	</tr>
-		      	<tr>
-		      		<td>Address</td>
-		      		<td><input  class="form-control" placeholder="Address">  </td>
-		      	</tr>			  
-		      	<tr>
-		      		<td>Picture</td>
-		      		<td>
-						<table>
-							<tr>
-								<td>
-								<input type="file" id="file" class="file" />	
-<!-- 参考如果不行的话就使用老方法 https://blog.csdn.net/maple980326/article/details/51828802     
-https://www.cnblogs.com/kevin19900306/p/5459859.html  https://www.google.com/search?q=anjularjs%E6%80%8E%E4%B9%88%E4%BD%BF%E7%94%A8bootstrapFileinput&ie=utf-8  -->								
-					                <button class="btn btn-primary" type="button" >
-				                   		上传
-					                </button>	
-					            </td>
-								
-							</tr>						
-						</table>
-		      		</td>
-		      	</tr>			      	
-			 </table>				
-			
-		</div>
-		<div class="modal-footer">						
-			<button class="btn btn-success" data-dismiss="modal" aria-hidden="true">Save</button>
-			<button class="btn btn-default" data-dismiss="modal" aria-hidden="true">Close</button>
-		</div>
-	  </div>
-	</div>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h3 id="myModalLabel">New Department</h3>
+            </div>
+            <div class="modal-body">
+
+                <table class="table table-bordered table-striped" width="800px">
+                    <tr>
+                        <td>Name</td>
+                        <td>
+                            <input class="form-control" placeholder="Department Name">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Address</td>
+                        <td><input class="form-control" placeholder="Address"></td>
+                    </tr>
+                    <tr>
+                        <td>Picture</td>
+                        <td>
+                            <table>
+                                <tr>
+                                    <td>
+                                        <input type="file" id="file" class="file"/>
+                                        <!-- 参考如果不行的话就使用老方法 https://blog.csdn.net/maple980326/article/details/51828802
+                                        https://www.cnblogs.com/kevin19900306/p/5459859.html  https://www.google.com/search?q=anjularjs%E6%80%8E%E4%B9%88%E4%BD%BF%E7%94%A8bootstrapFileinput&ie=utf-8  -->
+                                        <button class="btn btn-primary" type="button">
+                                            上传
+                                        </button>
+                                    </td>
+
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-success" data-dismiss="modal" aria-hidden="true">Save</button>
+                <button class="btn btn-default" data-dismiss="modal" aria-hidden="true">Close</button>
+            </div>
+        </div>
+    </div>
 </div>
-    <script src="../plugins/jQuery/jquery-2.2.3.min.js"></script>
-    <script src="../plugins/jQueryUI/jquery-ui.min.js"></script>
-    <script>
-        $.widget.bridge('uibutton', $.ui.button);
-    </script>
-    <script src="../plugins/bootstrap/js/bootstrap.min.js"></script>
-    <script src="../plugins/raphael/raphael-min.js"></script>
-    <script src="../plugins/morris/morris.min.js"></script>
-    <script src="../plugins/sparkline/jquery.sparkline.min.js"></script>
-    <script src="../plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
-    <script src="../plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
-    <script src="../plugins/knob/jquery.knob.js"></script>
-    <script src="../plugins/daterangepicker/moment.min.js"></script>
-    <script src="../plugins/daterangepicker/daterangepicker.js"></script>
-    <script src="../plugins/daterangepicker/daterangepicker.zh-CN.js"></script>
-    <script src="../plugins/datepicker/bootstrap-datepicker.js"></script>
-    <script src="../plugins/datepicker/locales/bootstrap-datepicker.zh-CN.js"></script>
-    <script src="../plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
-    <script src="../plugins/slimScroll/jquery.slimscroll.min.js"></script>
-    <script src="../plugins/fastclick/fastclick.js"></script>
-    <script src="../plugins/iCheck/icheck.min.js"></script>
-    <script src="../plugins/adminLTE/js/app.min.js"></script>
-    <script src="../plugins/treeTable/jquery.treetable.js"></script>
-    <script src="../plugins/select2/select2.full.min.js"></script>
-    <script src="../plugins/colorpicker/bootstrap-colorpicker.min.js"></script>
-    <script src="../plugins/bootstrap-wysihtml5/bootstrap-wysihtml5.zh-CN.js"></script>
-    <script src="../plugins/bootstrap-markdown/js/bootstrap-markdown.js"></script>
-    <script src="../plugins/bootstrap-markdown/locale/bootstrap-markdown.zh.js"></script>
-    <script src="../plugins/bootstrap-markdown/js/markdown.js"></script>
-    <script src="../plugins/bootstrap-markdown/js/to-markdown.js"></script>
-    <script src="../plugins/ckeditor/ckeditor.js"></script>
-    <script src="../plugins/input-mask/jquery.inputmask.js"></script>
-    <script src="../plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
-    <script src="../plugins/input-mask/jquery.inputmask.extensions.js"></script>
-    <script src="../plugins/datatables/jquery.dataTables.min.js"></script>
-    <script src="../plugins/datatables/dataTables.bootstrap.min.js"></script>
-    <script src="../plugins/chartjs/Chart.min.js"></script>
-    <script src="../plugins/flot/jquery.flot.min.js"></script>
-    <script src="../plugins/flot/jquery.flot.resize.min.js"></script>
-    <script src="../plugins/flot/jquery.flot.pie.min.js"></script>
-    <script src="../plugins/flot/jquery.flot.categories.min.js"></script>
-    <script src="../plugins/ionslider/ion.rangeSlider.min.js"></script>
-    <script src="../plugins/bootstrap-slider/bootstrap-slider.js"></script>
-    <script src="../plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.js"></script>
-    <script src="../plugins/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.zh-CN.js"></script>
-	<script src="../plugins/bootstrap-fileinput-master/js/fileinput.min.js"></script>
-	<script src="../plugins/bootstrap-fileinput-master/js/fileinput.min.js"></script>
-	<script src="../plugins/bootstrap-fileinput-master/themes/fa/theme.min.js"></script>
-   <script>
-		$("#file").fileinput();
-            // 选择框
-        $(document).ready(function() {
-		
-			$("#file").fileinput();
-            // 选择框
-            $(".select2").select2();
+<script src="../plugins/jQuery/jquery-2.2.3.min.js"></script>
+<script src="../plugins/jQueryUI/jquery-ui.min.js"></script>
+<script>
+    $.widget.bridge('uibutton', $.ui.button);
+</script>
+<script src="../plugins/bootstrap/js/bootstrap.min.js"></script>
+<script src="../plugins/raphael/raphael-min.js"></script>
+<script src="../plugins/morris/morris.min.js"></script>
+<script src="../plugins/sparkline/jquery.sparkline.min.js"></script>
+<script src="../plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+<script src="../plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+<script src="../plugins/knob/jquery.knob.js"></script>
+<script src="../plugins/daterangepicker/moment.min.js"></script>
+<script src="../plugins/daterangepicker/daterangepicker.js"></script>
+<script src="../plugins/daterangepicker/daterangepicker.zh-CN.js"></script>
+<script src="../plugins/datepicker/bootstrap-datepicker.js"></script>
+<script src="../plugins/datepicker/locales/bootstrap-datepicker.zh-CN.js"></script>
+<script src="../plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+<script src="../plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<script src="../plugins/fastclick/fastclick.js"></script>
+<script src="../plugins/iCheck/icheck.min.js"></script>
+<script src="../plugins/adminLTE/js/app.min.js"></script>
+<script src="../plugins/treeTable/jquery.treetable.js"></script>
+<script src="../plugins/select2/select2.full.min.js"></script>
+<script src="../plugins/colorpicker/bootstrap-colorpicker.min.js"></script>
+<script src="../plugins/bootstrap-wysihtml5/bootstrap-wysihtml5.zh-CN.js"></script>
+<script src="../plugins/bootstrap-markdown/js/bootstrap-markdown.js"></script>
+<script src="../plugins/bootstrap-markdown/locale/bootstrap-markdown.zh.js"></script>
+<script src="../plugins/bootstrap-markdown/js/markdown.js"></script>
+<script src="../plugins/bootstrap-markdown/js/to-markdown.js"></script>
+<script src="../plugins/ckeditor/ckeditor.js"></script>
+<script src="../plugins/input-mask/jquery.inputmask.js"></script>
+<script src="../plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
+<script src="../plugins/input-mask/jquery.inputmask.extensions.js"></script>
+<script src="../plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="../plugins/datatables/dataTables.bootstrap.min.js"></script>
+<script src="../plugins/chartjs/Chart.min.js"></script>
+<script src="../plugins/flot/jquery.flot.min.js"></script>
+<script src="../plugins/flot/jquery.flot.resize.min.js"></script>
+<script src="../plugins/flot/jquery.flot.pie.min.js"></script>
+<script src="../plugins/flot/jquery.flot.categories.min.js"></script>
+<script src="../plugins/ionslider/ion.rangeSlider.min.js"></script>
+<script src="../plugins/bootstrap-slider/bootstrap-slider.js"></script>
+<script src="../plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.js"></script>
+<script src="../plugins/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.zh-CN.js"></script>
+<script src="../plugins/bootstrap-fileinput-master/js/fileinput.min.js"></script>
+<script src="../plugins/bootstrap-fileinput-master/js/fileinput.min.js"></script>
+<script src="../plugins/bootstrap-fileinput-master/themes/fa/theme.min.js"></script>
+<script type="text/javascript" src="../plugins/angularjs/angular.min.js"></script>
+<script src="../plugins/angularjs/pagination.js"></script>
 
-            // WYSIHTML5编辑器
-            $(".textarea").wysihtml5({
-                locale: 'zh-CN'
-            });
-        });
+<script src="../plugins/angular-datepicker/js/ng-bs3-datepicker.js" charset="utf-8"></script>
+<script src="../plugins/angular-datepicker/js/moment.js"></script>
 
 
-        // 设置激活菜单
-        function setSidebarActive(tagUri) {
-            var liObj = $("#" + tagUri);
-            if (liObj.length > 0) {
-                liObj.parent().parent().addClass("active");
-                liObj.addClass("active");
+<script type="text/javascript">
+
+
+    function allSelect(check_v, checkname) {
+        var v_item = document.getElementsByName(check_v);
+        var items = document.getElementsByName(checkname);
+        for (var i = 0; i < items.length; ++i) {
+            if (v_item[0].checked) {
+                items[i].checked = true;
+            } else {
+                items[i].checked = false;
             }
         }
+    }
+
+  /*  function singleSelect2parent(check_v, checkname) {
+        var v_item = document.getElementsByName(check_v);
+        var items = document.getElementsByName(checkname);
+        var childStatus = true;
+        for (var i = 0; i < items.length; ++i) {
+            childStatus = (childStatus && items[i].checked);
+        }
+        if (childStatus) {
+            v_item[0].checked = true;
+        } else {
+            v_item[0].checked = false;
+        }
+    }
+*/
+
+    var app = angular.module('ihospital', ['pagination', 'ng-bs3-datepicker']).run(["$rootScope", function ($rootScope) {
+        $rootScope.sid = {};
+    }]);
+    app.service('loginService',function ($http) {
+
+        this.loginName=function () {
+
+            return $http.get('../login/name.do');
+
+        }
+
+    });
+
+    app.controller('newsController', function ($scope, $http, $rootScope, $filter,loginService) {
 
 
-        $(document).ready(function() {
-            setSidebarActive("admin-blank");
+        //获取登录名
+        $scope.showLoginName = function () {
+            loginService.loginName().success(
+                function (response) {
+                    $scope.loginName=response.loginName;
+                }
+            )
+        };
+
+            $scope.change = function ($rootScope, newsid) {
+                $rootScope.sid = newsid;
+            }
+
+            $scope.searchEntity = {};//定义搜索对象
+            //条件查询
+            $scope.search = function (page, rows) {
+                $http.post('../news/searchNews.do?page=' + page + "&rows=" + rows, $scope.searchEntity).success(
+                    function (response) {
+
+                        $scope.list = response.rows;//给列表变量赋值
+                        for (var i = 0; i < response.rows.length; i++) {
+                            $scope.list[i].time = $filter("date")(response.rows[i].time, "yyyy-MM-dd HH:mm:ss");
+                        }
+                        $scope.paginationConf.totalItems = response.total;//总记录数
+                    }
+                );
+            }
+            //刷新列表
+            $scope.reloadList = function () {
+                $scope.search($scope.paginationConf.currentPage, $scope.paginationConf.itemsPerPage);
+            }
+
+
+            $scope.selectIds = [];//选中的ID集合
+            //更新复选
+            $scope.updateSelection = function ($event, id) {
+                if ($event.target.checked) {//如果是被选中,则增加到数组
+                    $scope.selectIds.push(id);
+                } else {
+                    var idx = $scope.selectIds.indexOf(id);
+                    $scope.selectIds.splice(idx, 1);//删除
+                }
+            }
+            //批量删除
+            $scope.dele = function () {
+                //获取选中的复选框
+                $http.get('../news/deleteNews.do?ids=' + $scope.selectIds).success(
+                    function (response) {
+                        if (response.success) {
+                            $scope.reloadList();//刷新列表
+                        }
+                    }
+                );
+            }
+            //读取列表数据绑定到表单中
+            $scope.findAll = function () {
+                $http.get('../news/findAll.do').success(
+                    function (response) {
+                        $scope.list = response;
+                    }
+                );
+            }
+            $scope.selectsAll = function ($event) {
+                /* $http.get('../news/findAll.do').success(
+                     function(response){
+                         $scope.list=response;*/
+                if ($event.target.checked) {
+                    angular.forEach($scope.list, function (each) {
+                        $scope.selectIds.push(each.newsId);    //将空数组中push新的数据，符合条件的数据的id值
+
+                    });
+                } else {
+                    $scope.selectIds = [];
+                }
+                /*     }
+                 );*/
+            }
+
+
+            //分页控件配置
+            $scope.paginationConf = {
+                currentPage: 1,
+                totalItems: 10,
+                itemsPerPage: 10,
+                perPageOptions: [10, 20, 30, 40, 50],
+                onChange: function () {
+                    $scope.reloadList();//重新加载
+                }
+            };
+
+
+            //查询分页后的列表
+            $scope.findPage = function (page, size) {
+                $http.get('../news/findPage.do?page=' + page + '&size=' + size).success(
+                    function (response) {
+                        //显示当前页的数据
+                        $scope.list = response.rows;
+                        //更新分页控件配置
+                        $scope.paginationConf.totalItems = response.total;
+
+                    }
+                );
+            }
+            $scope.save = function () {
+                $http.post('../news/addNews.do', $scope.entity).success(
+                    function (response) {
+                        if (response.success) {
+                            //重新查询
+                            $scope.reloadList();//重新加载
+                        } else {
+                            alert(response.message);
+                        }
+                    }
+                );
+            }
+        }
+    );
+
+
+</script>
+
+
+<script>
+    $("#file").fileinput();
+    // 选择框
+    $(document).ready(function () {
+
+        $("#file").fileinput();
+        // 选择框
+        $(".select2").select2();
+
+        // WYSIHTML5编辑器
+        $(".textarea").wysihtml5({
+            locale: 'zh-CN'
         });
-		$(document).ready(function() {
+    });
 
-            //Date picker
-            $('#datepicker').datepicker({
-                autoclose: true,
-                language: 'zh-CN'
-            });
 
-            
+    // 设置激活菜单
+    function setSidebarActive(tagUri) {
+        var liObj = $("#" + tagUri);
+        if (liObj.length > 0) {
+            liObj.parent().parent().addClass("active");
+            liObj.addClass("active");
+        }
+    }
 
+
+    $(document).ready(function () {
+        setSidebarActive("admin-blank");
+    });
+    $(document).ready(function () {
+
+        //Date picker
+        $('#datepicker').datepicker({
+            autoclose: true,
+            language: 'zh-CN'
         });
-		
 
-		
-    </script>
+
+    });
+
+
+</script>
 </body>
 
 </html>

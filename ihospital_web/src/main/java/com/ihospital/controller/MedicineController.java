@@ -29,6 +29,7 @@ public class MedicineController {
         return medicineService.findAll();
     }
 
+    @ResponseBody
     @RequestMapping("/addMedicine.do")
     public Result add(@RequestBody Medicine medicine)  {
         try{
@@ -75,6 +76,7 @@ public class MedicineController {
 
     }
 
+    @ResponseBody
     @RequestMapping("/searchMedicine.do")
     public PageResult search(@RequestBody Medicine medicine, int page,int size){
         return  medicineService.findPage(medicine,page,size);

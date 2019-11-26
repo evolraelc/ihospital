@@ -79,4 +79,10 @@ public interface IPatientService {
     
     public PageResult findPage(Patient patient,int pageNum,int pageSize);
 
+    /**
+     * 设置病人状态
+     * @param id 病人id
+     * @param status 状态
+     */
+    void setStatus(Long id, String status);
 }

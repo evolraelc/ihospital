@@ -3,13 +3,12 @@
 <mapper namespace="com.ihospital.mapper.ConsultationMapper" >
   <resultMap id="BaseResultMap" type="com.ihospital.pojo.Consultation" >
     <id column="consult_id" property="consultId" jdbcType="BIGINT" />
-    <result column="patient_id" property="patientId" jdbcType="BIGINT" />
     <result column="physician_id" property="physicianId" jdbcType="BIGINT" />
     <result column="body" property="body" jdbcType="VARCHAR" />
-    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
-    <result column="last_edit_time" property="lastEditTime" jdbcType="TIMESTAMP" />
+    <result column="time" property="time" jdbcType="TIMESTAMP" />
     <result column="reply_count" property="replyCount" jdbcType="INTEGER" />
     <result column="last_reply_id" property="lastReplyId" jdbcType="INTEGER" />
+    <result column="patient_id" property="patientId" jdbcType="BIGINT" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -70,8 +69,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    consult_id, patient_id, physician_id, body, create_time, last_edit_time, reply_count, 
-    last_reply_id
+    consult_id, physician_id, body, time, reply_count, last_reply_id, patient_id
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.ihospital.pojo.ConsultationExample" >
     select
@@ -104,12 +102,12 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.ihospital.pojo.Consultation" >
-    insert into consultation (consult_id, patient_id, physician_id, 
-      body, create_time, last_edit_time, 
-      reply_count, last_reply_id)
-    values (#{consultId,jdbcType=BIGINT}, #{patientId,jdbcType=BIGINT}, #{physicianId,jdbcType=BIGINT}, 
-      #{body,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{lastEditTime,jdbcType=TIMESTAMP}, 
-      #{replyCount,jdbcType=INTEGER}, #{lastReplyId,jdbcType=INTEGER})
+    insert into consultation (consult_id, physician_id, body, 
+      time, reply_count, last_reply_id, 
+      patient_id)
+    values (#{consultId,jdbcType=BIGINT}, #{physicianId,jdbcType=BIGINT}, #{body,jdbcType=VARCHAR}, 
+      #{time,jdbcType=TIMESTAMP}, #{replyCount,jdbcType=INTEGER}, #{lastReplyId,jdbcType=INTEGER}, 
+      #{patientId,jdbcType=BIGINT})
   </insert>
   <insert id="insertSelective" parameterType="com.ihospital.pojo.Consultation" >
     insert into consultation
@@ -117,20 +115,14 @@
       <if test="consultId != null" >
         consult_id,
       </if>
-      <if test="patientId != null" >
-        patient_id,
-      </if>
       <if test="physicianId != null" >
         physician_id,
       </if>
       <if test="body != null" >
         body,
       </if>
-      <if test="createTime != null" >
-        create_time,
-      </if>
-      <if test="lastEditTime != null" >
-        last_edit_time,
+      <if test="time != null" >
+        time,
       </if>
       <if test="replyCount != null" >
         reply_count,
@@ -138,13 +130,13 @@
       <if test="lastReplyId != null" >
         last_reply_id,
       </if>
+      <if test="patientId != null" >
+        patient_id,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="consultId != null" >
         #{consultId,jdbcType=BIGINT},
-      </if>
-      <if test="patientId != null" >
-        #{patientId,jdbcType=BIGINT},
       </if>
       <if test="physicianId != null" >
         #{physicianId,jdbcType=BIGINT},
@@ -152,17 +144,17 @@
       <if test="body != null" >
         #{body,jdbcType=VARCHAR},
       </if>
-      <if test="createTime != null" >
-        #{createTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="lastEditTime != null" >
-        #{lastEditTime,jdbcType=TIMESTAMP},
+      <if test="time != null" >
+        #{time,jdbcType=TIMESTAMP},
       </if>
       <if test="replyCount != null" >
         #{replyCount,jdbcType=INTEGER},
       </if>
       <if test="lastReplyId != null" >
         #{lastReplyId,jdbcType=INTEGER},
+      </if>
+      <if test="patientId != null" >
+        #{patientId,jdbcType=BIGINT},
       </if>
     </trim>
   </insert>
@@ -178,26 +170,23 @@
       <if test="record.consultId != null" >
         consult_id = #{record.consultId,jdbcType=BIGINT},
       </if>
-      <if test="record.patientId != null" >
-        patient_id = #{record.patientId,jdbcType=BIGINT},
-      </if>
       <if test="record.physicianId != null" >
         physician_id = #{record.physicianId,jdbcType=BIGINT},
       </if>
       <if test="record.body != null" >
         body = #{record.body,jdbcType=VARCHAR},
       </if>
-      <if test="record.createTime != null" >
-        create_time = #{record.createTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="record.lastEditTime != null" >
-        last_edit_time = #{record.lastEditTime,jdbcType=TIMESTAMP},
+      <if test="record.time != null" >
+        time = #{record.time,jdbcType=TIMESTAMP},
       </if>
       <if test="record.replyCount != null" >
         reply_count = #{record.replyCount,jdbcType=INTEGER},
       </if>
       <if test="record.lastReplyId != null" >
         last_reply_id = #{record.lastReplyId,jdbcType=INTEGER},
+      </if>
+      <if test="record.patientId != null" >
+        patient_id = #{record.patientId,jdbcType=BIGINT},
       </if>
     </set>
     <if test="_parameter != null" >
@@ -207,13 +196,12 @@
   <update id="updateByExample" parameterType="map" >
     update consultation
     set consult_id = #{record.consultId,jdbcType=BIGINT},
-      patient_id = #{record.patientId,jdbcType=BIGINT},
       physician_id = #{record.physicianId,jdbcType=BIGINT},
       body = #{record.body,jdbcType=VARCHAR},
-      create_time = #{record.createTime,jdbcType=TIMESTAMP},
-      last_edit_time = #{record.lastEditTime,jdbcType=TIMESTAMP},
+      time = #{record.time,jdbcType=TIMESTAMP},
       reply_count = #{record.replyCount,jdbcType=INTEGER},
-      last_reply_id = #{record.lastReplyId,jdbcType=INTEGER}
+      last_reply_id = #{record.lastReplyId,jdbcType=INTEGER},
+      patient_id = #{record.patientId,jdbcType=BIGINT}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -221,20 +209,14 @@
   <update id="updateByPrimaryKeySelective" parameterType="com.ihospital.pojo.Consultation" >
     update consultation
     <set >
-      <if test="patientId != null" >
-        patient_id = #{patientId,jdbcType=BIGINT},
-      </if>
       <if test="physicianId != null" >
         physician_id = #{physicianId,jdbcType=BIGINT},
       </if>
       <if test="body != null" >
         body = #{body,jdbcType=VARCHAR},
       </if>
-      <if test="createTime != null" >
-        create_time = #{createTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="lastEditTime != null" >
-        last_edit_time = #{lastEditTime,jdbcType=TIMESTAMP},
+      <if test="time != null" >
+        time = #{time,jdbcType=TIMESTAMP},
       </if>
       <if test="replyCount != null" >
         reply_count = #{replyCount,jdbcType=INTEGER},
@@ -242,18 +224,20 @@
       <if test="lastReplyId != null" >
         last_reply_id = #{lastReplyId,jdbcType=INTEGER},
       </if>
+      <if test="patientId != null" >
+        patient_id = #{patientId,jdbcType=BIGINT},
+      </if>
     </set>
     where consult_id = #{consultId,jdbcType=BIGINT}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.ihospital.pojo.Consultation" >
     update consultation
-    set patient_id = #{patientId,jdbcType=BIGINT},
-      physician_id = #{physicianId,jdbcType=BIGINT},
+    set physician_id = #{physicianId,jdbcType=BIGINT},
       body = #{body,jdbcType=VARCHAR},
-      create_time = #{createTime,jdbcType=TIMESTAMP},
-      last_edit_time = #{lastEditTime,jdbcType=TIMESTAMP},
+      time = #{time,jdbcType=TIMESTAMP},
       reply_count = #{replyCount,jdbcType=INTEGER},
-      last_reply_id = #{lastReplyId,jdbcType=INTEGER}
+      last_reply_id = #{lastReplyId,jdbcType=INTEGER},
+      patient_id = #{patientId,jdbcType=BIGINT}
     where consult_id = #{consultId,jdbcType=BIGINT}
   </update>
 </mapper>

@@ -8,13 +8,11 @@
     <result column="physician_age" property="physicianAge" jdbcType="INTEGER" />
     <result column="physician_gender" property="physicianGender" jdbcType="BIT" />
     <result column="physician_avatar" property="physicianAvatar" jdbcType="VARCHAR" />
-    <result column="start_time" property="startTime" jdbcType="TIMESTAMP" />
     <result column="depart_id" property="departId" jdbcType="BIGINT" />
     <result column="depart_name" property="departName" jdbcType="VARCHAR" />
     <result column="expertise" property="expertise" jdbcType="VARCHAR" />
     <result column="phone_number" property="phoneNumber" jdbcType="VARCHAR" />
     <result column="brief_introduction" property="briefIntroduction" jdbcType="VARCHAR" />
-    <result column="uid" property="uid" jdbcType="VARCHAR" />
     <result column="pwd" property="pwd" jdbcType="VARCHAR" />
     <result column="email" property="email" jdbcType="VARCHAR" />
   </resultMap>
@@ -78,8 +76,7 @@
   </sql>
   <sql id="Base_Column_List" >
     physician_id, physician_name, worktitle, physician_age, physician_gender, physician_avatar, 
-    start_time, depart_id, depart_name, expertise, phone_number, brief_introduction, 
-    uid, pwd, email
+    depart_id, depart_name, expertise, phone_number, brief_introduction, pwd, email
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.ihospital.pojo.PhysicianExample" >
     select
@@ -114,14 +111,14 @@
   <insert id="insert" parameterType="com.ihospital.pojo.Physician" >
     insert into physician (physician_id, physician_name, worktitle, 
       physician_age, physician_gender, physician_avatar, 
-      start_time, depart_id, depart_name, 
-      expertise, phone_number, brief_introduction, 
-      uid, pwd, email)
+      depart_id, depart_name, expertise, 
+      phone_number, brief_introduction, pwd, 
+      email)
     values (#{physicianId,jdbcType=BIGINT}, #{physicianName,jdbcType=VARCHAR}, #{worktitle,jdbcType=VARCHAR}, 
       #{physicianAge,jdbcType=INTEGER}, #{physicianGender,jdbcType=BIT}, #{physicianAvatar,jdbcType=VARCHAR}, 
-      #{startTime,jdbcType=TIMESTAMP}, #{departId,jdbcType=BIGINT}, #{departName,jdbcType=VARCHAR}, 
-      #{expertise,jdbcType=VARCHAR}, #{phoneNumber,jdbcType=VARCHAR}, #{briefIntroduction,jdbcType=VARCHAR}, 
-      #{uid,jdbcType=VARCHAR}, #{pwd,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR})
+      #{departId,jdbcType=BIGINT}, #{departName,jdbcType=VARCHAR}, #{expertise,jdbcType=VARCHAR}, 
+      #{phoneNumber,jdbcType=VARCHAR}, #{briefIntroduction,jdbcType=VARCHAR}, #{pwd,jdbcType=VARCHAR}, 
+      #{email,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.ihospital.pojo.Physician" >
     insert into physician
@@ -144,9 +141,6 @@
       <if test="physicianAvatar != null" >
         physician_avatar,
       </if>
-      <if test="startTime != null" >
-        start_time,
-      </if>
       <if test="departId != null" >
         depart_id,
       </if>
@@ -161,9 +155,6 @@
       </if>
       <if test="briefIntroduction != null" >
         brief_introduction,
-      </if>
-      <if test="uid != null" >
-        uid,
       </if>
       <if test="pwd != null" >
         pwd,
@@ -191,9 +182,6 @@
       <if test="physicianAvatar != null" >
         #{physicianAvatar,jdbcType=VARCHAR},
       </if>
-      <if test="startTime != null" >
-        #{startTime,jdbcType=TIMESTAMP},
-      </if>
       <if test="departId != null" >
         #{departId,jdbcType=BIGINT},
       </if>
@@ -208,9 +196,6 @@
       </if>
       <if test="briefIntroduction != null" >
         #{briefIntroduction,jdbcType=VARCHAR},
-      </if>
-      <if test="uid != null" >
-        #{uid,jdbcType=VARCHAR},
       </if>
       <if test="pwd != null" >
         #{pwd,jdbcType=VARCHAR},
@@ -247,9 +232,6 @@
       <if test="record.physicianAvatar != null" >
         physician_avatar = #{record.physicianAvatar,jdbcType=VARCHAR},
       </if>
-      <if test="record.startTime != null" >
-        start_time = #{record.startTime,jdbcType=TIMESTAMP},
-      </if>
       <if test="record.departId != null" >
         depart_id = #{record.departId,jdbcType=BIGINT},
       </if>
@@ -264,9 +246,6 @@
       </if>
       <if test="record.briefIntroduction != null" >
         brief_introduction = #{record.briefIntroduction,jdbcType=VARCHAR},
-      </if>
-      <if test="record.uid != null" >
-        uid = #{record.uid,jdbcType=VARCHAR},
       </if>
       <if test="record.pwd != null" >
         pwd = #{record.pwd,jdbcType=VARCHAR},
@@ -287,13 +266,11 @@
       physician_age = #{record.physicianAge,jdbcType=INTEGER},
       physician_gender = #{record.physicianGender,jdbcType=BIT},
       physician_avatar = #{record.physicianAvatar,jdbcType=VARCHAR},
-      start_time = #{record.startTime,jdbcType=TIMESTAMP},
       depart_id = #{record.departId,jdbcType=BIGINT},
       depart_name = #{record.departName,jdbcType=VARCHAR},
       expertise = #{record.expertise,jdbcType=VARCHAR},
       phone_number = #{record.phoneNumber,jdbcType=VARCHAR},
       brief_introduction = #{record.briefIntroduction,jdbcType=VARCHAR},
-      uid = #{record.uid,jdbcType=VARCHAR},
       pwd = #{record.pwd,jdbcType=VARCHAR},
       email = #{record.email,jdbcType=VARCHAR}
     <if test="_parameter != null" >
@@ -318,9 +295,6 @@
       <if test="physicianAvatar != null" >
         physician_avatar = #{physicianAvatar,jdbcType=VARCHAR},
       </if>
-      <if test="startTime != null" >
-        start_time = #{startTime,jdbcType=TIMESTAMP},
-      </if>
       <if test="departId != null" >
         depart_id = #{departId,jdbcType=BIGINT},
       </if>
@@ -335,9 +309,6 @@
       </if>
       <if test="briefIntroduction != null" >
         brief_introduction = #{briefIntroduction,jdbcType=VARCHAR},
-      </if>
-      <if test="uid != null" >
-        uid = #{uid,jdbcType=VARCHAR},
       </if>
       <if test="pwd != null" >
         pwd = #{pwd,jdbcType=VARCHAR},
@@ -355,13 +326,11 @@
       physician_age = #{physicianAge,jdbcType=INTEGER},
       physician_gender = #{physicianGender,jdbcType=BIT},
       physician_avatar = #{physicianAvatar,jdbcType=VARCHAR},
-      start_time = #{startTime,jdbcType=TIMESTAMP},
       depart_id = #{departId,jdbcType=BIGINT},
       depart_name = #{departName,jdbcType=VARCHAR},
       expertise = #{expertise,jdbcType=VARCHAR},
       phone_number = #{phoneNumber,jdbcType=VARCHAR},
       brief_introduction = #{briefIntroduction,jdbcType=VARCHAR},
-      uid = #{uid,jdbcType=VARCHAR},
       pwd = #{pwd,jdbcType=VARCHAR},
       email = #{email,jdbcType=VARCHAR}
     where physician_id = #{physicianId,jdbcType=BIGINT}

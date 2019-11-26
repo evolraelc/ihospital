@@ -5,6 +5,8 @@
     <id column="prescript_id" property="prescriptId" jdbcType="BIGINT" />
     <result column="patho_id" property="pathoId" jdbcType="BIGINT" />
     <result column="medicine_id" property="medicineId" jdbcType="BIGINT" />
+    <result column="num" property="num" jdbcType="INTEGER" />
+    <result column="price" property="price" jdbcType="INTEGER" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -65,7 +67,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    prescript_id, patho_id, medicine_id
+    prescript_id, patho_id, medicine_id, num, price
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.ihospital.pojo.PrescriptionExample" >
     select
@@ -98,10 +100,10 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.ihospital.pojo.Prescription" >
-    insert into prescription (prescript_id, patho_id, medicine_id
-      )
-    values (#{prescriptId,jdbcType=BIGINT}, #{pathoId,jdbcType=BIGINT}, #{medicineId,jdbcType=BIGINT}
-      )
+    insert into prescription (prescript_id, patho_id, medicine_id, 
+      num, price)
+    values (#{prescriptId,jdbcType=BIGINT}, #{pathoId,jdbcType=BIGINT}, #{medicineId,jdbcType=BIGINT}, 
+      #{num,jdbcType=INTEGER}, #{price,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.ihospital.pojo.Prescription" >
     insert into prescription
@@ -115,6 +117,12 @@
       <if test="medicineId != null" >
         medicine_id,
       </if>
+      <if test="num != null" >
+        num,
+      </if>
+      <if test="price != null" >
+        price,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="prescriptId != null" >
@@ -125,6 +133,12 @@
       </if>
       <if test="medicineId != null" >
         #{medicineId,jdbcType=BIGINT},
+      </if>
+      <if test="num != null" >
+        #{num,jdbcType=INTEGER},
+      </if>
+      <if test="price != null" >
+        #{price,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>
@@ -146,6 +160,12 @@
       <if test="record.medicineId != null" >
         medicine_id = #{record.medicineId,jdbcType=BIGINT},
       </if>
+      <if test="record.num != null" >
+        num = #{record.num,jdbcType=INTEGER},
+      </if>
+      <if test="record.price != null" >
+        price = #{record.price,jdbcType=INTEGER},
+      </if>
     </set>
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
@@ -155,7 +175,9 @@
     update prescription
     set prescript_id = #{record.prescriptId,jdbcType=BIGINT},
       patho_id = #{record.pathoId,jdbcType=BIGINT},
-      medicine_id = #{record.medicineId,jdbcType=BIGINT}
+      medicine_id = #{record.medicineId,jdbcType=BIGINT},
+      num = #{record.num,jdbcType=INTEGER},
+      price = #{record.price,jdbcType=INTEGER}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -169,13 +191,21 @@
       <if test="medicineId != null" >
         medicine_id = #{medicineId,jdbcType=BIGINT},
       </if>
+      <if test="num != null" >
+        num = #{num,jdbcType=INTEGER},
+      </if>
+      <if test="price != null" >
+        price = #{price,jdbcType=INTEGER},
+      </if>
     </set>
     where prescript_id = #{prescriptId,jdbcType=BIGINT}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.ihospital.pojo.Prescription" >
     update prescription
     set patho_id = #{pathoId,jdbcType=BIGINT},
-      medicine_id = #{medicineId,jdbcType=BIGINT}
+      medicine_id = #{medicineId,jdbcType=BIGINT},
+      num = #{num,jdbcType=INTEGER},
+      price = #{price,jdbcType=INTEGER}
     where prescript_id = #{prescriptId,jdbcType=BIGINT}
   </update>
 </mapper>

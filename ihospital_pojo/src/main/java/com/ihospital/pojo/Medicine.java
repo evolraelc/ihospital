@@ -7,7 +7,7 @@ public class Medicine implements Serializable {
 
     private String medicineName;
 
-    private Float medicinePrice;
+    private Integer medicinePrice;
 
     public Long getMedicineId() {
         return medicineId;
@@ -25,11 +25,11 @@ public class Medicine implements Serializable {
         this.medicineName = medicineName == null ? null : medicineName.trim();
     }
 
-    public Float getMedicinePrice() {
+    public Integer getMedicinePrice() {
         return medicinePrice;
     }
 
-    public void setMedicinePrice(Float medicinePrice) {
+    public void setMedicinePrice(Integer medicinePrice) {
         this.medicinePrice = medicinePrice;
     }
 }

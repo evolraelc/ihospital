@@ -74,7 +74,7 @@ public interface IMedicineService {
     * @author: Cheng
     * @created: 2019/11/19/13:07
     **/
-    public PageResult findPage(Medicine medicine,int pageNum, int pageSize);
+    public PageResult findPage(Medicine medicine, int pageNum, int pageSize);
 
 
 

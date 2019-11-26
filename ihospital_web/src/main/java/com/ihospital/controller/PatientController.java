@@ -86,5 +86,18 @@ public class PatientController {
 
     }
 
+    @RequestMapping("/changeStatus.do")
+    public Result changeStatus(Long id, String target) {
+        try {
+            patientService.setStatus(id, target);
+            return new Result(true, "Change Success");
+        }
+        catch (Exception e) {
+            return new Result(false, e.getMessage());
+        }
+    }
+
+    
+
 
 }

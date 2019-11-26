@@ -19,10 +19,7 @@ public class Patient implements Serializable {
 
     private String phoneNumber;
 
-    private String uid;
-
     private String pwd;
-
     private String patientGenderStr;
 
     public String getPatientGenderStr() {
@@ -112,14 +109,6 @@ public class Patient implements Serializable {
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber == null ? null : phoneNumber.trim();
-    }
-
-    public String getUid() {
-        return uid;
-    }
-
-    public void setUid(String uid) {
-        this.uid = uid == null ? null : uid.trim();
     }
 
     public String getPwd() {

@@ -1,13 +1,13 @@
 package com.ihospital.pojo;
 
-import java.io.Serializable;
-
-public class Diseases implements Serializable {
+public class Diseases {
     private Long diseaseId;
 
     private String diseaseName;
 
     private Long departId;
+
+    private String detail;
 
     public Long getDiseaseId() {
         return diseaseId;
@@ -31,5 +31,13 @@ public class Diseases implements Serializable {
 
     public void setDepartId(Long departId) {
         this.departId = departId;
+    }
+
+    public String getDetail() {
+        return detail;
+    }
+
+    public void setDetail(String detail) {
+        this.detail = detail == null ? null : detail.trim();
     }
 }

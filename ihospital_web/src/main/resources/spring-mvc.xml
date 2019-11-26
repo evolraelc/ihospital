@@ -15,6 +15,7 @@
 		http://www.springframework.org/schema/aop/spring-aop.xsd
            ">
 
+    <context:property-placeholder location="classpath:config/application.properties"/>
     <!-- 扫描controller的注解，别的不扫描 -->
     <context:component-scan base-package="com.ihospital.controller">
     </context:component-scan>
@@ -47,6 +48,13 @@
     -->
     <aop:aspectj-autoproxy proxy-target-class="true"/>
 
+
+    <!-- 配置多媒体解析器 -->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="defaultEncoding" value="UTF-8"></property>
+        <!-- 设定文件上传的最大值5MB，5*1024*1024 -->
+        <property name="maxUploadSize" value="5242880"></property>
+    </bean>
 
     <!-- 文件上传配置 -->
 <!--    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">-->

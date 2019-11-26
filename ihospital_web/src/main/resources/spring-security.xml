@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+             xmlns:beans="http://www.springframework.org/schema/beans"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                  http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
+  <!--指定无需授权访问的路径-->
+<!--  放行根目录下的html-->
+  <http pattern="/*.html" security="none" />
+  <http pattern="/css/**" security="none" />
+  <http pattern="/img/**" security="none" />
+  <http pattern="/js/**" security="none" />
+  <http pattern="/plugins/**" security="none" />
+  <http pattern="/user/add.do" security="none"/>
+
+
+
+  <!--
+      use-expressions:是否启用SPEL表达式
+  -->
+  <http use-expressions="true">
+    <!--
+        pattern:路劲拦截
+        access:表示能访问的角色
+     -->
+    <intercept-url pattern="/**" access="hasAnyRole('ROLE_PATIENT', 'ROLE_ADMIN','ROLE_DOCTOR')"/>
+<!--    <intercept-url pattern="/pages/admin/**" access="hasRole('ROLE_ADMIN')"/>-->
+<!--    <intercept-url pattern="/pages/doctor/**" access="hasRole('ROLE_DOCTOR')"/>-->
+<!--    <intercept-url pattern="/pages/patient/**" access="hasRole('ROLE_PATIENT')"/>-->
+
+    <!--
+        启用登录
+        login-page:指定登录的页面
+        default-target-url:登录成功后默认页
+        authentication-failure-url:登录失败后跳转的页面
+      -->
+    <form-login
+        login-page="/login.html"
+        authentication-success-handler-ref="mySuccessHandler"
+        authentication-failure-url="/login.html"
+
+        />
+    <!--关闭CSRF安全校验-->
+    <csrf disabled="true" />
+
+    <!--是否允许同源请求在指定的iframe显示-->
+    <headers>
+      <frame-options policy="SAMEORIGIN"/>
+    </headers>
+    <logout />
+  </http>
+
+  <!--授权认证管理器-->
+  <authentication-manager>
+    <authentication-provider>
+      <user-service>
+        <!--定义一个用户，并指定角色为ROLE_ADMIN，密码为123456-->
+        <user name="admin" authorities="ROLE_ADMIN" password="123456" />
+      </user-service>
+    </authentication-provider>
+
+    <authentication-provider user-service-ref="doctorDetailService">
+
+    </authentication-provider>
+
+
+  </authentication-manager>
+
+  <beans:bean id="mySuccessHandler" class="com.ihospital.controller.LoginSuccessHandle"/>
+  <beans:bean id="doctorDetailService" class="com.ihospital.loginservice.DoctorDetailsServiceImpl"/>
+  <beans:bean id="patientDetailService" class="com.ihospital.loginservice.PatientDetailsServiceImpl"/>
+
+
+
+</beans:beans>

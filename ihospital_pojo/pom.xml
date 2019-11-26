@@ -9,6 +9,14 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
+    <dependencies>
+<!--        <dependency>-->
+<!--            <groupId>org.csource.fastdfs</groupId>-->
+<!--            <artifactId>fastdfs</artifactId>-->
+<!--            <version>1.2</version>-->
+<!--        </dependency>-->
+    </dependencies>
+
     <artifactId>ihospital_pojo</artifactId>
 
 

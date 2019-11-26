@@ -1,5 +1,8 @@
 package com.ihospital.pojo;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.io.Serializable;
 import java.util.Date;
 
@@ -8,21 +11,38 @@ public class Appointment implements Serializable {
 
     private Long patientId;
 
-    private Long physicianId;
+    private Long deptId;
 
-    private Date startTime;
-
-    private Date endTime;
+    @DateTimeFormat(pattern="yyyy-MM-dd")
+    @JsonFormat(timezone = "GMT+8",pattern="yyyy-MM-dd ")
+    private Date treatTime;
 
     private Boolean isValid;
-
-    private Integer queueNumber;
-
-    private Float appointCharge;
-
+    @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(timezone = "GMT+8",pattern="yyyy-MM-dd HH:mm:ss")
     private Date appointTime;
 
     private Integer priority;
+
+    //自定义string类型的优先级，如果priority=1，为转诊
+    //如果priority=2，为复诊
+    //如果priority=3，为初诊
+    private String priorityStr;
+    //下面是自定义的get
+
+
+    public String getPriorityStr() {
+        if(priority!=null){
+            if(priority==1)
+                priorityStr="转诊";
+            if(priority==2)
+                priorityStr="复诊";
+            if(priority==3)
+                priorityStr="初诊";
+
+        }
+        return priorityStr;
+    }
 
     public Long getAppointmentId() {
         return appointmentId;
@@ -40,28 +60,20 @@ public class Appointment implements Serializable {
         this.patientId = patientId;
     }
 
-    public Long getPhysicianId() {
-        return physicianId;
+    public Long getDeptId() {
+        return deptId;
     }
 
-    public void setPhysicianId(Long physicianId) {
-        this.physicianId = physicianId;
+    public void setDeptId(Long deptId) {
+        this.deptId = deptId;
     }
 
-    public Date getStartTime() {
-        return startTime;
+    public Date getTreatTime() {
+        return treatTime;
     }
 
-    public void setStartTime(Date startTime) {
-        this.startTime = startTime;
-    }
-
-    public Date getEndTime() {
-        return endTime;
-    }
-
-    public void setEndTime(Date endTime) {
-        this.endTime = endTime;
+    public void setTreatTime(Date treatTime) {
+        this.treatTime = treatTime;
     }
 
     public Boolean getIsValid() {
@@ -70,22 +82,6 @@ public class Appointment implements Serializable {
 
     public void setIsValid(Boolean isValid) {
         this.isValid = isValid;
-    }
-
-    public Integer getQueueNumber() {
-        return queueNumber;
-    }
-
-    public void setQueueNumber(Integer queueNumber) {
-        this.queueNumber = queueNumber;
-    }
-
-    public Float getAppointCharge() {
-        return appointCharge;
-    }
-
-    public void setAppointCharge(Float appointCharge) {
-        this.appointCharge = appointCharge;
     }
 
     public Date getAppointTime() {

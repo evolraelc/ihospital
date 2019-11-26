@@ -1,12 +1,17 @@
 package com.ihospital.pojo;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.io.Serializable;
 import java.util.Date;
 
 public class Pathography implements Serializable {
     private Long pathoId;
 
-    private Date createTime;
+    @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
+    //@JsonFormat(timezone = "GMT+8",pattern="yyyy-MM-dd HH:mm:ss")
+    private Date time;
 
     private Long patientId;
 
@@ -16,9 +21,9 @@ public class Pathography implements Serializable {
 
     private String narrative;
 
-    private Date lastEditTime;
-
     private Boolean pathoValid;
+
+    private Long appointId;
 
     public Long getPathoId() {
         return pathoId;
@@ -28,12 +33,12 @@ public class Pathography implements Serializable {
         this.pathoId = pathoId;
     }
 
-    public Date getCreateTime() {
-        return createTime;
+    public Date getTime() {
+        return time;
     }
 
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
+    public void setTime(Date time) {
+        this.time = time;
     }
 
     public Long getPatientId() {
@@ -68,19 +73,19 @@ public class Pathography implements Serializable {
         this.narrative = narrative == null ? null : narrative.trim();
     }
 
-    public Date getLastEditTime() {
-        return lastEditTime;
-    }
-
-    public void setLastEditTime(Date lastEditTime) {
-        this.lastEditTime = lastEditTime;
-    }
-
     public Boolean getPathoValid() {
         return pathoValid;
     }
 
     public void setPathoValid(Boolean pathoValid) {
         this.pathoValid = pathoValid;
+    }
+
+    public Long getAppointId() {
+        return appointId;
+    }
+
+    public void setAppointId(Long appointId) {
+        this.appointId = appointId;
     }
 }

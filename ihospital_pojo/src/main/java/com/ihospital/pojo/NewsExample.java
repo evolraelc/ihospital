@@ -306,133 +306,133 @@ public class NewsExample implements Serializable {
             return (Criteria) this;
         }
 
-        public Criteria andLauncherNameIsNull() {
-            addCriterion("launcher_name is null");
+        public Criteria andTimeIsNull() {
+            addCriterion("time is null");
             return (Criteria) this;
         }
 
-        public Criteria andLauncherNameIsNotNull() {
-            addCriterion("launcher_name is not null");
+        public Criteria andTimeIsNotNull() {
+            addCriterion("time is not null");
             return (Criteria) this;
         }
 
-        public Criteria andLauncherNameEqualTo(String value) {
-            addCriterion("launcher_name =", value, "launcherName");
+        public Criteria andTimeEqualTo(Date value) {
+            addCriterion("time =", value, "time");
             return (Criteria) this;
         }
 
-        public Criteria andLauncherNameNotEqualTo(String value) {
-            addCriterion("launcher_name <>", value, "launcherName");
+        public Criteria andTimeNotEqualTo(Date value) {
+            addCriterion("time <>", value, "time");
             return (Criteria) this;
         }
 
-        public Criteria andLauncherNameGreaterThan(String value) {
-            addCriterion("launcher_name >", value, "launcherName");
+        public Criteria andTimeGreaterThan(Date value) {
+            addCriterion("time >", value, "time");
             return (Criteria) this;
         }
 
-        public Criteria andLauncherNameGreaterThanOrEqualTo(String value) {
-            addCriterion("launcher_name >=", value, "launcherName");
+        public Criteria andTimeGreaterThanOrEqualTo(Date value) {
+            addCriterion("time >=", value, "time");
             return (Criteria) this;
         }
 
-        public Criteria andLauncherNameLessThan(String value) {
-            addCriterion("launcher_name <", value, "launcherName");
+        public Criteria andTimeLessThan(Date value) {
+            addCriterion("time <", value, "time");
             return (Criteria) this;
         }
 
-        public Criteria andLauncherNameLessThanOrEqualTo(String value) {
-            addCriterion("launcher_name <=", value, "launcherName");
+        public Criteria andTimeLessThanOrEqualTo(Date value) {
+            addCriterion("time <=", value, "time");
             return (Criteria) this;
         }
 
-        public Criteria andLauncherNameLike(String value) {
-            addCriterion("launcher_name like", value, "launcherName");
+        public Criteria andTimeIn(List<Date> values) {
+            addCriterion("time in", values, "time");
             return (Criteria) this;
         }
 
-        public Criteria andLauncherNameNotLike(String value) {
-            addCriterion("launcher_name not like", value, "launcherName");
+        public Criteria andTimeNotIn(List<Date> values) {
+            addCriterion("time not in", values, "time");
             return (Criteria) this;
         }
 
-        public Criteria andLauncherNameIn(List<String> values) {
-            addCriterion("launcher_name in", values, "launcherName");
+        public Criteria andTimeBetween(Date value1, Date value2) {
+            addCriterion("time between", value1, value2, "time");
             return (Criteria) this;
         }
 
-        public Criteria andLauncherNameNotIn(List<String> values) {
-            addCriterion("launcher_name not in", values, "launcherName");
+        public Criteria andTimeNotBetween(Date value1, Date value2) {
+            addCriterion("time not between", value1, value2, "time");
             return (Criteria) this;
         }
 
-        public Criteria andLauncherNameBetween(String value1, String value2) {
-            addCriterion("launcher_name between", value1, value2, "launcherName");
+        public Criteria andPicurlIsNull() {
+            addCriterion("picurl is null");
             return (Criteria) this;
         }
 
-        public Criteria andLauncherNameNotBetween(String value1, String value2) {
-            addCriterion("launcher_name not between", value1, value2, "launcherName");
+        public Criteria andPicurlIsNotNull() {
+            addCriterion("picurl is not null");
             return (Criteria) this;
         }
 
-        public Criteria andLaunchTimeIsNull() {
-            addCriterion("launch_time is null");
+        public Criteria andPicurlEqualTo(String value) {
+            addCriterion("picurl =", value, "picurl");
             return (Criteria) this;
         }
 
-        public Criteria andLaunchTimeIsNotNull() {
-            addCriterion("launch_time is not null");
+        public Criteria andPicurlNotEqualTo(String value) {
+            addCriterion("picurl <>", value, "picurl");
             return (Criteria) this;
         }
 
-        public Criteria andLaunchTimeEqualTo(Date value) {
-            addCriterion("launch_time =", value, "launchTime");
+        public Criteria andPicurlGreaterThan(String value) {
+            addCriterion("picurl >", value, "picurl");
             return (Criteria) this;
         }
 
-        public Criteria andLaunchTimeNotEqualTo(Date value) {
-            addCriterion("launch_time <>", value, "launchTime");
+        public Criteria andPicurlGreaterThanOrEqualTo(String value) {
+            addCriterion("picurl >=", value, "picurl");
             return (Criteria) this;
         }
 
-        public Criteria andLaunchTimeGreaterThan(Date value) {
-            addCriterion("launch_time >", value, "launchTime");
+        public Criteria andPicurlLessThan(String value) {
+            addCriterion("picurl <", value, "picurl");
             return (Criteria) this;
         }
 
-        public Criteria andLaunchTimeGreaterThanOrEqualTo(Date value) {
-            addCriterion("launch_time >=", value, "launchTime");
+        public Criteria andPicurlLessThanOrEqualTo(String value) {
+            addCriterion("picurl <=", value, "picurl");
             return (Criteria) this;
         }
 
-        public Criteria andLaunchTimeLessThan(Date value) {
-            addCriterion("launch_time <", value, "launchTime");
+        public Criteria andPicurlLike(String value) {
+            addCriterion("picurl like", value, "picurl");
             return (Criteria) this;
         }
 
-        public Criteria andLaunchTimeLessThanOrEqualTo(Date value) {
-            addCriterion("launch_time <=", value, "launchTime");
+        public Criteria andPicurlNotLike(String value) {
+            addCriterion("picurl not like", value, "picurl");
             return (Criteria) this;
         }
 
-        public Criteria andLaunchTimeIn(List<Date> values) {
-            addCriterion("launch_time in", values, "launchTime");
+        public Criteria andPicurlIn(List<String> values) {
+            addCriterion("picurl in", values, "picurl");
             return (Criteria) this;
         }
 
-        public Criteria andLaunchTimeNotIn(List<Date> values) {
-            addCriterion("launch_time not in", values, "launchTime");
+        public Criteria andPicurlNotIn(List<String> values) {
+            addCriterion("picurl not in", values, "picurl");
             return (Criteria) this;
         }
 
-        public Criteria andLaunchTimeBetween(Date value1, Date value2) {
-            addCriterion("launch_time between", value1, value2, "launchTime");
+        public Criteria andPicurlBetween(String value1, String value2) {
+            addCriterion("picurl between", value1, value2, "picurl");
             return (Criteria) this;
         }
 
-        public Criteria andLaunchTimeNotBetween(Date value1, Date value2) {
-            addCriterion("launch_time not between", value1, value2, "launchTime");
+        public Criteria andPicurlNotBetween(String value1, String value2) {
+            addCriterion("picurl not between", value1, value2, "picurl");
             return (Criteria) this;
         }
     }

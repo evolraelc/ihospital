@@ -4,14 +4,11 @@
   <resultMap id="BaseResultMap" type="com.ihospital.pojo.Reply" >
     <id column="reply_id" property="replyId" jdbcType="BIGINT" />
     <result column="parent_id" property="parentId" jdbcType="BIGINT" />
-    <result column="physician_id" property="physicianId" jdbcType="BIGINT" />
-    <result column="patient_id" property="patientId" jdbcType="BIGINT" />
     <result column="body" property="body" jdbcType="VARCHAR" />
-    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
-    <result column="last_edit_time" property="lastEditTime" jdbcType="TIMESTAMP" />
-    <result column="upvotes" property="upvotes" jdbcType="INTEGER" />
+    <result column="time" property="time" jdbcType="TIMESTAMP" />
     <result column="consult_id" property="consultId" jdbcType="BIGINT" />
     <result column="child_id" property="childId" jdbcType="BIGINT" />
+    <result column="type" property="type" jdbcType="BIT" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -72,8 +69,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    reply_id, parent_id, physician_id, patient_id, body, create_time, last_edit_time, 
-    upvotes, consult_id, child_id
+    reply_id, parent_id, body, time, consult_id, child_id, type
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.ihospital.pojo.ReplyExample" >
     select
@@ -106,14 +102,12 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.ihospital.pojo.Reply" >
-    insert into reply (reply_id, parent_id, physician_id, 
-      patient_id, body, create_time, 
-      last_edit_time, upvotes, consult_id, 
-      child_id)
-    values (#{replyId,jdbcType=BIGINT}, #{parentId,jdbcType=BIGINT}, #{physicianId,jdbcType=BIGINT}, 
-      #{patientId,jdbcType=BIGINT}, #{body,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
-      #{lastEditTime,jdbcType=TIMESTAMP}, #{upvotes,jdbcType=INTEGER}, #{consultId,jdbcType=BIGINT}, 
-      #{childId,jdbcType=BIGINT})
+    insert into reply (reply_id, parent_id, body, 
+      time, consult_id, child_id, 
+      type)
+    values (#{replyId,jdbcType=BIGINT}, #{parentId,jdbcType=BIGINT}, #{body,jdbcType=VARCHAR}, 
+      #{time,jdbcType=TIMESTAMP}, #{consultId,jdbcType=BIGINT}, #{childId,jdbcType=BIGINT}, 
+      #{type,jdbcType=BIT})
   </insert>
   <insert id="insertSelective" parameterType="com.ihospital.pojo.Reply" >
     insert into reply
@@ -124,29 +118,20 @@
       <if test="parentId != null" >
         parent_id,
       </if>
-      <if test="physicianId != null" >
-        physician_id,
-      </if>
-      <if test="patientId != null" >
-        patient_id,
-      </if>
       <if test="body != null" >
         body,
       </if>
-      <if test="createTime != null" >
-        create_time,
-      </if>
-      <if test="lastEditTime != null" >
-        last_edit_time,
-      </if>
-      <if test="upvotes != null" >
-        upvotes,
+      <if test="time != null" >
+        time,
       </if>
       <if test="consultId != null" >
         consult_id,
       </if>
       <if test="childId != null" >
         child_id,
+      </if>
+      <if test="type != null" >
+        type,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
@@ -156,29 +141,20 @@
       <if test="parentId != null" >
         #{parentId,jdbcType=BIGINT},
       </if>
-      <if test="physicianId != null" >
-        #{physicianId,jdbcType=BIGINT},
-      </if>
-      <if test="patientId != null" >
-        #{patientId,jdbcType=BIGINT},
-      </if>
       <if test="body != null" >
         #{body,jdbcType=VARCHAR},
       </if>
-      <if test="createTime != null" >
-        #{createTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="lastEditTime != null" >
-        #{lastEditTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="upvotes != null" >
-        #{upvotes,jdbcType=INTEGER},
+      <if test="time != null" >
+        #{time,jdbcType=TIMESTAMP},
       </if>
       <if test="consultId != null" >
         #{consultId,jdbcType=BIGINT},
       </if>
       <if test="childId != null" >
         #{childId,jdbcType=BIGINT},
+      </if>
+      <if test="type != null" >
+        #{type,jdbcType=BIT},
       </if>
     </trim>
   </insert>
@@ -197,29 +173,20 @@
       <if test="record.parentId != null" >
         parent_id = #{record.parentId,jdbcType=BIGINT},
       </if>
-      <if test="record.physicianId != null" >
-        physician_id = #{record.physicianId,jdbcType=BIGINT},
-      </if>
-      <if test="record.patientId != null" >
-        patient_id = #{record.patientId,jdbcType=BIGINT},
-      </if>
       <if test="record.body != null" >
         body = #{record.body,jdbcType=VARCHAR},
       </if>
-      <if test="record.createTime != null" >
-        create_time = #{record.createTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="record.lastEditTime != null" >
-        last_edit_time = #{record.lastEditTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="record.upvotes != null" >
-        upvotes = #{record.upvotes,jdbcType=INTEGER},
+      <if test="record.time != null" >
+        time = #{record.time,jdbcType=TIMESTAMP},
       </if>
       <if test="record.consultId != null" >
         consult_id = #{record.consultId,jdbcType=BIGINT},
       </if>
       <if test="record.childId != null" >
         child_id = #{record.childId,jdbcType=BIGINT},
+      </if>
+      <if test="record.type != null" >
+        type = #{record.type,jdbcType=BIT},
       </if>
     </set>
     <if test="_parameter != null" >
@@ -230,14 +197,11 @@
     update reply
     set reply_id = #{record.replyId,jdbcType=BIGINT},
       parent_id = #{record.parentId,jdbcType=BIGINT},
-      physician_id = #{record.physicianId,jdbcType=BIGINT},
-      patient_id = #{record.patientId,jdbcType=BIGINT},
       body = #{record.body,jdbcType=VARCHAR},
-      create_time = #{record.createTime,jdbcType=TIMESTAMP},
-      last_edit_time = #{record.lastEditTime,jdbcType=TIMESTAMP},
-      upvotes = #{record.upvotes,jdbcType=INTEGER},
+      time = #{record.time,jdbcType=TIMESTAMP},
       consult_id = #{record.consultId,jdbcType=BIGINT},
-      child_id = #{record.childId,jdbcType=BIGINT}
+      child_id = #{record.childId,jdbcType=BIGINT},
+      type = #{record.type,jdbcType=BIT}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -248,23 +212,11 @@
       <if test="parentId != null" >
         parent_id = #{parentId,jdbcType=BIGINT},
       </if>
-      <if test="physicianId != null" >
-        physician_id = #{physicianId,jdbcType=BIGINT},
-      </if>
-      <if test="patientId != null" >
-        patient_id = #{patientId,jdbcType=BIGINT},
-      </if>
       <if test="body != null" >
         body = #{body,jdbcType=VARCHAR},
       </if>
-      <if test="createTime != null" >
-        create_time = #{createTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="lastEditTime != null" >
-        last_edit_time = #{lastEditTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="upvotes != null" >
-        upvotes = #{upvotes,jdbcType=INTEGER},
+      <if test="time != null" >
+        time = #{time,jdbcType=TIMESTAMP},
       </if>
       <if test="consultId != null" >
         consult_id = #{consultId,jdbcType=BIGINT},
@@ -272,20 +224,20 @@
       <if test="childId != null" >
         child_id = #{childId,jdbcType=BIGINT},
       </if>
+      <if test="type != null" >
+        type = #{type,jdbcType=BIT},
+      </if>
     </set>
     where reply_id = #{replyId,jdbcType=BIGINT}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.ihospital.pojo.Reply" >
     update reply
     set parent_id = #{parentId,jdbcType=BIGINT},
-      physician_id = #{physicianId,jdbcType=BIGINT},
-      patient_id = #{patientId,jdbcType=BIGINT},
       body = #{body,jdbcType=VARCHAR},
-      create_time = #{createTime,jdbcType=TIMESTAMP},
-      last_edit_time = #{lastEditTime,jdbcType=TIMESTAMP},
-      upvotes = #{upvotes,jdbcType=INTEGER},
+      time = #{time,jdbcType=TIMESTAMP},
       consult_id = #{consultId,jdbcType=BIGINT},
-      child_id = #{childId,jdbcType=BIGINT}
+      child_id = #{childId,jdbcType=BIGINT},
+      type = #{type,jdbcType=BIT}
     where reply_id = #{replyId,jdbcType=BIGINT}
   </update>
 </mapper>

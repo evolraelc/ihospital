@@ -166,63 +166,63 @@ public class PathographyExample implements Serializable {
             return (Criteria) this;
         }
 
-        public Criteria andCreateTimeIsNull() {
-            addCriterion("create_time is null");
+        public Criteria andTimeIsNull() {
+            addCriterion("time is null");
             return (Criteria) this;
         }
 
-        public Criteria andCreateTimeIsNotNull() {
-            addCriterion("create_time is not null");
+        public Criteria andTimeIsNotNull() {
+            addCriterion("time is not null");
             return (Criteria) this;
         }
 
-        public Criteria andCreateTimeEqualTo(Date value) {
-            addCriterion("create_time =", value, "createTime");
+        public Criteria andTimeEqualTo(Date value) {
+            addCriterion("time =", value, "time");
             return (Criteria) this;
         }
 
-        public Criteria andCreateTimeNotEqualTo(Date value) {
-            addCriterion("create_time <>", value, "createTime");
+        public Criteria andTimeNotEqualTo(Date value) {
+            addCriterion("time <>", value, "time");
             return (Criteria) this;
         }
 
-        public Criteria andCreateTimeGreaterThan(Date value) {
-            addCriterion("create_time >", value, "createTime");
+        public Criteria andTimeGreaterThan(Date value) {
+            addCriterion("time >", value, "time");
             return (Criteria) this;
         }
 
-        public Criteria andCreateTimeGreaterThanOrEqualTo(Date value) {
-            addCriterion("create_time >=", value, "createTime");
+        public Criteria andTimeGreaterThanOrEqualTo(Date value) {
+            addCriterion("time >=", value, "time");
             return (Criteria) this;
         }
 
-        public Criteria andCreateTimeLessThan(Date value) {
-            addCriterion("create_time <", value, "createTime");
+        public Criteria andTimeLessThan(Date value) {
+            addCriterion("time <", value, "time");
             return (Criteria) this;
         }
 
-        public Criteria andCreateTimeLessThanOrEqualTo(Date value) {
-            addCriterion("create_time <=", value, "createTime");
+        public Criteria andTimeLessThanOrEqualTo(Date value) {
+            addCriterion("time <=", value, "time");
             return (Criteria) this;
         }
 
-        public Criteria andCreateTimeIn(List<Date> values) {
-            addCriterion("create_time in", values, "createTime");
+        public Criteria andTimeIn(List<Date> values) {
+            addCriterion("time in", values, "time");
             return (Criteria) this;
         }
 
-        public Criteria andCreateTimeNotIn(List<Date> values) {
-            addCriterion("create_time not in", values, "createTime");
+        public Criteria andTimeNotIn(List<Date> values) {
+            addCriterion("time not in", values, "time");
             return (Criteria) this;
         }
 
-        public Criteria andCreateTimeBetween(Date value1, Date value2) {
-            addCriterion("create_time between", value1, value2, "createTime");
+        public Criteria andTimeBetween(Date value1, Date value2) {
+            addCriterion("time between", value1, value2, "time");
             return (Criteria) this;
         }
 
-        public Criteria andCreateTimeNotBetween(Date value1, Date value2) {
-            addCriterion("create_time not between", value1, value2, "createTime");
+        public Criteria andTimeNotBetween(Date value1, Date value2) {
+            addCriterion("time not between", value1, value2, "time");
             return (Criteria) this;
         }
 
@@ -486,66 +486,6 @@ public class PathographyExample implements Serializable {
             return (Criteria) this;
         }
 
-        public Criteria andLastEditTimeIsNull() {
-            addCriterion("last_edit_time is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andLastEditTimeIsNotNull() {
-            addCriterion("last_edit_time is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andLastEditTimeEqualTo(Date value) {
-            addCriterion("last_edit_time =", value, "lastEditTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andLastEditTimeNotEqualTo(Date value) {
-            addCriterion("last_edit_time <>", value, "lastEditTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andLastEditTimeGreaterThan(Date value) {
-            addCriterion("last_edit_time >", value, "lastEditTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andLastEditTimeGreaterThanOrEqualTo(Date value) {
-            addCriterion("last_edit_time >=", value, "lastEditTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andLastEditTimeLessThan(Date value) {
-            addCriterion("last_edit_time <", value, "lastEditTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andLastEditTimeLessThanOrEqualTo(Date value) {
-            addCriterion("last_edit_time <=", value, "lastEditTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andLastEditTimeIn(List<Date> values) {
-            addCriterion("last_edit_time in", values, "lastEditTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andLastEditTimeNotIn(List<Date> values) {
-            addCriterion("last_edit_time not in", values, "lastEditTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andLastEditTimeBetween(Date value1, Date value2) {
-            addCriterion("last_edit_time between", value1, value2, "lastEditTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andLastEditTimeNotBetween(Date value1, Date value2) {
-            addCriterion("last_edit_time not between", value1, value2, "lastEditTime");
-            return (Criteria) this;
-        }
-
         public Criteria andPathoValidIsNull() {
             addCriterion("patho_valid is null");
             return (Criteria) this;
@@ -603,6 +543,66 @@ public class PathographyExample implements Serializable {
 
         public Criteria andPathoValidNotBetween(Boolean value1, Boolean value2) {
             addCriterion("patho_valid not between", value1, value2, "pathoValid");
+            return (Criteria) this;
+        }
+
+        public Criteria andAppointIdIsNull() {
+            addCriterion("appoint_id is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andAppointIdIsNotNull() {
+            addCriterion("appoint_id is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andAppointIdEqualTo(Long value) {
+            addCriterion("appoint_id =", value, "appointId");
+            return (Criteria) this;
+        }
+
+        public Criteria andAppointIdNotEqualTo(Long value) {
+            addCriterion("appoint_id <>", value, "appointId");
+            return (Criteria) this;
+        }
+
+        public Criteria andAppointIdGreaterThan(Long value) {
+            addCriterion("appoint_id >", value, "appointId");
+            return (Criteria) this;
+        }
+
+        public Criteria andAppointIdGreaterThanOrEqualTo(Long value) {
+            addCriterion("appoint_id >=", value, "appointId");
+            return (Criteria) this;
+        }
+
+        public Criteria andAppointIdLessThan(Long value) {
+            addCriterion("appoint_id <", value, "appointId");
+            return (Criteria) this;
+        }
+
+        public Criteria andAppointIdLessThanOrEqualTo(Long value) {
+            addCriterion("appoint_id <=", value, "appointId");
+            return (Criteria) this;
+        }
+
+        public Criteria andAppointIdIn(List<Long> values) {
+            addCriterion("appoint_id in", values, "appointId");
+            return (Criteria) this;
+        }
+
+        public Criteria andAppointIdNotIn(List<Long> values) {
+            addCriterion("appoint_id not in", values, "appointId");
+            return (Criteria) this;
+        }
+
+        public Criteria andAppointIdBetween(Long value1, Long value2) {
+            addCriterion("appoint_id between", value1, value2, "appointId");
+            return (Criteria) this;
+        }
+
+        public Criteria andAppointIdNotBetween(Long value1, Long value2) {
+            addCriterion("appoint_id not between", value1, value2, "appointId");
             return (Criteria) this;
         }
     }

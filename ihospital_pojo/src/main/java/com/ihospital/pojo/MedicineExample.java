@@ -245,52 +245,52 @@ public class MedicineExample implements Serializable {
             return (Criteria) this;
         }
 
-        public Criteria andMedicinePriceEqualTo(Float value) {
+        public Criteria andMedicinePriceEqualTo(Integer value) {
             addCriterion("medicine_price =", value, "medicinePrice");
             return (Criteria) this;
         }
 
-        public Criteria andMedicinePriceNotEqualTo(Float value) {
+        public Criteria andMedicinePriceNotEqualTo(Integer value) {
             addCriterion("medicine_price <>", value, "medicinePrice");
             return (Criteria) this;
         }
 
-        public Criteria andMedicinePriceGreaterThan(Float value) {
+        public Criteria andMedicinePriceGreaterThan(Integer value) {
             addCriterion("medicine_price >", value, "medicinePrice");
             return (Criteria) this;
         }
 
-        public Criteria andMedicinePriceGreaterThanOrEqualTo(Float value) {
+        public Criteria andMedicinePriceGreaterThanOrEqualTo(Integer value) {
             addCriterion("medicine_price >=", value, "medicinePrice");
             return (Criteria) this;
         }
 
-        public Criteria andMedicinePriceLessThan(Float value) {
+        public Criteria andMedicinePriceLessThan(Integer value) {
             addCriterion("medicine_price <", value, "medicinePrice");
             return (Criteria) this;
         }
 
-        public Criteria andMedicinePriceLessThanOrEqualTo(Float value) {
+        public Criteria andMedicinePriceLessThanOrEqualTo(Integer value) {
             addCriterion("medicine_price <=", value, "medicinePrice");
             return (Criteria) this;
         }
 
-        public Criteria andMedicinePriceIn(List<Float> values) {
+        public Criteria andMedicinePriceIn(List<Integer> values) {
             addCriterion("medicine_price in", values, "medicinePrice");
             return (Criteria) this;
         }
 
-        public Criteria andMedicinePriceNotIn(List<Float> values) {
+        public Criteria andMedicinePriceNotIn(List<Integer> values) {
             addCriterion("medicine_price not in", values, "medicinePrice");
             return (Criteria) this;
         }
 
-        public Criteria andMedicinePriceBetween(Float value1, Float value2) {
+        public Criteria andMedicinePriceBetween(Integer value1, Integer value2) {
             addCriterion("medicine_price between", value1, value2, "medicinePrice");
             return (Criteria) this;
         }
 
-        public Criteria andMedicinePriceNotBetween(Float value1, Float value2) {
+        public Criteria andMedicinePriceNotBetween(Integer value1, Integer value2) {
             addCriterion("medicine_price not between", value1, value2, "medicinePrice");
             return (Criteria) this;
         }

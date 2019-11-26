@@ -91,8 +91,8 @@
   <link rel="stylesheet" href="../plugins/iCheck/square/blue.css">
   <link rel="stylesheet" href="../plugins/morris/morris.css">
   <link rel="stylesheet" href="../plugins/jvectormap/jquery-jvectormap-1.2.2.css">
-  <link rel="stylesheet" href="../plugins/datepicker/datepicker3.css">
-  <link rel="stylesheet" href="../plugins/daterangepicker/daterangepicker.css">
+<!--  <link rel="stylesheet" href="../plugins/datepicker/datepicker3.css">-->
+<!--  <link rel="stylesheet" href="../plugins/daterangepicker/daterangepicker.css">-->
   <link rel="stylesheet" href="../plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
   <link rel="stylesheet" href="../plugins/datatables/dataTables.bootstrap.css">
   <link rel="stylesheet" href="../plugins/treeTable/jquery.treetable.css">
@@ -106,176 +106,43 @@
   <link rel="stylesheet" href="../plugins/ionslider/ion.rangeSlider.css">
   <link rel="stylesheet" href="../plugins/ionslider/ion.rangeSlider.skinNice.css">
   <link rel="stylesheet" href="../plugins/bootstrap-slider/slider.css">
-  <link rel="stylesheet" href="../plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.css">
-  <link rel="stylesheet" href="../plugins/bootstrap-fileinput-master/css/fileinput.min.css">
+<!--  <link rel="stylesheet" href="../plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.css">-->
+<!--  <link rel="stylesheet" href="../plugins/bootstrap-fileinput-master/css/fileinput.min.css">-->
 
 
-  <script type="text/javascript" src="../plugins/angularjs/angular.min.js"></script>
+
   <link rel="stylesheet" href="../plugins/angularjs/pagination.css">
-  <script src="../plugins/angularjs/pagination.js"></script>
-
-
-  <script type="text/javascript">
-    var app = angular.module('ihospital', ['pagination']);
-    app.controller('patientController', function ($scope, $http) {
-
-
-      //查询病人列表
-      $scope.findAll = function () {
-        $http.get('../patient/findAll.do').success(
-          function (response) {
-            $scope.list = response;
-          }
-        )
-
-
-      }
-
-      //分页控件初始配置
-      $scope.paginationConf = {
-        //当前页
-        currentPage: 1,
-        //总记录数
-        totalItems: 10,
-        //每页记录数
-        itemsPerPage: 10,
-        //分页选项
-        perPageOptions: [10, 20, 30, 40, 50],
-        //页码变更后触发
-        onChange: function () {
-          $scope.reloadList();
-        }
-      }
-
-      //刷新列表
-      $scope.reloadList = function () {
-        $scope.search($scope.paginationConf.currentPage,$scope.paginationConf.itemsPerPage);
-
-      };
-      //查询分页后的病人列表
-      $scope.findPage = function (page, size) {
-        $http.get('../patient/findPage.do?page=' + page + '&size=' + size).success(
-          function (response) {
-            //显示当前页的数据
-            $scope.list=response.rows;
-            //更新分页控件配置
-            $scope.paginationConf.totalItems =response.total;
-
-          }
-        );
-      }
-
-
-      //新增病人，不上传图片用post请求
-      $scope.addPatient = function () {
-        $http.post('../patient/addPatient.do',$scope.entity).success(
-          function (response) {
-            if (response.success){
-              //局部刷新
-              $scope.reloadList();
-            } else {
-              //弹出错误，样式我还不知道怎么改
-              alert(response.message);
-            }
-
-          }
-        );
-      };
-
-      //转换病人禁言状态
-      $scope.reversePatient = function (id) {
-        $http.get('../patient/reversePatient.do?id='+id).success(
-          function (response) {
-            if (response.success){
-              //局部刷新
-              $scope.reloadList();
-            } else {
-              //弹出错误，样式我还不知道怎么改
-              alert(response.message);
-            }
-          }
-        )
-
-      };
-
-      //用户勾选的id集合
-      $scope.selectIds=[];
-
-      $scope.updateSelection = function ($event,id) {
-        if($event.target.checked){
-          $scope.selectIds.push(id);
-        }else{
-          var index= $scope.selectIds.indexOf(id);
-          $scope.selectIds.splice(index,1);
-        }
-
-
-
-      };
-
-      $scope.deletePatient = function () {
-        $http.get('../patient/deletePatient.do?ids='+$scope.selectIds).success(
-          function (response) {
-            if (response.success){
-              //局部刷新
-              $scope.reloadList();
-            } else {
-              //弹出错误，样式我还不知道怎么改
-              alert(response.message);
-            }
-
-          }
-        );
-        
-      };
-
-
-      $scope.searchEntity={};
-      //条件查询
-      $scope.search = function (page,size) {
-        $http.post('../patient/searchPatient.do?page=' + page + '&size=' + size,$scope.searchEntity).success(
-          function (response) {
-            //显示当前页的数据
-            $scope.list=response.rows;
-            //更新分页控件配置
-            $scope.paginationConf.totalItems =response.total;
-
-          }
-        );
-
-      };
-    });
-
-
-  </script>
+  <link rel="stylesheet" href="../plugins/select2/select2-bootstrap.css">
 
 
 
 </head>
 
-<body class="hold-transition skin-purple-light sidebar-mini" ng-app="ihospital" ng-controller="patientController">
+<body class="hold-transition skin-purple-light sidebar-mini" ng-app="ihospital" ng-controller="patientController" ng-cloak ng-init="showLoginName()">
 
-<!-- /.content-wrapper -->
+
 <div class="wrapper">
 
   <!-- 页面头部 -->
+
+
   <header class="main-header">
     <!-- Logo -->
-      <a href="#" class="logo">
-        <!-- mini logo for sidebar mini 50x50 pixels -->
-        <span class="logo-mini"><b>OS</b></span>
-        <!-- logo for regular state and mobile devices -->
-        <span class="logo-lg"><b>Outpatient System</b></span>
+    <a href="#" class="logo">
+      <!-- mini logo for sidebar mini 50x50 pixels -->
+      <span class="logo-mini"><b>OS</b></span>
+      <!-- logo for regular state and mobile devices -->
+      <span class="logo-lg"><b>Outpatient System</b></span>
+    </a>
+
+
+    <!-- Header Navbar: style can be found in header.less -->
+    <nav class="navbar navbar-static-top">
+
+      <!-- Sidebar toggle button-->
+      <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+        <span class="sr-only">Toggle navigation</span>
       </a>
-
-
-      <!-- Header Navbar: style can be found in header.less -->
-      <nav class="navbar navbar-static-top">
-
-        <!-- Sidebar toggle button-->
-        <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
-          <span class="sr-only">Toggle navigation</span>
-        </a>
 
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
@@ -285,7 +152,7 @@
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="../img/user2-160x160.jpg" class="user-image" alt="User Image">
-              <span class="hidden-xs">Nina Mcintire</span>
+              <span class="hidden-xs">{{loginName}}</span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
@@ -317,7 +184,7 @@
                   <a href="#" class="btn btn-default btn-flat">Setting</a>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="btn btn-default btn-flat">Log out</a>
+                  <a href="../logout" class="btn btn-default btn-flat">Log out</a>
                 </div>
               </li>
             </ul>
@@ -329,19 +196,19 @@
   </header>
 
 
+  <!-- 页面头部 /-->
+
   <!-- 导航侧栏 -->
   <aside class="main-sidebar">
-
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
-
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
           <img src="../img/user2-160x160.jpg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Nina Mcintire</p>
+          <p>{{loginName}}</p>
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
@@ -388,7 +255,7 @@
     </section>
     <!-- /.sidebar -->
   </aside>
-
+  <!-- 导航侧栏 /-->
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -423,7 +290,7 @@
               <div class="form-group form-inline">
                 <div class="btn-group">
 
-                  <button type="button" class="btn btn-default" data-toggle="modal" data-target="#NewModal" ng-click="entity={}"><i
+                  <button type="button" class="btn btn-default" data-toggle="modal" data-target="#NewModal" ng-click="initForm()"><i
                       class="fa fa-file-o"></i> New
                   </button>
                   <button type="button" class="btn btn-default" ng-click="deletePatient()"><i
@@ -524,29 +391,30 @@
     </section>
   </div>
 
+
+  <!-- /.content -->
+
+
 </div>
+<!-- /.content-wrapper -->
 
 
 <!-- 底部导航 -->
 <footer class="main-footer">
-
   <div class="pull-right hidden-xs">
     <b>Version</b> 1.0.0
   </div>
-
   <strong>Copyright &copy; 2019 Team Nine </a>.</strong> All rights reserved.
 </footer>
-
+<!-- 底部导航 /-->
 
 </body>
-
-
 <div class="modal fade" id="NewModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" ">
   <div class="modal-dialog">
     <div class="modal-content">
-
+<form name="patientForm"  novalidate>
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+<!--        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>-->
         <h3 id="myModalLabel">New Patient</h3>
       </div>
       <div class="modal-body">
@@ -555,44 +423,53 @@
           <tr>
             <td>Name</td>
             <td>
-              <input class="form-control" placeholder="Patient Name" ng-model="entity.patientName">
+              <input name="name" class="form-control" placeholder="Patient Name" ng-model="entity.patientName"  ng-pattern="/^[\u4E00-\u9FA5A-Za-z\s]+(·[\u4E00-\u9FA5A-Za-z]+)*$/" required>
+              <p ng-show="patientForm.name.$invalid && !patientForm.name.$pristine" class="help-block">Wrong Input</p>
+
             </td>
           </tr>
           <tr>
             <td>Age</td>
             <td>
-              <input class="form-control" placeholder="Patient Age" ng-model="entity.patientAge">
+              <input name="age" class="form-control" placeholder="Patient Age" ng-model="entity.patientAge"ng-pattern="/^(?:[1-9][0-9]?|1[01][0-9]|120)$/" required >
+              <p ng-show="patientForm.age.$invalid && !patientForm.age.$pristine " class="help-block">Wrong Input</p>
             </td>
           </tr>
           <tr>
             <td>Sex</td>
             <!--  https://segmentfault.com/a/1190000007567520 anjularjs和下拉框 -->
-            <td><select class="form-control" ng-model="entity.patientGenderStr">
-              <option>Male</option>
-              <option>Female</option>
-            </select>
+            <td>
+<!--              <select class="form-control" ng-model="entity.patientGenderStr">-->
+<!--                <option>Male</option>-->
+<!--                <option>Female</option>-->
+<!--              </select>-->
+<!--              <input select2 config="sexList"  select2-model="entity.patientGenderStr" class="form-control" placeholder="Sex">-->
+              <input type="radio" ng-model="entity.patientGenderStr" value="Male">Male
+              <input type="radio" ng-model="entity.patientGenderStr" value="Female">Female
             </td>
 
           </tr>
           <tr>
             <td>Idcard</td>
             <td>
-              <input class="form-control" placeholder="Patient Idcard" ng-model="entity.idcard">
+              <input name="idcard" class="form-control" placeholder="Patient Idcard" ng-model="entity.idcard" ng-pattern="/(^[1-9]\d{5}(18|19|([23]\d))\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{3}[0-9Xx]$)|(^[1-9]\d{5}\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{3}$)/" required>
+              <p ng-show="patientForm.idcard.$invalid && !patientForm.idcard.$pristine" class="help-block">Wrong Input</p>
+
             </td>
 
           </tr>
           <tr>
             <td>Phone</td>
             <td>
-              <input class="form-control" placeholder="Doctor Phone"ng-model="entity.phoneNumber">
+              <input name="phone" class="form-control" placeholder="Patient Phone"ng-model="entity.phoneNumber" ng-pattern="/^[1](([3][0-9])|([4][5-9])|([5][0-3,5-9])|([6][5,6])|([7][0-8])|([8][0-9])|([9][1,8,9]))[0-9]{8}$/" required >
+              <p ng-show="patientForm.phone.$invalid && !patientForm.phone.$pristine" class="help-block">Wrong Input</p>
             </td>
           </tr>
           <tr>
             <td>Status</td>
-            <td><select class="form-control" ng-model="entity.utype">
-              <option>Approved</option>
-              <option>Denied</option>
-            </select>
+            <td>
+              <input type="radio" ng-model="entity.utype" value="Approved">Approved
+              <input type="radio" ng-model="entity.utype" value="Denied">Denied
             </td>
           </tr>
 
@@ -600,13 +477,13 @@
   https://www.cnblogs.com/kevin19900306/p/5459859.html  https://www.google.com/search?q=anjularjs%E6%80%8E%E4%B9%88%E4%BD%BF%E7%94%A8bootstrapFileinput&ie=utf-8  -->
           <tr>
 
-
             <td>
 
               Picture
             </td>
             <td>
-              <input type="file" id="file" class="file"/>
+
+              <input name="picture" type="file" id="file" class="file" />
 
             </td>
 
@@ -616,8 +493,9 @@
             <td>
               Show
             </td>
-            <td><img src="" width="200px" height="200px">
-              <button class="btn btn-primary" type="button">
+            <td><img src="{{entity.userAvatar}}" width="200px" height="200px">
+
+              <button class="btn btn-primary" type="button" ng-click="uploadFile()">
                 Upload
               </button>
             </td>
@@ -627,9 +505,11 @@
 
       </div>
       <div class="modal-footer">
-        <button class="btn btn-success" data-dismiss="modal" aria-hidden="true" ng-click="addPatient()" >Save</button>
-        <button class="btn btn-default" data-dismiss="modal" aria-hidden="true">Close</button>
+<!--        <button class="btn btn-success" data-dismiss="modal" aria-hidden="true" type="submit" ng-click="addPatient()" >Save</button>-->
+        <button class="btn btn-success" data-dismiss="modal" aria-hidden="true" type="submit" ng-click="addPatient()" ng-disabled="patientForm.$invalid" >Save</button>
+        <button class="btn btn-default" data-dismiss="modal" aria-hidden="true" ng-click="resetFile()">Close</button>
       </div>
+</form>
     </div>
   </div>
 </div>
@@ -647,20 +527,19 @@
 <script src="../plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
 <script src="../plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
 <script src="../plugins/knob/jquery.knob.js"></script>
-<script src="../plugins/daterangepicker/moment.min.js"></script>
-<script src="../plugins/daterangepicker/daterangepicker.js"></script>
-<script src="../plugins/daterangepicker/daterangepicker.zh-CN.js"></script>
-<script src="../plugins/datepicker/bootstrap-datepicker.js"></script>
-<script src="../plugins/datepicker/locales/bootstrap-datepicker.zh-CN.js"></script>
+<!--<script src="../plugins/daterangepicker/moment.min.js"></script>-->
+<!--<script src="../plugins/daterangepicker/daterangepicker.js"></script>-->
+<!--<script src="../plugins/daterangepicker/daterangepicker.zh-CN.js"></script>-->
+<!--<script src="../plugins/datepicker/bootstrap-datepicker.js"></script>-->
+<!--<script src="../plugins/datepicker/locales/bootstrap-datepicker.zh-CN.js"></script>-->
 <script src="../plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
 <script src="../plugins/slimScroll/jquery.slimscroll.min.js"></script>
 <script src="../plugins/fastclick/fastclick.js"></script>
 <script src="../plugins/iCheck/icheck.min.js"></script>
 <script src="../plugins/adminLTE/js/app.min.js"></script>
 <script src="../plugins/treeTable/jquery.treetable.js"></script>
-<script src="../plugins/select2/select2.full.min.js"></script>
 <script src="../plugins/colorpicker/bootstrap-colorpicker.min.js"></script>
-<script src="../plugins/bootstrap-wysihtml5/bootstrap-wysihtml5.zh-CN.js"></script>
+<!--<script src="../plugins/bootstrap-wysihtml5/bootstrap-wysihtml5.zh-CN.js"></script>-->
 <script src="../plugins/bootstrap-markdown/js/bootstrap-markdown.js"></script>
 <script src="../plugins/bootstrap-markdown/locale/bootstrap-markdown.zh.js"></script>
 <script src="../plugins/bootstrap-markdown/js/markdown.js"></script>
@@ -678,11 +557,23 @@
 <script src="../plugins/flot/jquery.flot.categories.min.js"></script>
 <script src="../plugins/ionslider/ion.rangeSlider.min.js"></script>
 <script src="../plugins/bootstrap-slider/bootstrap-slider.js"></script>
-<script src="../plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.js"></script>
-<script src="../plugins/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.zh-CN.js"></script>
-<script src="../plugins/bootstrap-fileinput-master/js/fileinput.min.js"></script>
-<script src="../plugins/bootstrap-fileinput-master/js/fileinput.min.js"></script>
-<script src="../plugins/bootstrap-fileinput-master/themes/fa/theme.min.js"></script>
+<!--<script src="../plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.js"></script>-->
+<!--<script src="../plugins/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.zh-CN.js"></script>-->
+<!--<script src="../plugins/bootstrap-fileinput-master/js/fileinput.min.js"></script>-->
+<!--<script src="../plugins/bootstrap-fileinput-master/js/fileinput.min.js"></script>-->
+<!--<script src="../plugins/bootstrap-fileinput-master/themes/fa/theme.min.js"></script>-->
+<script type="text/javascript" src="../plugins/angularjs/angular.min.js"></script>
+<script src="../plugins/angularjs/pagination.js"></script>
+<script src="../js/base_pagination.js"></script>
+<script src="../plugins/select2/select2.min.js"></script>
+<script src="../js/angular-select2.js"></script>
+<script src="../js/service/loginService.js"></script>
+<script src="../js/service/patientService.js"></script>
+<script src="../js/service/uploadService.js"></script>
+<script src="../js/controller/baseController.js"></script>
+<script src="../js/controller/patientController.js"></script>
+
+
 <script>
   $("#file").fileinput();
   // 选择框
@@ -690,12 +581,9 @@
 
     $("#file").fileinput();
     // 选择框
-    $(".select2").select2();
 
-    // WYSIHTML5编辑器
-    $(".textarea").wysihtml5({
-      locale: 'zh-CN'
-    });
+
+
   });
 
 
@@ -712,16 +600,7 @@
   $(document).ready(function () {
     setSidebarActive("admin-blank");
   });
-  $(document).ready(function () {
 
-    //Date picker
-    $('#datepicker').datepicker({
-      autoclose: true,
-      language: 'zh-CN'
-    });
-
-
-  });
 
 
 </script>

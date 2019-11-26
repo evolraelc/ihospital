@@ -10,9 +10,9 @@ public class News implements Serializable {
 
     private String title;
 
-    private String launcherName;
+    private Date time;
 
-    private Date launchTime;
+    private String picurl;
 
     public Long getNewsId() {
         return newsId;
@@ -38,19 +38,19 @@ public class News implements Serializable {
         this.title = title == null ? null : title.trim();
     }
 
-    public String getLauncherName() {
-        return launcherName;
+    public Date getTime() {
+        return time;
     }
 
-    public void setLauncherName(String launcherName) {
-        this.launcherName = launcherName == null ? null : launcherName.trim();
+    public void setTime(Date time) {
+        this.time = time;
     }
 
-    public Date getLaunchTime() {
-        return launchTime;
+    public String getPicurl() {
+        return picurl;
     }
 
-    public void setLaunchTime(Date launchTime) {
-        this.launchTime = launchTime;
+    public void setPicurl(String picurl) {
+        this.picurl = picurl == null ? null : picurl.trim();
     }
 }

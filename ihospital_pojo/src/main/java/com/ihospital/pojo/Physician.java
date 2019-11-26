@@ -1,9 +1,8 @@
 package com.ihospital.pojo;
 
 import java.io.Serializable;
-import java.util.Date;
 
-public class Physician implements Serializable {
+public class Physician  implements Serializable {
     private Long physicianId;
 
     private String physicianName;
@@ -16,8 +15,6 @@ public class Physician implements Serializable {
 
     private String physicianAvatar;
 
-    private Date startTime;
-
     private Long departId;
 
     private String departName;
@@ -27,8 +24,6 @@ public class Physician implements Serializable {
     private String phoneNumber;
 
     private String briefIntroduction;
-
-    private String uid;
 
     private String pwd;
 
@@ -82,14 +77,6 @@ public class Physician implements Serializable {
         this.physicianAvatar = physicianAvatar == null ? null : physicianAvatar.trim();
     }
 
-    public Date getStartTime() {
-        return startTime;
-    }
-
-    public void setStartTime(Date startTime) {
-        this.startTime = startTime;
-    }
-
     public Long getDepartId() {
         return departId;
     }
@@ -128,14 +115,6 @@ public class Physician implements Serializable {
 
     public void setBriefIntroduction(String briefIntroduction) {
         this.briefIntroduction = briefIntroduction == null ? null : briefIntroduction.trim();
-    }
-
-    public String getUid() {
-        return uid;
-    }
-
-    public void setUid(String uid) {
-        this.uid = uid == null ? null : uid.trim();
     }
 
     public String getPwd() {

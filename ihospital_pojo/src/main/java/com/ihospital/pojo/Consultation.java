@@ -6,19 +6,17 @@ import java.util.Date;
 public class Consultation implements Serializable {
     private Long consultId;
 
-    private Long patientId;
-
     private Long physicianId;
 
     private String body;
 
-    private Date createTime;
-
-    private Date lastEditTime;
+    private Date time;
 
     private Integer replyCount;
 
     private Integer lastReplyId;
+
+    private Long patientId;
 
     public Long getConsultId() {
         return consultId;
@@ -26,14 +24,6 @@ public class Consultation implements Serializable {
 
     public void setConsultId(Long consultId) {
         this.consultId = consultId;
-    }
-
-    public Long getPatientId() {
-        return patientId;
-    }
-
-    public void setPatientId(Long patientId) {
-        this.patientId = patientId;
     }
 
     public Long getPhysicianId() {
@@ -52,20 +42,12 @@ public class Consultation implements Serializable {
         this.body = body == null ? null : body.trim();
     }
 
-    public Date getCreateTime() {
-        return createTime;
+    public Date getTime() {
+        return time;
     }
 
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
-    }
-
-    public Date getLastEditTime() {
-        return lastEditTime;
-    }
-
-    public void setLastEditTime(Date lastEditTime) {
-        this.lastEditTime = lastEditTime;
+    public void setTime(Date time) {
+        this.time = time;
     }
 
     public Integer getReplyCount() {
@@ -82,5 +64,13 @@ public class Consultation implements Serializable {
 
     public void setLastReplyId(Integer lastReplyId) {
         this.lastReplyId = lastReplyId;
+    }
+
+    public Long getPatientId() {
+        return patientId;
+    }
+
+    public void setPatientId(Long patientId) {
+        this.patientId = patientId;
     }
 }

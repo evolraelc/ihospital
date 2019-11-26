@@ -8,7 +8,6 @@
     <result column="position" property="position" jdbcType="VARCHAR" />
     <result column="picture_url" property="pictureUrl" jdbcType="VARCHAR" />
     <result column="director_id" property="directorId" jdbcType="BIGINT" />
-    <result column="director_avatar" property="directorAvatar" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -69,7 +68,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    depart_id, depart_name, phone_number, position, picture_url, director_id, director_avatar
+    depart_id, depart_name, phone_number, position, picture_url, director_id
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.ihospital.pojo.DepartmentExample" >
     select
@@ -103,11 +102,11 @@
   </delete>
   <insert id="insert" parameterType="com.ihospital.pojo.Department" >
     insert into department (depart_id, depart_name, phone_number, 
-      position, picture_url, director_id, 
-      director_avatar)
+      position, picture_url, director_id
+      )
     values (#{departId,jdbcType=BIGINT}, #{departName,jdbcType=VARCHAR}, #{phoneNumber,jdbcType=VARCHAR}, 
-      #{position,jdbcType=VARCHAR}, #{pictureUrl,jdbcType=VARCHAR}, #{directorId,jdbcType=BIGINT}, 
-      #{directorAvatar,jdbcType=VARCHAR})
+      #{position,jdbcType=VARCHAR}, #{pictureUrl,jdbcType=VARCHAR}, #{directorId,jdbcType=BIGINT}
+      )
   </insert>
   <insert id="insertSelective" parameterType="com.ihospital.pojo.Department" >
     insert into department
@@ -130,9 +129,6 @@
       <if test="directorId != null" >
         director_id,
       </if>
-      <if test="directorAvatar != null" >
-        director_avatar,
-      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="departId != null" >
@@ -152,9 +148,6 @@
       </if>
       <if test="directorId != null" >
         #{directorId,jdbcType=BIGINT},
-      </if>
-      <if test="directorAvatar != null" >
-        #{directorAvatar,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -185,9 +178,6 @@
       <if test="record.directorId != null" >
         director_id = #{record.directorId,jdbcType=BIGINT},
       </if>
-      <if test="record.directorAvatar != null" >
-        director_avatar = #{record.directorAvatar,jdbcType=VARCHAR},
-      </if>
     </set>
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
@@ -200,8 +190,7 @@
       phone_number = #{record.phoneNumber,jdbcType=VARCHAR},
       position = #{record.position,jdbcType=VARCHAR},
       picture_url = #{record.pictureUrl,jdbcType=VARCHAR},
-      director_id = #{record.directorId,jdbcType=BIGINT},
-      director_avatar = #{record.directorAvatar,jdbcType=VARCHAR}
+      director_id = #{record.directorId,jdbcType=BIGINT}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -224,9 +213,6 @@
       <if test="directorId != null" >
         director_id = #{directorId,jdbcType=BIGINT},
       </if>
-      <if test="directorAvatar != null" >
-        director_avatar = #{directorAvatar,jdbcType=VARCHAR},
-      </if>
     </set>
     where depart_id = #{departId,jdbcType=BIGINT}
   </update>
@@ -236,8 +222,7 @@
       phone_number = #{phoneNumber,jdbcType=VARCHAR},
       position = #{position,jdbcType=VARCHAR},
       picture_url = #{pictureUrl,jdbcType=VARCHAR},
-      director_id = #{directorId,jdbcType=BIGINT},
-      director_avatar = #{directorAvatar,jdbcType=VARCHAR}
+      director_id = #{directorId,jdbcType=BIGINT}
     where depart_id = #{departId,jdbcType=BIGINT}
   </update>
 </mapper>

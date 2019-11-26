@@ -10,7 +10,6 @@
     <result column="user_avatar" property="userAvatar" jdbcType="VARCHAR" />
     <result column="idcard" property="idcard" jdbcType="CHAR" />
     <result column="phone_number" property="phoneNumber" jdbcType="VARCHAR" />
-    <result column="uid" property="uid" jdbcType="VARCHAR" />
     <result column="pwd" property="pwd" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Example_Where_Clause" >
@@ -73,7 +72,7 @@
   </sql>
   <sql id="Base_Column_List" >
     patient_id, patient_name, patient_age, patient_gender, utype, user_avatar, idcard, 
-    phone_number, uid, pwd
+    phone_number, pwd
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.ihospital.pojo.PatientExample" >
     select
@@ -108,12 +107,12 @@
   <insert id="insert" parameterType="com.ihospital.pojo.Patient" >
     insert into patient (patient_id, patient_name, patient_age, 
       patient_gender, utype, user_avatar, 
-      idcard, phone_number, uid, 
-      pwd)
+      idcard, phone_number, pwd
+      )
     values (#{patientId,jdbcType=BIGINT}, #{patientName,jdbcType=VARCHAR}, #{patientAge,jdbcType=INTEGER}, 
       #{patientGender,jdbcType=BIT}, #{utype,jdbcType=VARCHAR}, #{userAvatar,jdbcType=VARCHAR}, 
-      #{idcard,jdbcType=CHAR}, #{phoneNumber,jdbcType=VARCHAR}, #{uid,jdbcType=VARCHAR}, 
-      #{pwd,jdbcType=VARCHAR})
+      #{idcard,jdbcType=CHAR}, #{phoneNumber,jdbcType=VARCHAR}, #{pwd,jdbcType=VARCHAR}
+      )
   </insert>
   <insert id="insertSelective" parameterType="com.ihospital.pojo.Patient" >
     insert into patient
@@ -141,9 +140,6 @@
       </if>
       <if test="phoneNumber != null" >
         phone_number,
-      </if>
-      <if test="uid != null" >
-        uid,
       </if>
       <if test="pwd != null" >
         pwd,
@@ -173,9 +169,6 @@
       </if>
       <if test="phoneNumber != null" >
         #{phoneNumber,jdbcType=VARCHAR},
-      </if>
-      <if test="uid != null" >
-        #{uid,jdbcType=VARCHAR},
       </if>
       <if test="pwd != null" >
         #{pwd,jdbcType=VARCHAR},
@@ -215,9 +208,6 @@
       <if test="record.phoneNumber != null" >
         phone_number = #{record.phoneNumber,jdbcType=VARCHAR},
       </if>
-      <if test="record.uid != null" >
-        uid = #{record.uid,jdbcType=VARCHAR},
-      </if>
       <if test="record.pwd != null" >
         pwd = #{record.pwd,jdbcType=VARCHAR},
       </if>
@@ -236,7 +226,6 @@
       user_avatar = #{record.userAvatar,jdbcType=VARCHAR},
       idcard = #{record.idcard,jdbcType=CHAR},
       phone_number = #{record.phoneNumber,jdbcType=VARCHAR},
-      uid = #{record.uid,jdbcType=VARCHAR},
       pwd = #{record.pwd,jdbcType=VARCHAR}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
@@ -266,9 +255,6 @@
       <if test="phoneNumber != null" >
         phone_number = #{phoneNumber,jdbcType=VARCHAR},
       </if>
-      <if test="uid != null" >
-        uid = #{uid,jdbcType=VARCHAR},
-      </if>
       <if test="pwd != null" >
         pwd = #{pwd,jdbcType=VARCHAR},
       </if>
@@ -284,7 +270,6 @@
       user_avatar = #{userAvatar,jdbcType=VARCHAR},
       idcard = #{idcard,jdbcType=CHAR},
       phone_number = #{phoneNumber,jdbcType=VARCHAR},
-      uid = #{uid,jdbcType=VARCHAR},
       pwd = #{pwd,jdbcType=VARCHAR}
     where patient_id = #{patientId,jdbcType=BIGINT}
   </update>

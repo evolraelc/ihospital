@@ -40,16 +40,20 @@ public class PatientService implements IPatientService {
         //分页，调用插件
         PageHelper.startPage(pageNum, pageSize);
         Page<Patient> patients = (Page<Patient>) patientMapper.selectByExample(null);
+
+
         return new PageResult(patients.getTotal(), patients.getResult());
     }
 
     @Override
     public void addPatient(Patient patient) throws MyException {
 
-        if (patient.getPatientName().equals("金磊")) {
-
-
-            throw new MyException("亲，该用户名已经被注册");
+        PatientExample patientExample = new PatientExample();
+        patientExample.or().andIdcardEqualTo(patient.getIdcard());
+        patientExample.or().andPhoneNumberEqualTo(patient.getPhoneNumber());
+        List<Patient> patients = patientMapper.selectByExample(patientExample);
+        if (!patients.isEmpty()) {
+            throw new MyException("ID number or mobile number has been registered");
 
 
         } else{
@@ -63,7 +67,7 @@ public class PatientService implements IPatientService {
 
     @Override
     public Patient findOne(Long id) {
-        return null;
+        return patientMapper.selectByPrimaryKey(id);
     }
 
     @Override
@@ -115,4 +119,11 @@ public class PatientService implements IPatientService {
         return new PageResult(patients.getTotal(), patients.getResult());
     }
 
+
+    @Override
+    public void setStatus(Long id, String status) {
+        Patient patient = patientMapper.selectByPrimaryKey(id);
+        patient.setUtype(status);
+        patientMapper.updateByPrimaryKeySelective(patient);
+    }
 }

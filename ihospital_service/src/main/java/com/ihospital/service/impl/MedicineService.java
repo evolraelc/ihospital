@@ -75,7 +75,7 @@ public class MedicineService implements IMedicineService {
             }
         }
 
-        Page<Medicine> medicines = (Page<Medicine>) medicineMapper.selectByExample(null);
+        Page<Medicine> medicines = (Page<Medicine>) medicineMapper.selectByExample(medicineExample);
         return new PageResult(medicines.getTotal(),medicines.getResult());
 
 
