@@ -103,11 +103,9 @@
     <link rel="stylesheet" href="../plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.css">
 	<link rel="stylesheet" href="../plugins/bower_components/fullcalendar/dist/fullcalendar.min.css">
 	<link rel="stylesheet" href="../plugins/bower_components/fullcalendar/dist/fullcalendar.print.min.css" media="print">
-  <script type="text/javascript" src="../plugins/angularjs/angular.min.js"></script>
-  <link rel="stylesheet" href="../plugins/angularjs/pagination.css">
-  <script src="../plugins/angularjs/pagination.js"></script>
+    <link rel="stylesheet" href="../plugins/angularjs/pagination.css">
 </head>
-<body class="hold-transition skin-purple sidebar-mini">
+<body class="hold-transition skin-purple sidebar-mini" ng-app="ihospital" ng-controller="doctorReplyController" ng-init="initBody()" ng-cloak>
     <div class="wrapper">
 		<header class="main-header">
             <!-- Logo -->
@@ -201,8 +199,6 @@
             </div>
         </form>-->
                 <!-- /.search form -->
-
-
                 <!-- sidebar menu: : style can be found in sidebar.less -->
                 <ul class="sidebar-menu">
                     <li class="header">Menu</li>
@@ -315,157 +311,61 @@
                     <div class="tab-content">
                         <div class="active tab-pane" id="activity">
                             <!-- Post -->
-                            <div class="post">
+                            <div class="post" ng-repeat="comment in commentList">
                                 <div class="user-block">
                                     <img class="img-circle img-bordered-sm" src="../img/user1-128x128.jpg" alt="user image">
                                     <span class="username">
-                          <a href="#">Jack</a>
-                          
-                        </span>
-                                    <span class="description">Published at 18:00 on 2019.1.1</span>
+                                        <a href="#">{{comment.patientName}}</a>
+                                    </span>
+                                    <span class="description">Published at {{comment.createTime|date:'HH:mm'}} on {{comment.createTime|date:"yyyy.MM.dd"}}</span>
                                 </div>
                                 <!-- /.user-block -->
-                                <p>
-                                    The doctor is very good and careful!
-                                </p>
+                                <p>{{comment.body}}</p>
                                 <div class="box-footer box-comments">
-                        <div class="box-comment">
-                            <!-- User image -->
-                            <img class="img-circle img-sm" src="../img/user3-128x128.jpg" alt="User Image">
-
-                            <div class="comment-text">
-                                <span class="username">
-                        Mike
-                        <span class="text-muted pull-right">8:03 PM Today</span>
-                                </span>
-                                <!-- /.username -->
-                                I think the doctor has a bad attitude.
-                            </div>
-                            <!-- /.comment-text -->
-                        </div>
-                        <!-- /.box-comment -->
-                        <div class="box-comment">
-                            <!-- User image -->
-                            <img class="img-circle img-sm" src="../img/user4-128x128.jpg" alt="User Image">
-
-                            <div class="comment-text">
-                                <span class="username">
-                        Kangkang
-                        <span class="text-muted pull-right">8:03 PM Today</span>
-                                </span>
-                                <!-- /.username -->
-                                The doctor is very nice.
-                            </div>
-                            <!-- /.comment-text -->
-                        </div>
-                        <!-- /.box-comment -->
-						<form class="form-horizontal">
-                                    <div class="form-group margin-bottom-none">
-                                        <div class="col-sm-9">
-                                            <input class="form-control input-sm" placeholder="Response">
+                                    <div class="box-comment" ng-repeat="reply in comment.replyList">
+                                    <!-- User image -->
+                                        <img class="img-circle img-sm" src="../img/user3-128x128.jpg" alt="User Image">
+                                        <div class="comment-text">
+                                            <span class="username">{{reply.type == 0 ? comment.physicianName : comment.patientName}}
+                                                <span class="text-muted pull-right">{{reply.time|date:'shortTime'}} {{reply.time|date:"yyyy.MM.dd"}}</span>
+                                            </span>
+                                            <!-- /.username -->
+                                            {{reply.body}}
                                         </div>
-                                        <div class="col-sm-3">
-                                            <button type="submit" class="btn btn-danger pull-right btn-block btn-sm">Send</button>
-                                        </div>
+                                        <!-- /.comment-text -->
                                     </div>
-                                </form>
-                    </div>
-                            </div>
-                            <!-- /.post -->
+                                <!-- /.box-comment -->
+        <!--                        <div class="box-comment">-->
+        <!--                            &lt;!&ndash; User image &ndash;&gt;-->
+        <!--                            <img class="img-circle img-sm" src="../img/user4-128x128.jpg" alt="User Image">-->
 
-                             <!-- Post -->
-                            <div class="post clearfix">
-                                <div class="user-block">
-                                    <img class="img-circle img-bordered-sm" src="../img/user7-128x128.jpg" alt="User Image">
-                                    <span class="username">
-                          <a href="#">Jane</a>
-                          
-                        </span>
-                                    <span class="description">Published at 18:00 on 2019.1.1</span>
+        <!--                            <div class="comment-text">-->
+        <!--                                <span class="username">-->
+        <!--                        Kangkang-->
+        <!--                        <span class="text-muted pull-right">8:03 PM Today</span>-->
+        <!--                                </span>-->
+        <!--                                &lt;!&ndash; /.username &ndash;&gt;-->
+        <!--                                The doctor is very nice.-->
+        <!--                            </div>-->
+        <!--                            &lt;!&ndash; /.comment-text &ndash;&gt;-->
+        <!--                        </div>-->
+                                <!-- /.box-comment -->
+                                    <form class="form-horizontal">
+                                        <div class="form-group margin-bottom-none">
+                                            <div class="col-sm-9">
+                                                <input class="form-control input-sm" placeholder="Response" ng-model="comment.newReply">
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <button type="submit" class="btn btn-danger pull-right btn-block btn-sm" ng-click="addReply(comment)">Send</button>
+                                            </div>
+                                        </div>
+                                    </form>
                                 </div>
-                                <!-- /.user-block -->
-                                <p>
-                                    I don't like the doctor.
-                                </p>
-								
-					<div class="box-footer box-comments">
-                        <div class="box-comment">
-                            <!-- User image -->
-                            <img class="img-circle img-sm" src="../img/user3-128x128.jpg" alt="User Image">
-
-                            <div class="comment-text">
-                                <span class="username">
-                        Mike
-                        <span class="text-muted pull-right">8:03 PM Today</span>
-                                </span>
-                                <!-- /.username -->
-                                I think the doctor has a bad attitude.
                             </div>
-                            <!-- /.comment-text -->
-                        </div>
-                        <!-- /.box-comment -->
-                        <div class="box-comment">
-                            <!-- User image -->
-                            <img class="img-circle img-sm" src="../img/user4-128x128.jpg" alt="User Image">
-
-                            <div class="comment-text">
-                                <span class="username">
-                        Kangkang
-                        <span class="text-muted pull-right">8:03 PM Today</span>
-                                </span>
-                                <!-- /.username -->
-                                The doctor is very nice.
-                            </div>
-                            <!-- /.comment-text -->
-                        </div>
-                        <!-- /.box-comment -->
-						<form class="form-horizontal">
-                                    <div class="form-group margin-bottom-none">
-                                        <div class="col-sm-9">
-                                            <input class="form-control input-sm" placeholder="Response">
-                                        </div>
-                                        <div class="col-sm-3">
-                                            <button type="submit" class="btn btn-danger pull-right btn-block btn-sm">Send</button>
-                                        </div>
-                                    </div>
-                                </form>
-                    </div>
-
-                                
-                            </div>
-                            <!-- /.post -->  
-
-                            <!-- Post -->
-			
                             <div class="box-footer">
-                <div class="pull-left">
-                    <div class="form-group form-inline">
-                        Show
-                        <select class="form-control">
-                            <option>10</option>
-                            <option>15</option>
-                            <option>20</option>
-                            <option>50</option>
-                            <option>80</option>
-                        </select> entries
-                    </div>
-                </div>
+                                <tm-pagination conf="paginationConf"></tm-pagination>
 
-                <div class="box-tools pull-right">
-                    <ul class="pagination">
-                        
-                        <li><a href="#">Previous</a></li>
-                        <li><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">5</a></li>
-                        <li><a href="#">Next</a></li>
-                       
-                    </ul>
-                </div>
-
-            </div>
+                            </div>
                         </div>
                         <!-- /.tab-pane -->
                         <div class="tab-pane" id="timeline">
@@ -716,10 +616,17 @@
     <script src="../plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.js"></script>
     <script src="../plugins/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.zh-CN.js"></script>
 	<script src="../plugins/bower_components/moment/moment.js"></script>
-<script src="../plugins/bower_components/fullcalendar/dist/fullcalendar.min.js"></script>
-	
-
-
+    <script type="text/javascript" src="../plugins/angularjs/angular.min.js"></script>
+    <script src="../plugins/angularjs/pagination.js"></script>
+    <script src="../plugins/bower_components/fullcalendar/dist/fullcalendar.min.js"></script>
+    <script src="../js/base_pagination.js"></script>
+    <script src="../js/service/loginService.js"></script>
+    <script src="../js/service/doctorService.js"></script>
+    <script src="../js/service/replyService.js"></script>
+    <script src="../js/service/patientService.js"></script>
+    <script src="../js/service/commentService.js"></script>
+    <script src="../js/controller/baseController.js"></script>
+    <script src="../js/controller/doctorReplyController.js"></script>
     <script>
         $(document).ready(function() {
             // 选择框

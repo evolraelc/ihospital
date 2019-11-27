@@ -103,88 +103,7 @@
     <link rel="stylesheet" href="../plugins/bootstrap-slider/slider.css">
 <!--    <link rel="stylesheet" href="../plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.css">-->
 <!--	  <link rel="stylesheet" href="../plugins/bootstrap-fileinput-master/css/fileinput.min.css">-->
-    <script type="text/javascript" src="../plugins/angularjs/angular.min.js"></script>
     <link rel="stylesheet" href="../plugins/angularjs/pagination.css">
-    <script src="../plugins/angularjs/pagination.js"></script>
-
-    <script type="text/javascript">
-        var app = angular.module('ihospital',[]);
-
-        app.service('loginService',function ($http) {
-
-          this.loginName=function () {
-
-            return $http.get('../login/name.do');
-
-          }
-
-        });
-        app.config(['$locationProvider', function($locationProvider) {
-            $locationProvider.html5Mode(true);
-        }]);
-        app.controller("commentInfoController", function ($scope, $http, $filter, $location,loginService) {
-            var id = "";
-            if($location.search().id) {
-                id = $location.search().id;
-            }
-            $scope.comment = {};
-            $scope.replyList = {};
-            $scope.getComment = function () {
-                if(id !== "") {
-                    $http.get('../comment/getComment.do?id='+id).success(
-                        function (response) {
-                            $scope.comment = response;
-                            $scope.comment.createTime = $filter("date")(response.createTime, "yyyy-MM-dd HH:mm:ss");
-                        }
-                    );
-                }
-            };
-            $scope.getReplyList = function () {
-                $http.get('../reply/findAll.do?consultId='+id).success(
-                    function (response) {
-                        $scope.replyList = response;
-                        for(var i = 0; i < response.length; i++) {
-                            $scope.replyList[i].time = $filter("date")(response[i].time, "yyyy-MM-dd HH:mm:ss");
-                        }
-                    }
-                );
-            };
-            $scope.initInfo = function () {
-
-                $scope.showLoginName();
-                $scope.getComment();
-                $scope.getReplyList();
-            };
-            $scope.approve = function () {
-                $http.get('../patient/changeStatus.do?id='+$scope.comment.patientId+'&target=Approved').success(
-                    function (response) {
-                        if(!response.success) {
-                            alert(response.msg);
-                        }
-                    }
-                );
-            };
-            $scope.deny = function () {
-                $http.get('../patient/changeStatus.do?id='+$scope.comment.patientId+'&target=Denied').success(
-                    function (response) {
-                        if(!response.success) {
-                            alert(response.msg);
-                        }
-                    }
-                );
-            };
-
-          //获取登录名
-          $scope.showLoginName = function () {
-            loginService.loginName().success(
-              function (response) {
-                $scope.loginName=response.loginName;
-              }
-            )
-          };
-        });
-    </script>
-
 </head>
 
 <body class="hold-transition skin-purple-light sidebar-mini" ng-app="ihospital" ng-controller="commentInfoController" ng-cloak ng-init="initInfo()">
@@ -346,7 +265,7 @@
                             </div>
                             <div class="col-md-1 title">Time</div>
                             <div class="col-md-5 data text">
-                                {{comment.createTime}}
+                                {{comment.createTime|date:"yyyy-MM-dd HH:mm:ss"}}
                             </div>
 							 <div class="col-md-1 title rowHeight2x">Details</div>
                             <div class="col-md-11 data rowHeight2x">
@@ -397,7 +316,7 @@
 
                             <div class="col-md-1 title">Time</div>
                             <div class="col-md-5 data text">
-                                {{entity.time}}
+                                {{entity.time|date:'yyyy-MM-dd HH:mm:ss'}}
                             </div>
 							<div class="col-md-1 title rowHeight2x">Details</div>
                             <div class="col-md-11 data rowHeight2x">
@@ -535,6 +454,17 @@ https://www.cnblogs.com/kevin19900306/p/5459859.html  https://www.google.com/sea
     <script src="../plugins/flot/jquery.flot.categories.min.js"></script>
     <script src="../plugins/ionslider/ion.rangeSlider.min.js"></script>
     <script src="../plugins/bootstrap-slider/bootstrap-slider.js"></script>
+    <script type="text/javascript" src="../plugins/angularjs/angular.min.js"></script>
+    <script src="../plugins/angularjs/pagination.js"></script>
+    <script type="text/javascript">
+        var app = angular.module('ihospital',[]);
+    </script>
+    <script src="../js/config/locationConfig.js"></script>
+    <script src="../js/service/loginService.js"></script>
+    <script src="../js/service/commentService.js"></script>
+    <script src="../js/service/replyService.js"></script>
+    <script src="../js/service/patientService.js"></script>
+    <script src="../js/controller/replyController.js"></script>
 <!--    <script src="../plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.js"></script>-->
 <!--    <script src="../plugins/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.zh-CN.js"></script>-->
 <!--	<script src="../plugins/bootstrap-fileinput-master/js/fileinput.min.js"></script>-->

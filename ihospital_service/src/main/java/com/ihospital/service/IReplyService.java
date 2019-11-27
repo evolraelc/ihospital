@@ -24,4 +24,16 @@ public interface IReplyService {
      * @return 对应回复
      */
     Reply getReplyById(Long id);
+
+    /**
+     * 添加回复
+     * @param reply 回复实体
+     */
+    void addReply(Reply reply);
+
+    /**
+     * 更新回复
+     * @param reply 回复实体
+     */
+    void updateReply(Reply reply);
 }

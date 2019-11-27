@@ -129,6 +129,10 @@ public class CommentService implements ICommentService {
                 Date maxDate = new Date(minDate.getTime() + 86399000L);
                 criteria.andTimeBetween(minDate, maxDate);
             }
+            else if(commentItem.getPhysicianId() != null) {
+                criteria.andPhysicianIdEqualTo(commentItem.getPhysicianId());
+                example.setOrderByClause("'time' DESC");
+            }
         }
         PageHelper.startPage(pageNum, pageSize);
         Page<Consultation> page = (Page<Consultation>) consultationMapper.selectByExample(example);

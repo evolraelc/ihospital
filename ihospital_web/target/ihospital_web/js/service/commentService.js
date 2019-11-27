@@ -11,4 +11,7 @@ app.service("commentService",function ($http){
     this.search = function (pageNum, pageSize, searchEntity) {
         return $http.post('../comment/searchComment.do?pageNum='+pageNum+'&pageSize='+pageSize, searchEntity);
     };
+    this.getComment = function (id) {
+        return $http.get('../comment/getComment.do?id='+id);
+    };
 });

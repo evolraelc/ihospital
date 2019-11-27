@@ -13,5 +13,6 @@
         <module name="ihospital_pojo" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel target="8" />
   </component>
 </project>
