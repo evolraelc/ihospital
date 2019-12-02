@@ -139,4 +139,10 @@ public class CommentService implements ICommentService {
         List<CommentItem> items = createItemList(page.getResult());
         return new PageResult(page.getTotal(), items);
     }
+
+    @Override
+    public void addComment(Consultation consultation) {
+        consultation.setTime(new Date());
+        consultationMapper.insertSelective(consultation);
+    }
 }

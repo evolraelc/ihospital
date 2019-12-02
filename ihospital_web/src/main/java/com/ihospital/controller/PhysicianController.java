@@ -84,9 +84,8 @@ public class PhysicianController {
             logger.warn("mapper works");
             Long departId = physicianService.departNameToId( department.getDepartName() );
             logger.warn("departId works");
-            if (departId==null) {
+            if (departId==null)
                 throw new MyException("error:department not found");
-            }
             logger.warn("departId not null");
             physician.setDepartId(departId);
             physician.setDepartName(department.getDepartName());
@@ -148,6 +147,10 @@ public class PhysicianController {
             return new Result(false,"failure");
         }
     }
+
+
+
+
 
 
 }

@@ -126,4 +126,18 @@ public class PatientService implements IPatientService {
         patient.setUtype(status);
         patientMapper.updateByPrimaryKeySelective(patient);
     }
+
+
+    @Override
+    public Patient getPatientByPhone(String phone) {
+        PatientExample example = new PatientExample();
+        PatientExample.Criteria criteria = example.createCriteria();
+        criteria.andPhoneNumberEqualTo(phone);
+        Patient patient = new Patient();
+        List<Patient> list = patientMapper.selectByExample(example);
+        if(!list.isEmpty()) {
+            patient = list.get(0);
+        }
+        return patient;
+    }
 }

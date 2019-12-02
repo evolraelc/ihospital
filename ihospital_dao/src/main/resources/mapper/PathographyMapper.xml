@@ -102,7 +102,10 @@
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.ihospital.pojo.Pathography" >
+  <insert id="insert" parameterType="com.ihospital.pojo.Pathography" keyColumn="patho_id" keyProperty="pathoId" useGeneratedKeys="true" >
+<!--    <selectKey resultType="java.lang.Long" order="AFTER" keyProperty="patho_id">-->
+<!--      SELECT LAST_INSERT_ID() AS patho_id-->
+<!--    </selectKey>-->
     insert into pathography (patho_id, time, patient_id, 
       physician_id, diagnosis, narrative, 
       patho_valid, appoint_id)

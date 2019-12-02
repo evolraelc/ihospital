@@ -16,39 +16,6 @@ app.controller('commentController', function ($scope, $controller, loginService,
             }
         );
     };
-    // $scope.paginationConf = {
-    //     currentPage: 1,
-    //     totalItems: 10,
-    //     itemsPerPage: 10,
-    //     perPageOptions: [10, 20, 30, 40, 50],
-    //     onChange: function () {
-    //         $scope.reloadList();
-    //     }
-    // };
-    // $scope.reloadList = function () {
-    //     $scope.search($scope.paginationConf.currentPage, $scope.paginationConf.itemsPerPage);
-    // };
-    // $scope.findPage = function (pageNum, pageSize) {
-    //     commentService.findPage(pageNum, pageSize).success(
-    //         function (response) {
-    //             $scope.list = response.rows;
-    //             for(var i = 0; i < response.rows.length; i++) {
-    //                 $scope.list[i].createTime = $filter("date")(response.rows[i].createTime, "yyyy-MM-dd HH:mm:ss");
-    //             }
-    //             $scope.paginationConf.totalItems = response.total;
-    //         }
-    //     );
-    // };
-    // $scope.selectIds = [];
-    // $scope.updateSelect = function($event, id) {
-    //     if($event.target.checked) {
-    //         $scope.selectIds.push(id);
-    //     }
-    //     else {
-    //         var index = $scope.selectIds.indexOf(id);
-    //         $scope.selectIds.splice(index, 1);
-    //     }
-    // };
     $scope.deleteComment = function () {
         commentService.deleteComment($scope.selectIds).success(
             function (response) {

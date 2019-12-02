@@ -9,9 +9,11 @@
   <http pattern="/*.html" security="none" />
   <http pattern="/css/**" security="none" />
   <http pattern="/img/**" security="none" />
+  <http pattern="/images/**" security="none" />
   <http pattern="/js/**" security="none" />
   <http pattern="/plugins/**" security="none" />
   <http pattern="/user/add.do" security="none"/>
+
 
 
 
@@ -24,9 +26,12 @@
         access:表示能访问的角色
      -->
     <intercept-url pattern="/**" access="hasAnyRole('ROLE_PATIENT', 'ROLE_ADMIN','ROLE_DOCTOR')"/>
-<!--    <intercept-url pattern="/pages/admin/**" access="hasRole('ROLE_ADMIN')"/>-->
-<!--    <intercept-url pattern="/pages/doctor/**" access="hasRole('ROLE_DOCTOR')"/>-->
-<!--    <intercept-url pattern="/pages/patient/**" access="hasRole('ROLE_PATIENT')"/>-->
+<!--    <intercept-url pattern="/pages/all-administrator-patienttable.html" access="hasRole('ROLE_ADMIN')"/>-->
+<!--    <intercept-url pattern="/pages/all-administrator-medicalrecordinfo.html" access="hasRole('ROLE_ADMIN')"/>-->
+<!--    <intercept-url pattern="/pages/all-administrator-medicalrecordtable.html" access="hasRole('ROLE_ADMIN')"/>-->
+<!--    <intercept-url pattern="/pages/all-doctor-personalcenter.html" access="hasRole('ROLE_DOCTOR')"/>-->
+<!--    <intercept-url pattern="/pages/all-doctor-startwork.html" access="hasRole('ROLE_DOCTOR')"/>-->
+<!--    <intercept-url pattern="/pages/all-patient-index.html" access="hasRole('ROLE_PATIENT')"/>-->
 
     <!--
         启用登录

@@ -1,1 +1,1 @@
-var app =angular.module('ihospital',['pagination']);
+var app =angular.module('ihospital',['pagination'])

@@ -14,15 +14,36 @@ public class Appointment implements Serializable {
     private Long deptId;
 
     @DateTimeFormat(pattern="yyyy-MM-dd")
-    @JsonFormat(timezone = "GMT+8",pattern="yyyy-MM-dd ")
+    //@JsonFormat(timezone = "GMT+8",pattern="yyyy-MM-dd ")
     private Date treatTime;
+
+
+    private String treatTimeStr;
+
+    public String getTreatTimeStr() {
+        return treatTimeStr;
+    }
+
+    public void setTreatTimeStr(String treatTimeStr) {
+        this.treatTimeStr = treatTimeStr;
+    }
 
     private Boolean isValid;
     @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
-    @JsonFormat(timezone = "GMT+8",pattern="yyyy-MM-dd HH:mm:ss")
+    //@JsonFormat(timezone = "GMT+8",pattern="yyyy-MM-dd HH:mm:ss")
     private Date appointTime;
 
     private Integer priority;
+
+    private Long priorityLong;
+
+    public Long getPriorityLong() {
+        return priorityLong;
+    }
+
+    public void setPriorityLong(Long priorityLong) {
+        this.priorityLong = priorityLong;
+    }
 
     //自定义string类型的优先级，如果priority=1，为转诊
     //如果priority=2，为复诊
@@ -98,5 +119,19 @@ public class Appointment implements Serializable {
 
     public void setPriority(Integer priority) {
         this.priority = priority;
+    }
+
+    @Override
+    public String toString() {
+        return "Appointment{" +
+                "appointmentId=" + appointmentId +
+                ", patientId=" + patientId +
+                ", deptId=" + deptId +
+                ", treatTime=" + treatTime +
+                ", isValid=" + isValid +
+                ", appointTime=" + appointTime +
+                ", priority=" + priority +
+                ", priorityStr='" + priorityStr + '\'' +
+                '}';
     }
 }

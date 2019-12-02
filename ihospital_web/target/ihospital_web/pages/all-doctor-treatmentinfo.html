@@ -18,82 +18,9 @@
 
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
-    <!-- Bootstrap 3.3.6 -->
-    <!-- Font Awesome -->
-    <!-- Ionicons -->
-    <!-- iCheck -->
-    <!-- Morris chart -->
-    <!-- jvectormap -->
-    <!-- Date Picker -->
-    <!-- Daterange picker -->
-    <!-- Bootstrap time Picker -->
-    <!--<link rel="stylesheet" href="../../../plugins/timepicker/bootstrap-timepicker.min.css">-->
-    <!-- bootstrap wysihtml5 - text editor -->
-    <!--数据表格-->
-    <!-- 表格树 -->
-    <!-- select2 -->
-    <!-- Bootstrap Color Picker -->
-    <!-- bootstrap wysihtml5 - text editor -->
-    <!--bootstrap-markdown-->
-    <!-- Theme style -->
-    <!-- AdminLTE Skins. Choose a skin from the css/skins
-       folder instead of downloading all of them to reduce the load. -->
-    <!-- Ion Slider -->
-    <!-- ion slider Nice -->
-    <!-- bootstrap slider -->
-    <!-- bootstrap-datetimepicker -->
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
   <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->
-
-
-
-
-
-
-
-
-    <!-- jQuery 2.2.3 -->
-    <!-- jQuery UI 1.11.4 -->
-    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-    <!-- Bootstrap 3.3.6 -->
-    <!-- Morris.js charts -->
-    <!-- Sparkline -->
-    <!-- jvectormap -->
-    <!-- jQuery Knob Chart -->
-    <!-- daterangepicker -->
-    <!-- datepicker -->
-    <!-- Bootstrap WYSIHTML5 -->
-    <!-- Slimscroll -->
-    <!-- FastClick -->
-    <!-- iCheck -->
-    <!-- AdminLTE App -->
-    <!-- 表格树 -->
-    <!-- select2 -->
-    <!-- bootstrap color picker -->
-    <!-- bootstrap time picker -->
-    <!--<script src="../../../plugins/timepicker/bootstrap-timepicker.min.js"></script>-->
-    <!-- Bootstrap WYSIHTML5 -->
-    <!--bootstrap-markdown-->
-    <!-- CK Editor -->
-    <!-- InputMask -->
-    <!-- DataTables -->
-    <!-- ChartJS 1.0.1 -->
-    <!-- FLOT CHARTS -->
-    <!-- FLOT RESIZE PLUGIN - allows the chart to redraw when the window is resized -->
-    <!-- FLOT PIE PLUGIN - also used to draw donut charts -->
-    <!-- FLOT CATEGORIES PLUGIN - Used to draw bar charts -->
-    <!-- jQuery Knob -->
-    <!-- Sparkline -->
-    <!-- Morris.js charts -->
-    <!-- Ion Slider -->
-    <!-- Bootstrap slider -->
-    <!-- bootstrap-datetimepicker -->
-    <!-- 页面meta /-->
 
     <link rel="stylesheet" href="../plugins/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../plugins/font-awesome/css/font-awesome.min.css">
@@ -117,15 +44,14 @@
     <link rel="stylesheet" href="../plugins/ionslider/ion.rangeSlider.skinNice.css">
     <link rel="stylesheet" href="../plugins/bootstrap-slider/slider.css">
     <link rel="stylesheet" href="../plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.css">
-    <script type="text/javascript" src="../plugins/angularjs/angular.min.js"></script>
+    <link rel="stylesheet" href="../plugins/bootstrap-fileinput-master/css/fileinput.min.css">
     <link rel="stylesheet" href="../plugins/angularjs/pagination.css">
-    <script src="../plugins/angularjs/pagination.js"></script>
 
 
 
 </head>
 
-<body class="hold-transition skin-purple sidebar-mini">
+<body class="hold-transition skin-purple sidebar-mini" ng-app="ihospital" ng-controller="medicalRecordInfoController" ng-init="initInfo()">
 
     <div class="wrapper">
 
@@ -162,7 +88,7 @@
                         <li class="dropdown user user-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
 							<img src="../img/user2-160x160.jpg" class="user-image" alt="User Image">
-							<span class="hidden-xs">Nina Mcintire</span>
+							<span class="hidden-xs">请叫我{{medicalRecordInfo.physicianName}}</span>
 							</a>
                             <ul class="dropdown-menu">
                                 <!-- User image -->
@@ -170,32 +96,18 @@
                                     <img src="../img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                                     <p>
-                                        Nina Mcintire
+                                        还不知道叫啥
 										
                                         <small>Director of Respiration Department</small>
                                     </p>
                                 </li>
-                                <!-- Menu Body 
-                        <li class="user-body">
-                            <div class="row">
-                                <div class="col-xs-4 text-center">
-                                    <a href="#">Followers</a>
-                                </div>
-                                <div class="col-xs-4 text-center">
-                                    <a href="#">Sales</a>
-                                </div>
-                                <div class="col-xs-4 text-center">
-                                    <a href="#">Friends</a>
-                                </div>
-                            </div>
-                        </li>-->
-                                <!-- Menu Footer-->
+
                                 <li class="user-footer">
                                     <div class="pull-left">
                                         <a href="#" class="btn btn-default btn-flat">Setting</a>
                                     </div>
                                     <div class="pull-right">
-                                        <a href="#" class="btn btn-default btn-flat">Log out</a>
+                                        <a href="../logout" class="btn btn-default btn-flat">Log out</a>
                                     </div>
                                 </li>
                             </ul>
@@ -223,41 +135,19 @@
                         <img src="../img/user2-160x160.jpg" class="img-circle" alt="User Image">
                     </div>
                     <div class="pull-left info">
-                        <p>Nina Mcintire</p>
+                        <p> 请叫我{{medicalRecordInfo.physicianName}}</p>
                         <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                     </div>
                 </div>
-                <!-- search form -->
-                <!--<form action="#" method="get" class="sidebar-form">
-            <div class="input-group">
-                <input type="text" name="q" class="form-control" placeholder="搜索...">
-                <span class="input-group-btn">
-                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
-                </button>
-              </span>
-            </div>
-        </form>-->
-                <!-- /.search form -->
 
 
-                <!-- sidebar menu: : style can be found in sidebar.less -->
                 <ul class="sidebar-menu">
                     <li class="header">Menu</li>
 
-                    <li id="admin-index"><a href="all-doctor-personalcenter.html"><i class="fa fa-dashboard"></i> <span>Personal Center</span></a></li>
-					<li id="admin-index"><a href="all-doctor-startwork.html"><i class="fa fa-dashboard"></i> <span>Start Working</span></a></li>
-					<li id="admin-index"><a href="all-doctor-treatmenttable.html"><i class="fa fa-dashboard"></i> <span>Diagnostic Record</span></a></li>
-                    
+                    <li id="admin-index" style="..."><a onclick="window.location.href='all-doctor-personalcenter.html'" ><i class="fa fa-dashboard"></i> <span>Personal Center</span></a></li>
+					<li id="admin-index" style="..."><a onclick="window.location.href='all-doctor-startwork.html'"><i class="fa fa-dashboard"></i> <span>Start Working</span></a></li>
+					<li id="admin-index" style="..."><a onclick="window.location.href='all-doctor-treatmenttable.html'" ><i class="fa fa-dashboard"></i> <span>Diagnostic Record</span></a></li>
 
-                    <!-- 菜单 -->
-
-
-
-                    
-
-                    <!-- 菜单 /-->
-
-                    
 
                 </ul>
             </section>
@@ -275,7 +165,7 @@
         <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
             <li><a href="#">Doctor</a></li>
-			<li><a href="#">Diagnostic Record</a></li>
+			<li><a href="all-doctor-treatmenttable.html">Diagnostic Record</a></li>
             <li class="active">Diagnostic Details</li>
         </ol>
     </section>
@@ -292,112 +182,93 @@
                     </div>
                     <!-- /.box-header -->
                     <!-- form start -->
-                    <form role="form">
-                        <div class="box-body">
-                            <div class="form-group">
-                                <div class="row data-type">
+                        <form role="form">
+                            <div class="box-body">
+                                <div class="form-group">
+                                    <div class="row data-type">
 
-                            <div class="col-md-1 title">No.</div>
-                            <div class="col-md-2 data text">
-                                11060001
-                            </div>
 
-                            <div class="col-md-1 title">Time</div>
-                            <div class="col-md-2 data text">
-                                11.06 10：55
-                            </div>
+                                        <div class="col-md-1 title">No.</div>
+                                        <div class="col-md-2 data text">
+                                            {{medicalRecordInfo.pathoId}}
+                                        </div>
 
-                            <div class="col-md-1 title">Dept.</div>
-                            <div class="col-md-2 data text">
-                                Respiration
-                            </div>
+                                        <div class="col-md-1 title">Time</div>
+                                        <div class="col-md-2 data text">
+                                            {{medicalRecordInfo.time}}
+                                        </div>
 
-                            <div class="col-md-1 title">Doctor</div>
-                            <div class="col-md-2 data text">
-                                Nina Mcintire
-                            </div>
-							<div class="col-md-1 title">Name</div>
-                            <div class="col-md-2 data text">
-                                Jane
-                            </div>
+                                        <div class="col-md-1 title">DepartmentName</div>
+                                        <div class="col-md-2 data text">
+                                            {{medicalRecordInfo.departName}}
+                                        </div>
 
-                            <div class="col-md-1 title">Sex</div>
-                            <div class="col-md-2 data text">
-                                Male
-                            </div>
+                                        <div class="col-md-1 title">DoctorName</div>
+                                        <div class="col-md-2 data text">
+                                            {{medicalRecordInfo.physicianName}}
+                                        </div>
+                                        <div class="col-md-1 title">PatientName</div>
+                                        <div class="col-md-2 data text">
+                                            {{medicalRecordInfo.patientName}}
+                                        </div>
 
-                            <div class="col-md-1 title">Age</div>
-                            <div class="col-md-2 data text">
-                                18
-                            </div>
+                                        <div class="col-md-1 title">Sex</div>
+                                        <div class="col-md-2 data text">
+                                            {{patient.patientGenderStr}}
+                                        </div>
 
-                            <div class="col-md-1 title">Type</div>
-                            <div class="col-md-2 data text">
-                                Referral
-                            </div>
-							
-							 <div class="col-md-1 title rowHeight2x">Details</div>
-                            <div class="col-md-11 data rowHeight2x">
-                                <textarea class="form-control" rows="3" disabled="disabled">have a cold</textarea>
-                            </div>
-							<div class="col-md-1 title">Prescription</div>
-							<div class="col-md-11 data text">
-                                
-                            </div>
-							<div class="col-md-1 title"></div>
-                            <div class="col-md-3 data text">
-                                Amoxicillin
-                            </div>
+                                        <div class="col-md-1 title">Age</div>
+                                        <div class="col-md-2 data text">
+                                            {{patient.patientAge}}
+                                        </div>
 
-                             <div class="col-md-1 title">Num</div>
-                            <div class="col-md-3 data text">
-                                2
-                            </div>
-							
-							<div class="col-md-1 title">Price</div>
-                            <div class="col-md-3 data text">
-                                28            RMB
-                            </div>
-							<div class="col-md-1 title"></div>
-                            <div class="col-md-3 data text">
-                                Amoxicillin
-                            </div>
+                                        <div class="col-md-1 title">Type</div>
+                                        <div class="col-md-2 data text">
+                                            {{appointment.priorityStr}}
+                                        </div>
 
-                             <div class="col-md-1 title">Num</div>
-                            <div class="col-md-3 data text">
-                                2
-                            </div>
-							
-							<div class="col-md-1 title">Price</div>
-                            <div class="col-md-3 data text">
-                                28            RMB
-                            </div>
-							<div class="col-md-1 title">Total</div>
-							<div class="col-md-11 data text">
-							200   RMB 
-							</div>
-							 <div class="col-md-1 title rowHeight2x">Advice</div>
-                            <div class="col-md-11 data text rowHeight2x">
-                                <textarea class="form-control" rows="3"  disabled="disabled">SARS</textarea>
+                                        <div class="col-md-1 title rowHeight2x">Details</div>
+                                        <div class="col-md-11 data rowHeight2x">
+                                            <textarea class="form-control" rows="3" disabled="disabled">{{medicalRecordInfo.diagnosis}}</textarea>
+                                        </div>
+                                        <div class="col-md-1 title">Prescription</div>
+                                        <div class="col-md-11 data text">
+
+                                        </div>
+                                        <div ng-repeat="entity in list">
+                                            <div class="col-md-1 title">药名</div>
+                                            <div class="col-md-3 data text">
+                                                {{entity.medicineName}}
+                                            </div>
+
+                                            <div class="col-md-1 title">Num</div>
+                                            <div class="col-md-3 data text">
+                                                {{entity.num}}
+                                            </div>
+
+                                            <div class="col-md-1 title">Price</div>
+                                            <div class="col-md-3 data text">
+                                                {{entity.medicinePrice}} RMB
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-1 title">Total</div>
+                                        <div class="col-md-11 data text">
+                                            {{total}}   RMB
+                                        </div>
+                                        <div class="col-md-1 title rowHeight2x">Advice</div>
+                                        <div class="col-md-11 data text rowHeight2x">
+                                            <textarea class="form-control" rows="3"  disabled="disabled"> {{medicalRecordInfo.narrative}}</textarea>
+                                        </div>
+
+                                    </div>
+
+
+                                </div>
+
                             </div>
 
-                            
-
-                            
-
-                        </div>
-						
-						
-                            </div>
-                            
-                        
-                    
-					
-                            
-                            
-                        </div>
-                        
-                    </form>
+                        </form>
                 </div>
 				
 				
@@ -408,70 +279,57 @@
                     </div>
                     <!-- /.box-header -->
                     <!-- form start -->
-                    <form role="form">
-                        <div class="box-body">
-                            <div class="form-group">
-                                <div class="row data-type">
+                     <form role="form">
+                         <div class="box-body">
+                             <div class="form-group">
+                                 <div class="row data-type">
 
-                            <div class="col-md-1 title">No.</div>
-                            <div class="col-md-2 data text">
-                                11060001
-                            </div>
+                                     <div class="col-md-1 title">No.</div>
+                                     <div class="col-md-2 data text">
+                                         {{medicalRecordInfo.appointmentId}}
+                                     </div>
 
-                            <div class="col-md-1 title">R-Time</div>
-                            <div class="col-md-2 data text">
-                                11.06 10：55
-                            </div>
-							<div class="col-md-1 title">D-Time</div>
-                            <div class="col-md-2 data text">
-                                11.06
-                            </div>
+                                     <div class="col-md-1 title">R-Time</div>
+                                     <div class="col-md-2 data text">
+                                         {{appointment.appointTime}}
+                                     </div>
+                                     <div class="col-md-1 title">D-Time</div>
+                                     <div class="col-md-2 data text">
+                                         {{appointment.treatTime}}
+                                     </div>
 
-                            <div class="col-md-1 title">Dept.</div>
-                            <div class="col-md-2 data text">
-                                Respiration
-                            </div>
+                                     <div class="col-md-1 title">Dept.</div>
+                                     <div class="col-md-2 data text">
+                                         {{medicalRecordInfo.departName}}
+                                     </div>
 
-                            
-							<div class="col-md-1 title">Name</div>
-                            <div class="col-md-2 data text">
-                                Jane
-                            </div>
+                                     <div class="col-md-1 title">Name</div>
+                                     <div class="col-md-2 data text">
+                                         {{medicalRecordInfo.patientName}}
+                                     </div>
 
-                            <div class="col-md-1 title">Sex</div>
-                            <div class="col-md-2 data text">
-                                Male
-                            </div>
+                                     <div class="col-md-1 title">Sex</div>
+                                     <div class="col-md-2 data text">
+                                         {{patient.patientGenderStr}}
+                                     </div>
 
-                            <div class="col-md-1 title">Age</div>
-                            <div class="col-md-2 data text">
-                                18
-                            </div>
+                                     <div class="col-md-1 title">Age</div>
+                                     <div class="col-md-2 data text">
+                                         {{patient.patientAge}}
+                                     </div>
 
-                            <div class="col-md-1 title">Type</div>
-                            <div class="col-md-2 data text">
-                                 Referral
-                            </div>
-							
-							
+                                     <div class="col-md-1 title">Type</div>
+                                     <div class="col-md-2 data text">
+                                         {{appointment.priorityStr}}
+                                     </div>
 
-                            
+                                 </div>
 
-                            
+                             </div>
 
-                        </div>
-						
-						
-                            </div>
-                            
-                        
-                    
-					
-                            
-                            
-                        </div>
-                        
-                    </form>
+                         </div>
+
+                     </form>
                 </div>
 			
         <!-- /.row -->
@@ -494,7 +352,8 @@
 
     </div>
 
-
+    <script src="../plugins/angularjs/pagination.js"></script>
+    <script type="text/javascript" src="../plugins/angularjs/angular.min.js"></script>
     <script src="../plugins/jQuery/jquery-2.2.3.min.js"></script>
     <script src="../plugins/jQueryUI/jquery-ui.min.js"></script>
     <script>
@@ -518,7 +377,7 @@
     <script src="../plugins/iCheck/icheck.min.js"></script>
     <script src="../plugins/adminLTE/js/app.min.js"></script>
     <script src="../plugins/treeTable/jquery.treetable.js"></script>
-    <script src="../plugins/select2/select2.full.min.js"></script>
+
     <script src="../plugins/colorpicker/bootstrap-colorpicker.min.js"></script>
     <script src="../plugins/bootstrap-wysihtml5/bootstrap-wysihtml5.zh-CN.js"></script>
     <script src="../plugins/bootstrap-markdown/js/bootstrap-markdown.js"></script>
@@ -540,6 +399,122 @@
     <script src="../plugins/bootstrap-slider/bootstrap-slider.js"></script>
     <script src="../plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.js"></script>
     <script src="../plugins/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.zh-CN.js"></script>
+    <script src="../plugins/bootstrap-fileinput-master/js/fileinput.min.js"></script>
+    <script src="../plugins/bootstrap-fileinput-master/js/fileinput.min.js"></script>
+    <script src="../plugins/bootstrap-fileinput-master/themes/fa/theme.min.js"></script>
+
+    <script type="text/javascript" >
+        var app=angular.module('ihospital',[]);
+        app.service('loginService',function ($http) {
+
+            this.loginName=function () {
+
+                return $http.get('../login/name.do');
+
+            }
+
+        });
+        app.config(['$locationProvider',function($locationProvider){
+            $locationProvider.html5Mode(true);
+        }]);
+        app.controller("medicalRecordInfoController",function($scope,$http,$filter,$location,loginService){
+            var id="";
+
+            if($location.search().id){
+                id=$location.search().id;
+            }
+            $scope.medicalRecordInfo={};
+            $scope.patient={};
+            $scope.appointment={};
+            //获取登录名
+            $scope.showLoginName = function () {
+                loginService.loginName().success(
+                    function (response) {
+                        $scope.loginName=response.loginName;
+                    }
+                )
+            };
+            $scope.findOneMedicalRecord=function(){
+                if(id!==""){
+
+                    $http.get('../medicalRecord/findOneMedicalRecord.do?id='+id).success(
+                        function(response){
+                            $scope.medicalRecordInfo=response;
+                            $scope.medicalRecordInfo.pathoId=response.pathoId;
+                            $scope.medicalRecordInfo.time=$filter("date")(response.time,"yyyy-MM-dd HH:mm:ss");
+                            $scope.medicalRecordInfo.appointmentId=response.appointmentId;
+                            $scope.medicalRecordInfo.departName=response.departName;
+                            $scope.medicalRecordInfo.physicianName=response.physicianName;
+                            $scope.medicalRecordInfo.physicianId=response.physicianId;
+                            $scope.medicalRecordInfo.patientId=response.patientId;
+                            $scope.medicalRecordInfo.patientName=response.patientName;
+                            $scope.medicalRecordInfo.diagnosis=response.diagnosis;
+                            $scope.medicalRecordInfo.narrative=response.narrative;
+                            $scope.medicalRecordInfo.pathoValid=response.pathoValid;
+                        }
+                    );
+                }
+
+            };
+            $scope.findPatientByPathoId=function(){
+                if(id!==""){
+
+                    $http.get('../medicalRecord/findPatientByPathoId.do?id='+id).success(
+                        function(response){
+                            $scope.patient=response;
+                            $scope.patient.patientGenderStr=response.patientGenderStr;
+                            $scope.patient.patientAge=response.patientAge;
+
+                        }
+                    );
+                }
+
+            };
+            $scope.findAppointmentByPathoId=function(){
+                if(id!==""){
+
+                    $http.get('../medicalRecord/findAppointmentByPathoId.do?id='+id).success(
+                        function(response){
+                            $scope.appointment=response;
+                            // $scope.appointment.time=$filter("date")(response.time,"yyyy-MM-dd HH:mm:ss");
+
+                            $scope.appointment.treatTime=response.treatTime;
+                            $scope.appointment.appointTime=response.appointTime;
+                            $scope.appointment.priorityStr=response.priorityStr;
+
+
+                        }
+                    );
+                }
+
+            };
+            $scope.findMedicineInformationByPathoId=function(){
+                if(id!==""){
+
+                    $http.get('../medicalRecord/findMedicineInformationByPathoId.do?id='+id).success(
+                        function(response){
+                            $scope.list=response.medicineRows;
+                            $scope.total=response.total;
+                        }
+                    );
+                }
+
+            };
+
+            //加载页面时执行该函数，用ng-init标签写在body标签里
+            $scope.initInfo=function () {
+
+                $scope.findOneMedicalRecord();
+                $scope.findPatientByPathoId();
+                $scope.findAppointmentByPathoId();
+                $scope.findMedicineInformationByPathoId();
+
+            }
+
+        });
+
+    </script>
+
    <script>
         $(document).ready(function() {
             // 选择框

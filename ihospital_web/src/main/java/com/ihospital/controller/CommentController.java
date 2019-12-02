@@ -1,5 +1,6 @@
 package com.ihospital.controller;
 
+import com.ihospital.pojo.Consultation;
 import com.ihospital.service.ICommentService;
 import entity.CommentItem;
 import entity.PageResult;
@@ -52,5 +53,17 @@ public class CommentController {
     @RequestMapping(path = "/searchComment.do")
     public PageResult searchComment(@RequestBody CommentItem commentItem, int pageNum, int pageSize) {
         return commentService.findPage(commentItem, pageNum, pageSize);
+    }
+
+    @RequestMapping(path = "/addComment.do")
+    public Result addComment(@RequestBody Consultation consultation){
+        try {
+            commentService.addComment(consultation);
+            return new Result(true, "评论成功");
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+            return new Result(false, e.getMessage());
+        }
     }
 }

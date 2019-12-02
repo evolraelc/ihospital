@@ -33,7 +33,6 @@ public interface IMedicalRecordService {
     public List<Long> findDepartmentByName(String name);
     //根据科室ID，查询到这些科室下的所有医生id
     public List<Long> findPhysicianIdByDepart(List<Long> departIds);
-
     //根据就诊信息Id查找一条对应的就诊记录
     public Pathography findOnePathographyById(Long id);
     //根据就诊信息Id查找一条对应的就诊记录详细信息

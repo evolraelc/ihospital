@@ -278,6 +278,7 @@ public class MedicalRecordService implements IMedicalRecordService {
      * @function
      */
     //根据科室ID，查询到这些科室下的所有医生id
+    @Override
     public List<Long> findPhysicianIdByDepart(List<Long> departIds){
         List<Physician> physicians=new ArrayList<>();
         List<Long> physicianIds=new ArrayList<>();

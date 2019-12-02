@@ -101,7 +101,7 @@
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.ihospital.pojo.Appointment" >
+  <insert id="insert" parameterType="com.ihospital.pojo.Appointment"  keyColumn="appointment_id" keyProperty="appointmentId" useGeneratedKeys="true" >
     insert into appointment (appointment_id, patient_id, dept_id, 
       treat_time, is_valid, appoint_time, 
       priority)

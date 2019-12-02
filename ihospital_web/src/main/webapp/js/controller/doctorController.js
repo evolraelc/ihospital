@@ -114,8 +114,7 @@ app.controller('doctorController', function ($scope, $http, loginService) {
         $scope.all_depart_list = Array.from(new Set(departNames));
 
         $scope.all_depart_list = $scope.all_depart_list.filter(x => (x !== null && x.length > 0)
-      )
-        ;
+      );
 
       }
     ).error(
@@ -171,18 +170,18 @@ app.controller('doctorController', function ($scope, $http, loginService) {
   }
 
   $scope.updateDoctor = function () {
-    $scope.addedItemDoctor.physicianId = $scope.changeId;
-    var para1 = JSON.stringify($scope.addedItemDoctor);
-    var para2 = JSON.stringify($scope.departOfDoctor);
-    var param = {};
-    param.data = para1 + "&" + para2;
-    $http.post("../doctor/updatePhysician.do", param).success(
-      function (data) {
+      $scope.addedItemDoctor.physicianId = $scope.changeId;
+      var para1 = JSON.stringify($scope.addedItemDoctor);
+      var para2 = JSON.stringify($scope.departOfDoctor);
+      var param = {};
+      param.data = para1 + "&" + para2;
+      $http.post("../doctor/updatePhysician.do", param).success(
+        function (data) {
 
-        //局部刷新
-        $scope.reloadList();
-        $scope.updateDoctorRefresh();
-      }
+          //局部刷新
+          $scope.reloadList();
+          $scope.updateDoctorRefresh();
+        }
     ).error( //// ajax 异常 必须在非web层解决
       function (data) {
 

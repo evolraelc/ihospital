@@ -86,7 +86,7 @@
     </if>
   </select>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
-    select 
+    select
     <include refid="Base_Column_List" />
     from reply
     where reply_id = #{replyId,jdbcType=BIGINT}
@@ -109,7 +109,7 @@
       #{time,jdbcType=TIMESTAMP}, #{consultId,jdbcType=BIGINT}, #{childId,jdbcType=BIGINT}, 
       #{type,jdbcType=BIT})
   </insert>
-  <insert id="insertSelective" parameterType="com.ihospital.pojo.Reply" >
+  <insert id="insertSelective" parameterType="com.ihospital.pojo.Reply" keyColumn="reply_id" keyProperty="replyId" useGeneratedKeys="true">
     insert into reply
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="replyId != null" >

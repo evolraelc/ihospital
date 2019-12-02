@@ -1799,7 +1799,7 @@ TABLES
 -------------------------------------------------------------------*/
 
 .pricing-table {
-	width:50%;
+	width:100%;
 	float:left;
 	margin:10px 0 0;
 }
@@ -1816,6 +1816,12 @@ TABLES
 .pricing-table li span {
 	width:50%;
 	color:#6c6c6c;
+}
+.pricing-table li span.firsthead {
+	width:50%;
+	color:#6c6c6c;
+	font-size: 15px;
+	font-weight: 600;
 }
 .pricing-table .table-heading {
 	text-transform:uppercase;
@@ -2645,6 +2651,36 @@ SHOP
 .product-thumb{ 
 	background:#ededed
 }
+
+.product-thumb a img{ 
+	width:224px;height:268px
+}
+.product-thumb2{ 
+	background:#ededed
+}
+.product-thumb2 a img{ 
+	width:339px;height:268px
+}
+
+.imgcontain {
+  object-fit: contain;
+}
+ 
+.imgcover {
+  object-fit: cover;
+}
+ 
+.imgnone {
+  object-fit: none;
+}
+ 
+.imgscale-down {
+  object-fit: scale-down;
+}
+
+
+
+
 .product h4{
 	font-size:15px; 
 	color:#646363; 
@@ -2664,7 +2700,7 @@ SHOP
 	padding:20px 0 0;
 }
 .price-rating .price{ 
-	float:left; 
+	float:none; 
 	font-size:22px;
 	padding-left:3px;
 }
@@ -2854,6 +2890,13 @@ LATEST NEWS ( blog )
 .blog-thumbnail img {
 	display: block;
 	width: 100%;
+	width:555px;height:395px
+	
+}
+.blog-thumbnail2 img {
+	display: block;
+	width: 100%;
+	
 }
 .blog-date {
 	padding: 5px 10.5px 10px 12.5px;
@@ -2861,8 +2904,16 @@ LATEST NEWS ( blog )
 	text-align: center;
 	top: 0;
 }
-.day {
+.day2 {
 	color: #FFFFFF;
+	font-size: 42px;
+	font-weight: 900;
+	line-height: 44px;
+	margin: 0 0 0 2px;
+	font-weight: 800;
+}
+.day3 {
+	color: #428bca;
 	font-size: 42px;
 	font-weight: 900;
 	line-height: 44px;
@@ -3708,4 +3759,21 @@ COLOR SWITCHER ONLY FOR DEMO
 }
 .backgrounds a#bg-ten {
 	background:url(../images/bg10.png);
+}
+
+
+.imgcontain {
+  object-fit: contain;
+}
+ 
+.imgcover {
+  object-fit: cover;
+}
+ 
+.imgnone {
+  object-fit: none;
+}
+ 
+.imgscale-down {
+  object-fit: scale-down;
 }

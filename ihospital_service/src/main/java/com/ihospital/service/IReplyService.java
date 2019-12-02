@@ -2,6 +2,7 @@ package com.ihospital.service;
 
 import com.ihospital.pojo.Reply;
 
+
 import java.util.List;
 
 /**
@@ -17,6 +18,13 @@ public interface IReplyService {
      * @return 对应回复列表
      */
     List<Reply> getReplyList(Long consultId);
+
+    /**
+     * 获取回复生成的树
+     * @param consultId 评论id
+     * @return 对应回复树
+     */
+    //ReplyTree getReplyTree(Long consultId);
 
     /**
      * 获取回复

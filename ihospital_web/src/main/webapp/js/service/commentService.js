@@ -14,4 +14,7 @@ app.service("commentService",function ($http){
     this.getComment = function (id) {
         return $http.get('../comment/getComment.do?id='+id);
     };
+    this.addComment = function (comment) {
+        return $http.post('../comment/addComment.do', comment);
+    }
 });

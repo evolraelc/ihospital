@@ -1,5 +1,6 @@
 package com.ihospital.service;
 
+import com.ihospital.pojo.Consultation;
 import entity.CommentItem;
 import entity.PageResult;
 
@@ -47,4 +48,10 @@ public interface ICommentService {
      * @return 分页结果
      */
     PageResult findPage(CommentItem commentItem, int pageNum, int pageSize);
+
+    /**
+     * 添加评论
+     * @param consultation 新评论
+     */
+    void addComment(Consultation consultation);
 }

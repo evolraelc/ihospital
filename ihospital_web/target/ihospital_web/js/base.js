@@ -1,1 +1,1 @@
-var app =angular.module('ihospital',['ng-bs3-datepicker']);
+var app =angular.module('ihospital',['ng-bs3-datepicker'])

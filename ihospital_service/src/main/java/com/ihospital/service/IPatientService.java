@@ -85,4 +85,11 @@ public interface IPatientService {
      * @param status 状态
      */
     void setStatus(Long id, String status);
+
+    /**
+     * 根据电话获取病人信息
+     * @param phone 电话号码
+     * @return 病人实体
+     */
+    Patient getPatientByPhone(String phone);
 }

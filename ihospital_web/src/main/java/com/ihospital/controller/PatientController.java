@@ -97,6 +97,11 @@ public class PatientController {
         }
     }
 
+    @RequestMapping("/getPatient.do")
+    public Patient getPatient(String phone) {
+        return patientService.getPatientByPhone(phone);
+    }
+
     
 
 
