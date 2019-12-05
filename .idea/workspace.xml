@@ -7,48 +7,161 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5aa75bbd-7191-4eeb-ae52-a6dbb5c0da90" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/config/locationConfig.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/controller/doctorReplyController.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/controller/replyController.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/service/replyService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ihospital_pojo/src/main/java/entity/PatientInfo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/ihospital.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ihospital.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_dao/src/main/resources/mapper/ReplyMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_dao/src/main/resources/mapper/ReplyMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_service/src/main/java/com/ihospital/service/IReplyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_service/src/main/java/com/ihospital/service/IReplyService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_pojo/src/main/java/com/ihospital/pojo/Consultation.java" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_pojo/src/main/java/com/ihospital/pojo/Consultation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_pojo/src/main/java/entity/CommentItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_pojo/src/main/java/entity/CommentItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_pojo/target/classes/com/ihospital/pojo/Consultation.class" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_pojo/target/classes/com/ihospital/pojo/Consultation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_pojo/target/classes/entity/CommentItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_pojo/target/classes/entity/CommentItem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_service/src/main/java/com/ihospital/service/IPatientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_service/src/main/java/com/ihospital/service/IPatientService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ihospital_service/src/main/java/com/ihospital/service/impl/CommentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_service/src/main/java/com/ihospital/service/impl/CommentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_service/src/main/java/com/ihospital/service/impl/PatientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_service/src/main/java/com/ihospital/service/impl/PatientService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ihospital_service/src/main/java/com/ihospital/service/impl/ReplyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_service/src/main/java/com/ihospital/service/impl/ReplyService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_service/target/classes/com/ihospital/service/IPatientService.class" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_service/target/classes/com/ihospital/service/IPatientService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ihospital_service/target/classes/com/ihospital/service/impl/CommentService.class" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_service/target/classes/com/ihospital/service/impl/CommentService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_service/target/classes/com/ihospital/service/impl/PatientService.class" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_service/target/classes/com/ihospital/service/impl/PatientService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ihospital_service/target/classes/com/ihospital/service/impl/ReplyService.class" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_service/target/classes/com/ihospital/service/impl/ReplyService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/java/com/ihospital/controller/ReplyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/src/main/java/com/ihospital/controller/ReplyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/controller/commentController.js" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/controller/commentController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/controller/doctorWorkController.js" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/controller/doctorWorkController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/service/commentService.js" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/service/commentService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/service/doctorService.js" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/service/doctorService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/service/patientService.js" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/service/patientService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/pages/all-administrator-commentinfo.html" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/src/main/webapp/pages/all-administrator-commentinfo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/pages/all-administrator-commenttable.html" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/src/main/webapp/pages/all-administrator-commenttable.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/pages/all-doctor-personalcenter.html" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/src/main/webapp/pages/all-doctor-personalcenter.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/plugins/angular-datepicker/js/angular.js" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/src/main/webapp/plugins/angular-datepicker/js/angular.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_utils/target/ihospital_utils-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_utils/target/ihospital_utils-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_utils/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_utils/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_utils/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_utils/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_utils/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_utils/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_utils/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_utils/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/java/com/ihospital/controller/PatientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/src/main/java/com/ihospital/controller/PatientController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/java/com/ihospital/controller/PhysicianController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/src/main/java/com/ihospital/controller/PhysicianController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/resources/spring-security.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/src/main/resources/spring-security.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/css/medicom.css" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/src/main/webapp/css/medicom.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/angular-select2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/base.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/base_pagination.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/bootstrap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/color-switcher.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/config/locationConfig.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/controller/baseController.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/controller/commentController.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/controller/departmentController.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/controller/departmentInfoController.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/controller/doctorController.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/controller/doctorReplyController.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/controller/doctorWorkController.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/controller/medicineController.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/controller/patientController.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/controller/patientReplyController.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/controller/replyController.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/counter.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/easyResponsiveTabs.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/forms-validation.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/jquery-revolution.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/jquery-ui-1.10.3.custom.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/jquery.easypiechart.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/jquery.fancybox-media.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/jquery.fancybox.pack.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/jquery.jcarousel.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/jquery.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/jquery.mixitup.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/jquery.prettyPhoto.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/jquery.stellar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/jquery.themepunch.plugins.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/jquery.themepunch.revolution.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/jquery.uniform.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/map.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/map2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/modernizr-2.6.2.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/owl.carousel.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/preview-fullwidth.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/scripts.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/service/commentService.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/service/doctorService.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/service/loginService.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/service/medicineService.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/service/patientService.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/service/replyService.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/service/uploadService.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/video.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/waypoints.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/src/main/webapp/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/pages/all-admin-login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/pages/all-administrator-commentinfo.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/pages/all-administrator-commenttable.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/pages/all-administrator-departmentinfo.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/pages/all-administrator-departmenttable.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/pages/all-administrator-doctortable.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/pages/all-administrator-drugtable.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/pages/all-administrator-medicalrecordinfo.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/pages/all-administrator-medicalrecordtable.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/pages/all-administrator-newsinfo.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/pages/all-administrator-newstable.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/pages/all-administrator-patienttable.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/pages/all-doctor-personalcenter.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/pages/all-doctor-startwork.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/pages/all-doctor-treatmentinfo.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/pages/all-doctor-treatmenttable.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/pages/all-patient-appointinfo.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/pages/all-patient-appointlist.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/pages/all-patient-departmentinfo.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/pages/all-patient-departmentlist.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/pages/all-patient-doctorinfo.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/pages/all-patient-doctorlist.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/pages/all-patient-index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/pages/all-patient-medicalinfo.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/pages/all-patient-medicalrecordinfo.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/pages/all-patient-medicalrecordlist.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/pages/all-patient-newsinfo.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/pages/all-patient-newslist.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/pages/all-patient-search1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/pages/all-patient-search2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/pages/all-patient-search3.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/pages/department-show.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/pages/patient-login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/pages/patient-register.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/pages/registration-information.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/target/classes/com/ihospital/controller/PatientController.class" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/target/classes/com/ihospital/controller/PatientController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/target/classes/com/ihospital/controller/PhysicianController.class" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/target/classes/com/ihospital/controller/PhysicianController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/target/classes/spring-security.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/target/classes/spring-security.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/WEB-INF/classes/com/ihospital/controller/PatientController.class" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/WEB-INF/classes/com/ihospital/controller/PatientController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/WEB-INF/classes/com/ihospital/controller/PhysicianController.class" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/WEB-INF/classes/com/ihospital/controller/PhysicianController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/WEB-INF/classes/spring-security.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/WEB-INF/classes/spring-security.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/WEB-INF/lib/ihospital_dao-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/WEB-INF/lib/ihospital_dao-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/WEB-INF/lib/ihospital_pojo-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/WEB-INF/lib/ihospital_pojo-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/WEB-INF/lib/ihospital_service-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/WEB-INF/lib/ihospital_service-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/js/controller/commentController.js" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/js/controller/commentController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/WEB-INF/lib/ihospital_utils-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/WEB-INF/lib/ihospital_utils-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/css/medicom.css" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/css/medicom.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/js/controller/doctorReplyController.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/js/controller/doctorWorkController.js" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/js/controller/doctorWorkController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/js/service/commentService.js" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/js/service/commentService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/js/controller/patientController.js" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/js/controller/patientController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/js/controller/patientReplyController.js" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/js/controller/patientReplyController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/js/jquery.easypiechart.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/js/jquery.easypiechart.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/js/service/doctorService.js" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/js/service/doctorService.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/js/service/patientService.js" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/js/service/patientService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/pages/all-administrator-commentinfo.html" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/pages/all-administrator-commentinfo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/pages/all-administrator-commenttable.html" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/pages/all-administrator-commenttable.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/js/service/uploadService.js" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/js/service/uploadService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/js/waypoints.js" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/js/waypoints.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/pages/all-doctor-personalcenter.html" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/pages/all-doctor-personalcenter.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/plugins/angular-datepicker/js/angular.js" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/plugins/angular-datepicker/js/angular.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/pages/all-doctor-startwork.html" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/pages/all-doctor-startwork.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/pages/all-patient-appointinfo.html" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/pages/all-patient-appointinfo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/pages/all-patient-appointlist.html" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/pages/all-patient-appointlist.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/pages/all-patient-departmentinfo.html" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/pages/all-patient-departmentinfo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/pages/all-patient-departmentlist.html" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/pages/all-patient-departmentlist.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/pages/all-patient-doctorinfo.html" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/pages/all-patient-doctorinfo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/pages/all-patient-doctorlist.html" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/pages/all-patient-doctorlist.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/pages/all-patient-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/pages/all-patient-index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/pages/all-patient-medicalrecordinfo.html" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/pages/all-patient-medicalrecordinfo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/pages/all-patient-medicalrecordlist.html" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/pages/all-patient-medicalrecordlist.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/pages/all-patient-newsinfo.html" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/pages/all-patient-newsinfo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/pages/all-patient-newslist.html" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/pages/all-patient-newslist.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/pages/all-patient-search2.html" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/pages/all-patient-search2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/pages/all-patient-search3.html" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/pages/all-patient-search3.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/pages/patient-login.html" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/pages/patient-login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/pages/patient-register.html" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/pages/patient-register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -74,19 +187,15 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="package-info" />
-        <option value="Class" />
         <option value="JavaScript File" />
+        <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>paginationConf</find>
-      <find>ng-</find>
-      <find>addPatient</find>
-      <find>jackson</find>
       <find>UTF-8</find>
       <find>entity</find>
       <find>list</find>
@@ -95,7 +204,6 @@
       <find>moment</find>
       <find>uploadService</find>
       <find>zh</find>
-      <find>select2</find>
       <find>pathographySearch</find>
       <find>commentItem</find>
       <find>initForm</find>
@@ -108,17 +216,23 @@
       <find>../</find>
       <find>save</find>
       <find>js</find>
-      <find>js/</find>
       <find>images</find>
-      <find>images/</find>
       <find>alert</find>
+      <find>nowtime</find>
+      <find>select2</find>
+      <find>pojo</find>
+      <find>image/</find>
+      <find>findConfigOfDrug</find>
+      <find>images/</find>
+      <find>js/</find>
+      <find>pagination</find>
     </findStrings>
     <replaceStrings>
       <replace>loginName</replace>
       <replace>{{loginName}}</replace>
       <replace>../../</replace>
-      <replace>../js/</replace>
       <replace>../images/</replace>
+      <replace>../js/</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -140,6 +254,7 @@
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
+        <option name="localRepository" value="$USER_HOME$/server/LocalWarehouse" />
         <option name="mavenHome" value="$USER_HOME$/server/apache-maven-3.6.2" />
         <option name="userSettingsFile" value="$USER_HOME$/server/apache-maven-3.6.2/conf/settings.xml" />
       </MavenGeneralSettings>
@@ -154,48 +269,53 @@
   <component name="MavenRunner">
     <option name="vmOptions" value="-DarchetypeCatalog=internal" />
   </component>
-  <component name="ProjectId" id="1U9LJbVwLJG7jRHwaKS8beUfVez" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectId" id="1UQikVMoxX5nOVErWJw6qtCr81T" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/ihospital_web/src/main/webapp/css" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/ihospital_service/src/main/java/com/ihospital/service/impl" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Problems" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\IdeaProjects\ihospital\ihospital_web\src\main\webapp\css" />
-      <recent name="D:\IdeaProjects\ihospital\ihospital_web\src\main\webapp\pages" />
-      <recent name="D:\IdeaProjects\ihospital\ihospital_web\src\main\webapp\js\controller" />
-      <recent name="D:\IdeaProjects\ihospital\ihospital_web\src\main\java\com\ihospital\controller" />
       <recent name="D:\IdeaProjects\ihospital\ihospital_service\src\main\java\com\ihospital\service\impl" />
+      <recent name="D:\IdeaProjects\ihospital\ihospital_web\src\main\java\com\ihospital\controller" />
+      <recent name="D:\IdeaProjects\ihospital\ihospital_service\src\main\java\com\ihospital\service" />
+      <recent name="D:\IdeaProjects\ihospital\ihospital_web\src\main\webapp\pages" />
+      <recent name="D:\IdeaProjects\ihospital\ihospital_web\src\main\webapp\js\service" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\IdeaProjects\ihospital\ihospital_web\src\main\resources\config" />
+      <recent name="$PROJECT_DIR$/ihospital_pojo/src/main/java/entity" />
+      <recent name="$PROJECT_DIR$/ihospital_service/src/main/java/com/ihospital/service/impl" />
+      <recent name="$PROJECT_DIR$/ihospital_service/src/main/java/com/ihospital/service" />
+      <recent name="$PROJECT_DIR$/ihospital_web/src/main/java/com/ihospital/controller" />
+      <recent name="$PROJECT_DIR$/ihospital_web/src/main/resources" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager">
-    <configuration name="Tomcat 9.0.29" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.29" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+  <component name="RunManager" selected="Tomcat Server.ihospital_web">
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Test" />
+      <module name="ihospital_utils" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ihospital_web" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.29" ALTERNATIVE_JRE_ENABLED="false">
       <option name="BROWSER_ID" value="e5120d43-2c3f-47ef-9f26-65e539e05186" />
-      <option name="UPDATING_POLICY" value="redeploy-artifacts" />
+      <option name="COMMON_VM_ARGUMENTS" value="-Dfile.encoding=UTF-8" />
+      <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
+      <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
       <deployment>
         <artifact name="ihospital_web:war exploded">
           <settings>
@@ -204,7 +324,7 @@
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="Unnamed_ihospital" />
+        <option name="BASE_DIRECTORY_NAME" value="Unnamed_ihospital_2" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -212,7 +332,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="49482" />
+        <option name="DEBUG_PORT" value="6314" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -266,6 +386,38 @@
         </option>
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.Test" />
+      <item itemvalue="Tomcat Server.ihospital_web" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Test" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <option name="contentProportion" value="0.1891892" />
+          <treeState>
+            <expand>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="Running" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+            </expand>
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -296,10 +448,20 @@
       <workItem from="1574734843976" duration="5839000" />
       <workItem from="1574748391852" duration="319000" />
       <workItem from="1574754765027" duration="331000" />
-      <workItem from="1574755131130" duration="1080000" />
-      <workItem from="1574763803560" duration="12932000" />
-      <workItem from="1574813350970" duration="10383000" />
-      <workItem from="1574844028510" duration="5874000" />
+      <workItem from="1574755131130" duration="52691000" />
+      <workItem from="1574914488140" duration="2571000" />
+      <workItem from="1574918846113" duration="19378000" />
+      <workItem from="1575209680740" duration="115000" />
+      <workItem from="1575211660650" duration="2574000" />
+      <workItem from="1575265317066" duration="2450000" />
+      <workItem from="1575279765861" duration="103000" />
+      <workItem from="1575279899202" duration="10690000" />
+      <workItem from="1575295364541" duration="1312000" />
+      <workItem from="1575441517933" duration="813000" />
+      <workItem from="1575442501198" duration="834000" />
+      <workItem from="1575443352825" duration="537000" />
+      <workItem from="1575443906150" duration="6407000" />
+      <workItem from="1575519092675" duration="11325000" />
     </task>
     <servers />
   </component>
@@ -332,11 +494,183 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="SHOW_UNVERSIONED_FILES_WHILE_COMMIT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="184" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1575533652573">
+      <screen x="0" y="23" width="1440" height="811" />
+    </state>
+    <state x="184" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.811@0.23.1440.811" timestamp="1575533652573" />
+    <state x="533" y="108" key="#com.intellij.ide.util.MemberChooser" timestamp="1575559262164">
+      <screen x="0" y="23" width="1440" height="812" />
+    </state>
+    <state x="533" y="108" key="#com.intellij.ide.util.MemberChooser/0.23.1440.812@0.23.1440.812" timestamp="1575559262164" />
+    <state x="-22" y="158" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1575442614809">
+      <screen x="0" y="23" width="1440" height="810" />
+    </state>
+    <state x="-22" y="158" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.23.1440.810@0.23.1440.810" timestamp="1575442614809" />
+    <state x="280" y="23" key="CommitChangelistDialog2" timestamp="1575561266828">
+      <screen x="0" y="23" width="1440" height="811" />
+    </state>
+    <state x="280" y="23" key="CommitChangelistDialog2/0.23.1440.811@0.23.1440.811" timestamp="1575561266828" />
+    <state width="1109" height="155" key="GridCell.Tab.0.bottom" timestamp="1575532803319">
+      <screen x="0" y="23" width="1440" height="811" />
+    </state>
+    <state width="1109" height="155" key="GridCell.Tab.0.bottom/0.23.1440.811@0.23.1440.811" timestamp="1575532803319" />
+    <state width="1109" height="155" key="GridCell.Tab.0.bottom/0.23.1440.812@0.23.1440.812" timestamp="1575522378623" />
+    <state width="1109" height="155" key="GridCell.Tab.0.center" timestamp="1575532803318">
+      <screen x="0" y="23" width="1440" height="811" />
+    </state>
+    <state width="1109" height="155" key="GridCell.Tab.0.center/0.23.1440.811@0.23.1440.811" timestamp="1575532803318" />
+    <state width="1109" height="155" key="GridCell.Tab.0.center/0.23.1440.812@0.23.1440.812" timestamp="1575522378622" />
+    <state width="1109" height="155" key="GridCell.Tab.0.left" timestamp="1575532803318">
+      <screen x="0" y="23" width="1440" height="811" />
+    </state>
+    <state width="1109" height="155" key="GridCell.Tab.0.left/0.23.1440.811@0.23.1440.811" timestamp="1575532803318" />
+    <state width="1109" height="155" key="GridCell.Tab.0.left/0.23.1440.812@0.23.1440.812" timestamp="1575522378621" />
+    <state width="1109" height="155" key="GridCell.Tab.0.right" timestamp="1575532803318">
+      <screen x="0" y="23" width="1440" height="811" />
+    </state>
+    <state width="1109" height="155" key="GridCell.Tab.0.right/0.23.1440.811@0.23.1440.811" timestamp="1575532803318" />
+    <state width="1109" height="155" key="GridCell.Tab.0.right/0.23.1440.812@0.23.1440.812" timestamp="1575522378622" />
+    <state width="1109" height="155" key="GridCell.Tab.1.bottom" timestamp="1575532803212">
+      <screen x="0" y="23" width="1440" height="811" />
+    </state>
+    <state width="1109" height="155" key="GridCell.Tab.1.bottom/0.23.1440.811@0.23.1440.811" timestamp="1575532803212" />
+    <state width="1109" height="155" key="GridCell.Tab.1.bottom/0.23.1440.812@0.23.1440.812" timestamp="1575522378624" />
+    <state width="1109" height="155" key="GridCell.Tab.1.center" timestamp="1575532803212">
+      <screen x="0" y="23" width="1440" height="811" />
+    </state>
+    <state width="1109" height="155" key="GridCell.Tab.1.center/0.23.1440.811@0.23.1440.811" timestamp="1575532803212" />
+    <state width="1109" height="155" key="GridCell.Tab.1.center/0.23.1440.812@0.23.1440.812" timestamp="1575522378623" />
+    <state width="1109" height="155" key="GridCell.Tab.1.left" timestamp="1575532803211">
+      <screen x="0" y="23" width="1440" height="811" />
+    </state>
+    <state width="1109" height="155" key="GridCell.Tab.1.left/0.23.1440.811@0.23.1440.811" timestamp="1575532803211" />
+    <state width="1109" height="155" key="GridCell.Tab.1.left/0.23.1440.812@0.23.1440.812" timestamp="1575522378623" />
+    <state width="1109" height="155" key="GridCell.Tab.1.right" timestamp="1575532803212">
+      <screen x="0" y="23" width="1440" height="811" />
+    </state>
+    <state width="1109" height="155" key="GridCell.Tab.1.right/0.23.1440.811@0.23.1440.811" timestamp="1575532803212" />
+    <state width="1109" height="155" key="GridCell.Tab.1.right/0.23.1440.812@0.23.1440.812" timestamp="1575522378624" />
+    <state width="1109" height="155" key="GridCell.Tab.2.bottom" timestamp="1575532803214">
+      <screen x="0" y="23" width="1440" height="811" />
+    </state>
+    <state width="1109" height="155" key="GridCell.Tab.2.bottom/0.23.1440.811@0.23.1440.811" timestamp="1575532803214" />
+    <state width="1109" height="155" key="GridCell.Tab.2.bottom/0.23.1440.812@0.23.1440.812" timestamp="1575522378625" />
+    <state width="1109" height="155" key="GridCell.Tab.2.center" timestamp="1575532803213">
+      <screen x="0" y="23" width="1440" height="811" />
+    </state>
+    <state width="1109" height="155" key="GridCell.Tab.2.center/0.23.1440.811@0.23.1440.811" timestamp="1575532803213" />
+    <state width="1109" height="155" key="GridCell.Tab.2.center/0.23.1440.812@0.23.1440.812" timestamp="1575522378624" />
+    <state width="1109" height="155" key="GridCell.Tab.2.left" timestamp="1575532803213">
+      <screen x="0" y="23" width="1440" height="811" />
+    </state>
+    <state width="1109" height="155" key="GridCell.Tab.2.left/0.23.1440.811@0.23.1440.811" timestamp="1575532803213" />
+    <state width="1109" height="155" key="GridCell.Tab.2.left/0.23.1440.812@0.23.1440.812" timestamp="1575522378624" />
+    <state width="1109" height="155" key="GridCell.Tab.2.right" timestamp="1575532803213">
+      <screen x="0" y="23" width="1440" height="811" />
+    </state>
+    <state width="1109" height="155" key="GridCell.Tab.2.right/0.23.1440.811@0.23.1440.811" timestamp="1575532803213" />
+    <state width="1109" height="155" key="GridCell.Tab.2.right/0.23.1440.812@0.23.1440.812" timestamp="1575522378625" />
+    <state x="221" y="67" key="SettingsEditor" timestamp="1575533638598">
+      <screen x="0" y="23" width="1440" height="811" />
+    </state>
+    <state x="221" y="67" key="SettingsEditor/0.23.1440.810@0.23.1440.810" timestamp="1575451344002" />
+    <state x="221" y="67" key="SettingsEditor/0.23.1440.811@0.23.1440.811" timestamp="1575533638598" />
+    <state x="372" y="246" key="com.intellij.ide.util.TipDialog" timestamp="1575519096561">
+      <screen x="0" y="23" width="1440" height="811" />
+    </state>
+    <state x="372" y="246" key="com.intellij.ide.util.TipDialog/0.23.1440.810@0.23.1440.810" timestamp="1575443913686" />
+    <state x="372" y="246" key="com.intellij.ide.util.TipDialog/0.23.1440.811@0.23.1440.811" timestamp="1575519096561" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>ihospital_pojo</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>12</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>

@@ -104,8 +104,9 @@
 	<link rel="stylesheet" href="../plugins/bower_components/fullcalendar/dist/fullcalendar.min.css">
 	<link rel="stylesheet" href="../plugins/bower_components/fullcalendar/dist/fullcalendar.print.min.css" media="print">
     <link rel="stylesheet" href="../plugins/angularjs/pagination.css">
+
 </head>
-<body class="hold-transition skin-purple sidebar-mini" ng-app="ihospital" ng-controller="doctorReplyController" ng-init="initBody()" ng-cloak>
+<body class="hold-transition skin-purple sidebar-mini" ng-app="ihospital" ng-controller="doctorCenterController" ng-init="initBody()" ng-cloak>
     <div class="wrapper">
 		<header class="main-header">
             <!-- Logo -->
@@ -128,20 +129,19 @@
                         <!-- User Account: style can be found in dropdown.less -->
                         <li class="dropdown user user-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-							<img src="../img/user2-160x160.jpg" class="user-image" alt="User Image">
-							<span class="hidden-xs">Nina Mcintire</span>
-							</a>
-                            <ul class="dropdown-menu">
-                                <!-- User image -->
-                                <li class="user-header">
-                                    <img src="../img/user2-160x160.jpg" class="img-circle" alt="User Image">
+	                            <img src="{{doctorEntity.physicianAvatar}}" class="user-image" alt="User Image">
+	                            <span class="hidden-xs">{{doctorEntity.physicianName}}</span>
+                            </a>
+	                        <ul class="dropdown-menu">
+		                        <!-- User image -->
+		                        <li class="user-header">
+			                        <img src="{{doctorEntity.physicianAvatar}}" class="img-circle" alt="User Image">
 
-                                    <p>
-                                        Nina Mcintire
-										
-                                        <small>Director of Respiration Department</small>
-                                    </p>
-                                </li>
+			                        <p>
+				                        {{doctorEntity.physicianName}}
+				                        <small> {{doctorEntity.worktitle}} of {{doctorEntity.departName}}</small>
+			                        </p>
+		                        </li>
                                 <!-- Menu Body 
                         <li class="user-body">
                             <div class="row">
@@ -163,7 +163,7 @@
                                         
                                     </div>
                                     <div class="pull-right">
-                                        <a href="#" class="btn btn-default btn-flat">Log out</a>
+                                        <a href="../logout" class="btn btn-default btn-flat">Log out</a>
                                     </div>
                                 </li>
                             </ul>
@@ -181,10 +181,10 @@
                 <!-- Sidebar user panel -->
                 <div class="user-panel">
                     <div class="pull-left image">
-                        <img src="../img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                        <img src="{{doctorEntity.physicianAvatar}}" class="img-circle" alt="User Image">
                     </div>
                     <div class="pull-left info">
-                        <p>Nina Mcintire</p>
+                        <p>{{doctorEntity.physicianName}}</p>
                         <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                     </div>
                 </div>
@@ -236,11 +236,11 @@
                 <!-- Profile Image -->
                 <div class="box box-primary">
                     <div class="box-body box-profile">
-                        <img class="profile-user-img img-responsive img-circle" src="../img/user2-160x160.jpg" alt="User profile picture">
+                        <img class="profile-user-img img-responsive img-circle" src="{{doctorEntity.physicianAvatar}}" alt="User profile picture">
 
-                        <h3 class="profile-username text-center">Nina Mcintire</h3>
+                        <h3 class="profile-username text-center">{{doctorEntity.physicianName}}</h3>
 
-                        <p class="text-muted text-center">Director of Respiration Department</p>
+                        <p class="text-muted text-center">{{doctorEntity.worktitle}} of {{doctorEntity.departName}}</p>
 
                         <ul class="list-group list-group-unbordered">
                             <li class="list-group-item">
@@ -267,25 +267,24 @@
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
-                        <strong><i class="fa fa-book margin-r-5"></i> Education</strong>
+                        <strong><i class="fa fa-tablet margin-r-5"></i> Phone</strong>
 
                         <p class="text-muted">
-                            Master of Peking University, Ph.D.of  Peking Union Medical College Hospital, former visiting scholar at Mayo Clinic
+                            {{doctorEntity.phoneNumber}}
                         </p>
 
                         <hr>
 
                         <strong><i class="fa fa-map-marker margin-r-5"></i>Email</strong>
 
-                        <p class="text-muted">1528413465@qq.com</p>
+                        <p class="text-muted">{{doctorEntity.email}}</p>
 
                         <hr>
 
-                        <strong><i class="fa fa-pencil margin-r-5"></i>Areas of Expertise</strong>
+                        <strong><i class="fa fa-pencil margin-r-5"></i>Area of Expertise</strong>
 
                         <p>
-                            <span class="label label-danger">pneumonia</span>
-                            <span class="label label-success">bronchitis</span>
+                            <span class="label label-success">{{doctorEntity.expertise}}</span>
                             
                         </p>
 
@@ -293,7 +292,7 @@
 
                         <strong><i class="fa fa-file-text-o margin-r-5"></i>Details</strong>
 
-                        <p>Proficient in lung surgery and bronchial surgery, is one of the best experts in China</p>
+                        <p>{{doctorEntity.briefIntroduction}}</p>
                     </div>
                     <!-- /.box-body -->
                 </div>
@@ -313,7 +312,7 @@
                             <!-- Post -->
                             <div class="post" ng-repeat="comment in commentList">
                                 <div class="user-block">
-                                    <img class="img-circle img-bordered-sm" src="../img/user1-128x128.jpg" alt="user image">
+                                    <img class="img-circle img-bordered-sm" src="{{comment.avatar}}" alt="user image">
                                     <span class="username">
                                         <a href="#">{{comment.patientName}}</a>
                                     </span>
@@ -322,9 +321,12 @@
                                 <!-- /.user-block -->
                                 <p>{{comment.body}}</p>
                                 <div class="box-footer box-comments">
-                                    <div class="box-comment" ng-repeat="reply in comment.replyList">
+                                    <div class="col-sm-3" ng-if="!comment.show">
+                                        <button type="button" class="btn btn-danger pull-right btn-block btn-sm" ng-click="showReply(comment)">Show {{comment.replyCount}} Reply</button>
+                                    </div>
+                                    <div class="box-comment" ng-repeat="reply in comment.replyList" ng-if="comment.show">
                                     <!-- User image -->
-                                        <img class="img-circle img-sm" src="../img/user3-128x128.jpg" alt="User Image">
+                                        <img class="img-circle img-sm" src="{{reply.type == 0 ? doctorEntity.physicianAvatar : comment.avatar}}" alt="User Image">
                                         <div class="comment-text">
                                             <span class="username">{{reply.type == 0 ? comment.physicianName : comment.patientName}}
                                                 <span class="text-muted pull-right">{{reply.time|date:'shortTime'}} {{reply.time|date:"yyyy.MM.dd"}}</span>
@@ -333,6 +335,9 @@
                                             {{reply.body}}
                                         </div>
                                         <!-- /.comment-text -->
+                                    </div>
+                                    <div class="col-sm-3" ng-if="comment.show">
+                                        <button type="button" class="btn btn-danger pull-right btn-block btn-sm" ng-click="showReply(comment)">Hide Reply</button>
                                     </div>
                                 <!-- /.box-comment -->
         <!--                        <div class="box-comment">-->
@@ -381,78 +386,107 @@
                         </div>
                         <!-- /.tab-pane -->
 						<div class="tab-pane" id="pic_upload">
-                                <div class="row data-type">                                  
-								 <!-- 颜色图片 -->
-								 <div class="btn-group">
-					                 <button type="button" class="btn btn-default" title="新建" data-target="#uploadModal"  data-toggle="modal"  ><i class="fa fa-file-o"></i> 新建</button>
-                             		                 
-					             </div>
-								 
+                                <div class="row data-type">
 								 <table class="table table-bordered table-striped table-hover dataTable">
-					                    <thead>
-					                        <tr>
-					                            
-											    <th class="sorting">颜色</th>
-											    <th class="sorting">图片</th>
-												<th class="sorting">操作</th>
-							            </thead>
-					                    <tbody>
-					                      <tr>					                           
-									            <td>
-									            	
-									            </td>
-									            <td>
-									           		<img alt="" src="" width="100px" height="100px">	            	 
-									            </td>
-												 <td> <button type="button" class="btn btn-default" title="删除" ><i class="fa fa-trash-o"></i> 删除</button></td> 
-					                      </tr>
-					                    </tbody>
-								 </table> 
-								  
+                                     <tr>
+                                         <td>
+                                             Picture
+                                         </td>
+                                         <td>
+                                             <input name="picture" type="file" id="file" class="file"/>
+                                         </td>
+                                     </tr>
+                                     <tr>
+                                         <td>
+                                             Show
+                                         </td>
+                                         <td><img src="{{doctorEntity.physicianAvatar}}" width="200px" height="200px">
+                                             <button class="btn btn-primary" type="button" ng-click="uploadFile()">
+                                                 Upload
+                                             </button>
+                                         </td>
+                                     </tr>
+								 </table>
                                 </div>
-                            </div>
+                        </div>
 
                         <div class="tab-pane" id="settings">
-                            <form class="form-horizontal">
+                            <form class="form-horizontal" name="doctorForm" novalidate>
                                 <div class="form-group">
                                     <label for="inputName" class="col-sm-2 control-label">Name</label>
 
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="inputName" placeholder="Name">
+                                        <input type="text" class="form-control" name="inputName"
+                                               ng-model="doctorEntity.physicianName"
+                                               ng-pattern="/^[\u4E00-\u9FA5A-Za-z\s]+(·[\u4E00-\u9FA5A-Za-z]+)*$/"
+                                               placeholder="Name">
+                                        <p ng-show="doctorForm.inputName.$invalid && !doctorForm.inputName.$pristine" class="help-block">
+                                            Wrong Name
+                                        </p>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="inputEmail" class="col-sm-2 control-label">Email</label>
-
                                     <div class="col-sm-10">
-                                        <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                                        <input type="email" class="form-control" name="inputEmail"
+                                               ng-model="doctorEntity.email"
+                                               ng-pattern="/^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/"
+                                               placeholder="Email">
+                                        <p ng-show="doctorForm.inputEmail.$invalid && !doctorForm.inputEmail.$pristine" class="help-block">
+                                            Wrong Email
+                                        </p>
                                     </div>
                                 </div>
                                 
                                 <div class="form-group">
-                                    <label for="inputExperience" class="col-sm-2 control-label">Education</label>
-
+                                    <label for="inputExperience" class="col-sm-2 control-label">Phone</label>
                                     <div class="col-sm-10">
-                                        <textarea class="form-control" id="inputExperience" placeholder="Education"></textarea>
+                                        <input type="text" class="form-control" name="inputPhone"
+                                               ng-model="doctorEntity.phoneNumber"
+                                               ng-pattern="/^1[3456789]\d{9}$/"
+                                               placeholder="Phone">
+                                        <p ng-show="doctorForm.inputPhone.$invalid && !doctorForm.inputPhone.$pristine" class="help-block">
+                                            Wrong PhoneNumber
+                                        </p>
                                     </div>
                                 </div>
+                                <div class="form-group">
+                                    <label for="inputExperience" class="col-sm-2 control-label">OldPwd</label>
+                                    <div class="col-sm-10">
+                                        <input type="password" class="form-control" name="inputOldPwd" placeholder="Old Password" ng-model="oldPwd">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputExperience" class="col-sm-2 control-label">NewPwd</label>
+                                    <div class="col-sm-10">
+                                        <input type="password" class="form-control" name="inputNewPwd"
+                                               ng-model="newPwd"
+                                               ng-pattern="/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/"
+                                               placeholder="New Password">
+                                        <p ng-show="doctorForm.inputNewPwd.$invalid && !doctorForm.inputNewPwd.$pristine " class="help-block">
+                                            Wrong Password
+                                        </p>
+                                    </div>
+                                </div>
+
+
                                 <div class="form-group">
                                     <label for="inputSkills" class="col-sm-2 control-label">Areas of Expertise</label>
 
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="inputSkills" placeholder="Areas of Expertise">
+                                        <input type="text" class="form-control" id="inputSkills" ng-model="doctorEntity.expertise" placeholder="Areas of Expertise">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="inputExperience" class="col-sm-2 control-label">Details</label>
 
                                     <div class="col-sm-10">
-                                        <textarea class="form-control" id="inputExperience" placeholder="Details"></textarea>
+                                        <textarea class="form-control" id="inputExperience" ng-model="doctorEntity.briefIntroduction" placeholder="Details"></textarea>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="col-sm-offset-2 col-sm-10">
-                                        <button type="submit" class="btn btn-danger">Save</button>
+                                        <button type="submit" class="btn btn-danger" ng-click="update()" ng-disabled="doctorForm.$invalid">Save</button>
                                     </div>
                                 </div>
                             </form>
@@ -469,51 +503,6 @@
 
 			</section>
     <!-- /.content -->
-	
-	
-	
-	<div class="modal fade" id="uploadModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog" >
-	<div class="modal-content">
-		<div class="modal-header">
-			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-			<h3 id="myModalLabel">上传商品图片</h3>
-		</div>
-		<div class="modal-body">							
-			
-			<table class="table table-bordered table-striped">
-		      	<tr>
-		      		<td>颜色</td>
-		      		<td><input  class="form-control" placeholder="颜色" >  </td>
-		      	</tr>			    
-		      	<tr>
-		      		<td>商品图片</td>
-		      		<td>
-						<table>
-							<tr>
-								<td>
-								<input type="file" id="file" />				                
-					                <button class="btn btn-primary" type="button" >
-				                   		上传
-					                </button>	
-					            </td>
-								<td>
-									<img  src="" width="200px" height="200px">
-								</td>
-							</tr>						
-						</table>
-		      		</td>
-		      	</tr>		      	
-			 </table>				
-			
-		</div>
-		<div class="modal-footer">						
-			<button class="btn btn-success"  data-dismiss="modal" aria-hidden="true">保存</button>
-			<button class="btn btn-default" data-dismiss="modal" aria-hidden="true">关闭</button>
-		</div>
-	  </div>
-	</div>
-</div>
 
 <div class="modal fade" id="ModifyPwdModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog" >
@@ -592,7 +581,6 @@
     <script src="../plugins/iCheck/icheck.min.js"></script>
     <script src="../plugins/adminLTE/js/app.min.js"></script>
     <script src="../plugins/treeTable/jquery.treetable.js"></script>
-    <script src="../plugins/select2/select2.full.min.js"></script>
     <script src="../plugins/colorpicker/bootstrap-colorpicker.min.js"></script>
     <script src="../plugins/bootstrap-wysihtml5/bootstrap-wysihtml5.zh-CN.js"></script>
     <script src="../plugins/bootstrap-markdown/js/bootstrap-markdown.js"></script>
@@ -620,12 +608,14 @@
     <script src="../plugins/bower_components/fullcalendar/dist/fullcalendar.min.js"></script>
     <script src="../js/base_pagination.js"></script>
     <script src="../js/service/loginService.js"></script>
+    <script src="../js/service/loginService.js"></script>
     <script src="../js/service/doctorService.js"></script>
     <script src="../js/service/replyService.js"></script>
     <script src="../js/service/patientService.js"></script>
     <script src="../js/service/commentService.js"></script>
+    <script src="../js/service/uploadService.js"></script>
     <script src="../js/controller/baseController.js"></script>
-    <script src="../js/controller/doctorReplyController.js"></script>
+    <script src="../js/controller/doctorCenterController.js"></script>
     <script>
         $(document).ready(function() {
             // 选择框

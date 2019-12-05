@@ -137,8 +137,9 @@ public class PhysicianController {
             department = mapper.readValue(data[1],Department.class);
 
             Long departId = physicianService.departNameToId( department.getDepartName() );
-            if (departId==null)
+            if (departId==null) {
                 throw new MyException("error:department not found");
+            }
             physician.setDepartId(departId);
             physicianService.updatePhysician(physician);
             return new Result(true,"success");
@@ -148,7 +149,16 @@ public class PhysicianController {
         }
     }
 
-
+    @RequestMapping(value = "/update.do")
+    public Result update(@RequestBody Physician physician) {
+        try{
+            physicianService.updatePhysician(physician);
+            return new Result(true, "修改成功");
+        }catch (Exception e) {
+            e.printStackTrace();
+            return new Result(false, "修改失败");
+        }
+    }
 
 
 

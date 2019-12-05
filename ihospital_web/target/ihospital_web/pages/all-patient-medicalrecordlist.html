@@ -57,8 +57,10 @@
 	<!-- Bootstrap
 	============================================= -->
     <link rel="stylesheet" href="../css/bootstrap.css">
-	
-	
+	<link rel="stylesheet" href="../plugins/bootstrap-slider/slider.css">
+	<!--date picker-->
+	<link rel="stylesheet" href="../plugins/angular-datepicker/css/ng-bs3-datepicker.css">
+	<link rel="stylesheet" href="../plugins/angular-datepicker/css/font-awesome.css">
 
     
 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -78,7 +80,7 @@
 
 	</head>
 
-<body class="fixed-header">
+<body class="fixed-header" ng-app="ihospital" ng-controller="patientMedicalRecordListController" ng-init="initInfo()">
 	
 	<!-- Document Wrapper
 	============================================= -->
@@ -87,79 +89,81 @@
    
 		    <!-- Header
 		============================================= -->
-		<header id="header" class="medicom-header ">
-		
-			<!-- Top Row
-			============================================= -->
-			<div class="colourfull-row"></div>
-        
-			<div class="container">
-				
-				
-				<!-- Primary Navigation
-				============================================= -->
-				<nav class="navbar navbar-default" role="navigation">
-				
-					<!-- Brand and toggle get grouped for better mobile display
-					============================================= -->
-					
-					<div class="navbar-header">
-						
-						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#primary-nav">
-						  <span class="sr-only">Toggle navigation</span>
-						  <span class="icon-bar"></span>
-						  <span class="icon-bar"></span>
-						  <span class="icon-bar"></span>
-						</button>
-						
-						<a class="navbar-brand" href="index.html"><img src="../images/logo.png" alt="" title=""></a>
-					
-					</div>
-				
-					
-					<div class="collapse navbar-collapse navbar-right" id="primary-nav">
-						
-						<ul class="nav navbar-nav">
-							
-							<li class="dropdown active">
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Home</a>						
-								
-							</li>
-							
-							<li class="dropdown">
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown"></i>Record</a>
-								<ul class="dropdown-menu">                                                                                          
-								  <li><a href="about-us.html">Register</a></li>
-								  <li><a href="about-us2.html">Diagnose</a></li>
-								</ul>
-							</li>
-						  
-							<li class="dropdown">
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Search</a>
-							</li>
-						  
-							
-						  
-							<li class="dropdown last">
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown" >Personal Center</a>
-								<ul class="dropdown-menu">                                                                                          
-									<li><a href="about-us.html">Center</a></li>
-									<li><a href="about-us2.html">Log Out</a></li>
-								</ul>
-							</li>
+	     <!-- Header
+	 ============================================= -->
+	     <header id="header" class="medicom-header ">
 
-						  
-						  
-						  
-						</ul>
-						
-					</div>
-					
-				</nav>
+		     <!-- Top Row
+			 ============================================= -->
+		     <div class="colourfull-row"></div>
 
-			</div>
+		     <div class="container">
 
-    </header>
+
+			     <!-- Primary Navigation
+				 ============================================= -->
+			     <nav class="navbar navbar-default" role="navigation">
+
+				     <!-- Brand and toggle get grouped for better mobile display
+					 ============================================= -->
+
+				     <div class="navbar-header">
+
+					     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#primary-nav">
+						     <span class="sr-only">Toggle navigation</span>
+						     <span class="icon-bar"></span>
+						     <span class="icon-bar"></span>
+						     <span class="icon-bar"></span>
+					     </button>
+
+					     <a class="navbar-brand" href="index.html"><img src="../images/logo.png" alt="" title=""></a>
+
+				     </div>
+
+
+				     <div class="collapse navbar-collapse navbar-right" id="primary-nav">
+
+					     <ul class="nav navbar-nav">
+
+						     <li class="dropdown active">
+							     <a href="src/main/webapp/pages/all-patient-index.html" class="dropdown-toggle">Home</a>
+
+						     </li>
+
+						     <li class="dropdown">
+							     <a href="src/main/webapp/pages/all-patient-departmentlist.html" class="dropdown-toggle">Department</a>
+
+						     </li>
+						     <li class="dropdown">
+							     <a href="src/main/webapp/pages/all-patient-doctorlist.html">Doctor</a>
+
+						     </li>
+						     <li class="dropdown">
+
+							     <a href="src/main/webapp/pages/all-patient-newslist.html" class="dropdown-toggle">News</a>
+
+						     </li>
+						     <li class="dropdown">
+							     <a href="#" class="dropdown-toggle" data-toggle="dropdown"></i>Record</a>
+							     <ul class="dropdown-menu">
+								     <li><a href="src/main/webapp/pages/all-patient-appointlist.html">Register</a></li>
+								     <li><a href="src/main/webapp/pages/all-patient-medicalrecordlist.html">Diagnose</a></li>
+							     </ul>
+						     </li>
+
+						     <li class="dropdown last">
+							     <a href="../logout" class="dropdown-toggle" >Log Out</a>
+
+						     </li>
+					     </ul>
+
+				     </div>
+
+			     </nav>
+
+		     </div>
+
+	     </header>
 		 
 		 
 		    <!-- Sub Page Banner
@@ -194,32 +198,29 @@
 				<div class="search clearfix">
 									
 									
-										<input type="text" placeholder="Search...">
-										<button type="submit" class="search-icon"><i class="fa fa-search"></i></button>
+										<input type="text" ng-model="searchEntity.physicianName" placeholder="Search doctor ">
+										<button type="submit" class="search-icon" ng-click="initInfo()"><i class="fa fa-search"></i></button>
 									
 								</div>
 				</div>
 				<div class="pull-right">
 					<div class="search clearfix">
-									
-									
-										<input type="text" name="datepicker" id="datepicker" placeholder="Appointment Date" onclick="removeChecks();" class="hasDatepicker">
+
+							<div class="">
+								<ng-bs3-datepicker ng-model="searchEntity.time" language="en" date-format="YYYY-MM-DD" placeholder="select date">
+							</div>
+<!--										<input type="text" name="datepicker" id="datepicker" placeholder="Appointment Date" onclick="removeChecks();" class="hasDatepicker">-->
 									
 								</div>
 				
 				
 				</div>
                 </div>			
-					
-					
-					
-					
+
 					<div class="col-md-12 clearfix">
 						<ol class="commentlist">
 								
-								
-								
-								<li class="comment">
+								<li class="comment" ng-repeat="entity in list">
 									
 									<article class="comment-wrapper clearfix"> 
 					
@@ -227,118 +228,21 @@
 										
 										   
 											<div class="comment-head">
-												<span class="comment-author">Department Name</span>
-												<span class="comment-date">September 30, 2013 at 3:21 pm</span>
+
+												<span class="comment-author">{{entity.departName}}</span>
+												<span class="comment-date">{{entity.time}}</span>
+												<span class="comment-id" hidden="true">{{entity.pathoId}}</span>
 												<span class="comment-reply">
-													<a class="comment-reply-link" href="#."><i class="fa fa-reply"></i>More</a>
+													<a class="comment-reply-link" href="src/main/webapp/pages/all-patient-medicalrecordinfo.html?id={{entity.pathoId}}"><i class="fa fa-reply"></i>More</a>
 												</span> 
 											</div>
 					
 											<div class="comment-message">
-											dhlslvhsrnb irsiolsnmboplnwrvmbop;sbmonrs
-											</div>                        
-										
-										
-									</article>
-									
-								</li>
-								
-								
-								<li class="comment">
-									
-									<article class="comment-wrapper clearfix"> 
-					
-					
-										
-										   
-											<div class="comment-head">
-												<span class="comment-author">Department Name</span>
-												<span class="comment-date">September 30, 2013 at 3:21 pm</span>
-												<span class="comment-reply">
-													<a class="comment-reply-link" href="#."><i class="fa fa-reply"></i>More</a>
-												</span> 
+												Physician：{{entity.physicianName}}
 											</div>
-					
-											<div class="comment-message">
-											dhlslvhsrnb irsiolsnmboplnwrvmbop;sbmonrs
-											</div>                        
-										
-										
 									</article>
 									
 								</li>
-								
-								<li class="comment">
-									
-									<article class="comment-wrapper clearfix"> 
-					
-					
-										
-										   
-											<div class="comment-head">
-												<span class="comment-author">Department Name</span>
-												<span class="comment-date">September 30, 2013 at 3:21 pm</span>
-												<span class="comment-reply">
-													<a class="comment-reply-link" href="#."><i class="fa fa-reply"></i>More</a>
-												</span> 
-											</div>
-					
-											<div class="comment-message">
-											dhlslvhsrnb irsiolsnmboplnwrvmbop;sbmonrs
-											</div>                        
-										
-										
-									</article>
-									
-								</li>
-								
-								<li class="comment">
-									
-									<article class="comment-wrapper clearfix"> 
-					
-					
-										
-										   
-											<div class="comment-head">
-												<span class="comment-author">Department Name</span>
-												<span class="comment-date">September 30, 2013 at 3:21 pm</span>
-												<span class="comment-reply">
-													<a class="comment-reply-link" href="#."><i class="fa fa-reply"></i>More</a>
-												</span> 
-											</div>
-					
-											<div class="comment-message">
-											dhlslvhsrnb irsiolsnmboplnwrvmbop;sbmonrs
-											</div>                        
-										
-										
-									</article>
-									
-								</li>
-								<li class="comment">
-									
-									<article class="comment-wrapper clearfix"> 
-					
-					
-										
-										   
-											<div class="comment-head">
-												<span class="comment-author">Department Name</span>
-												<span class="comment-date">September 30, 2013 at 3:21 pm</span>
-												<span class="comment-reply">
-													<a class="comment-reply-link" href="#."><i class="fa fa-reply"></i>More</a>
-												</span> 
-											</div>
-					
-											<div class="comment-message">
-											dhlslvhsrnb irsiolsnmboplnwrvmbop;sbmonrs
-											</div>                        
-										
-										
-									</article>
-									
-								</li>
-								
 							</ol>
 						
 				
@@ -377,36 +281,9 @@
 	
 	</div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	<!-- All Javascript
   ============================================= -->
+	<script src="../js/modernizr-2.6.2.min.js"></script>
 	<script src="../js/jquery.js"></script>
 	<script src="../js/bootstrap.min.js"></script>
 	<script src="../js/jquery.stellar.js"></script>
@@ -423,10 +300,40 @@
 	<script src="../js/jquery.jcarousel.min.js"></script>
 	<script src="../js/jquery.easypiechart.min.js"></script>
 	<script src="../js/scripts.js"></script>
+		 <script src="../plugins/bootstrap-slider/bootstrap-slider.js"></script>
 
-	
-    <script>
-		
+		 <script type="text/javascript" src="../plugins/angularjs/angular.min.js"></script>
+		 <script src="../plugins/angular-datepicker/js/moment.js"></script>
+		 <script src="../plugins/angular-datepicker/js/ng-bs3-datepicker.js" charset="utf-8"></script>
+
+		 <script type="text/javascript" >
+
+			 var app=angular.module('ihospital',['ng-bs3-datepicker']);
+		 </script>
+    <script type="text/javascript">
+		app.controller('patientMedicalRecordListController',function($scope,$http){
+			//获取登录名:病人的电话号码
+			$scope.loginNumber="";
+			//条件查询
+			$scope.searchEntity={};
+			$scope.initInfo = function () {
+
+				$http.get('../login/name.do').success(
+						function(response){
+							$scope.loginNumber=response.loginName;
+							$scope.findAll();
+
+						}
+				)
+			};
+			$scope.findAll=function(){
+				$http.post('../patientMedical/findAll.do?phoneNumber='+$scope.loginNumber,$scope.searchEntity).success(
+						function(response){
+							$scope.list=response;
+						}
+				)
+			}
+		});
 		(function () {
 			
 			// Revolution slider
@@ -467,14 +374,7 @@
 			checkWidth();
 			// Bind event listener
 			$(window).resize(checkWidth);
-			
-			
-			
-			
 
-			
-			
-		
 		})(jQuery);
 
 	</script>

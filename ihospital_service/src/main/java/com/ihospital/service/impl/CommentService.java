@@ -46,6 +46,7 @@ public class CommentService implements ICommentService {
         commentItem.setBody(consultation.getBody());
         commentItem.setPatientName(patientMapper.selectByPrimaryKey(consultation.getPatientId()).getPatientName());
         commentItem.setPhysicianName(physicianMapper.selectByPrimaryKey(consultation.getPhysicianId()).getPhysicianName());
+        commentItem.setReplyCount(consultation.getReplyCount());
         return commentItem;
     }
 

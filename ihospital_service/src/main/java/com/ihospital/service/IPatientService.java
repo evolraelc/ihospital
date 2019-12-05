@@ -3,6 +3,7 @@ package com.ihospital.service;
 import com.ihospital.pojo.Patient;
 import entity.MyException;
 import entity.PageResult;
+import entity.PatientInfo;
 
 import java.util.List;
 
@@ -92,4 +93,6 @@ public interface IPatientService {
      * @return 病人实体
      */
     Patient getPatientByPhone(String phone);
+
+    void updatePatient(PatientInfo patientInfo) throws MyException;
 }

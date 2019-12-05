@@ -14,7 +14,7 @@ public class Consultation implements Serializable {
 
     private Integer replyCount;
 
-    private Integer lastReplyId;
+    private Long lastReplyId;
 
     private Long patientId;
 
@@ -58,11 +58,11 @@ public class Consultation implements Serializable {
         this.replyCount = replyCount;
     }
 
-    public Integer getLastReplyId() {
+    public Long getLastReplyId() {
         return lastReplyId;
     }
 
-    public void setLastReplyId(Integer lastReplyId) {
+    public void setLastReplyId(Long lastReplyId) {
         this.lastReplyId = lastReplyId;
     }
 

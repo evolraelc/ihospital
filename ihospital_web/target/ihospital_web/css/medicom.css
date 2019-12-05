@@ -852,6 +852,14 @@ APPOINTMENT 2
 	width:64%;
 	margin-bottom:10px;
 }
+.appointment-sec2 .myselect2 {
+	width:100%;
+	margin-bottom:10px;
+}
+.appointment-sec2 .mydatepicker {
+	width:97%;
+	margin-bottom:10px;
+}
 .appointment-sec2 .selector {
 	margin-bottom:10px !important;
 	width:64% !important
@@ -862,6 +870,9 @@ APPOINTMENT 2
 	margin-bottom:10px;
 }
 .appointment-sec2 input[type="submit"] {
+	margin:0 0 0 33%;
+}
+.appointment-sec2 input[type="button"] {
 	margin:0 0 0 33%;
 }
 
@@ -2895,7 +2906,7 @@ LATEST NEWS ( blog )
 }
 .blog-thumbnail2 img {
 	display: block;
-	width: 100%;
+	width:1420px;height:670px
 	
 }
 .blog-date {
@@ -3776,4 +3787,13 @@ COLOR SWITCHER ONLY FOR DEMO
  
 .imgscale-down {
   object-fit: scale-down;
+}
+
+.mydatepicker input[type="text"] {
+	width: 100%;
+	margin-bottom: 0;
+}
+.myselect2 .inner{
+	width: 64%;
+
 }

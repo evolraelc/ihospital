@@ -143,17 +143,17 @@ app.controller('patientController', function ($scope, $http , $controller,patien
     $scope.patientForm.$setPristine();
 
   };
-  //轮询
-  var stop;
-  $scope.$on(
-    '$ionicView.beforeLeave',function () {
-      $interval.cancel(stop);//离开后停止轮询
-    }
-  )
-  stop=$interval(function () {
-    $scope.reloadList();
-
-  },6000);
+  // //轮询
+  // var stop;
+  // $scope.$on(
+  //   '$ionicView.beforeLeave',function () {
+  //     $interval.cancel(stop);//离开后停止轮询
+  //   }
+  // )
+  // stop=$interval(function () {
+  //   $scope.reloadList();
+  //
+  // },6000);
 
 
 

@@ -22,6 +22,8 @@ app.controller('doctorWorkController', function ($scope, $http, doctorService, u
 
     $scope.getLoginId();
     $scope.Datetime = new Date();
+    $scope.entity = {pathography: {}, drugList: []};
+    $scope.appointEntity={};
     $scope.nowDate = $filter('date')($scope.Datetime, "yyyy-MM-dd");//获取当前日期
     $scope.findConfigOfDrug();
     $scope.findConfigOfDepartment();
@@ -43,9 +45,10 @@ app.controller('doctorWorkController', function ($scope, $http, doctorService, u
   $scope.isSubmited = 0;//默认当前表单没有提交
   $scope.isAppointed = 0;//默认初始没有转诊
 
-  $scope.currentpatient = {};
+
   $scope.getNextPatient = function (date, deptId) {
     if ($scope.isInit == 1||($scope.isSubmited == 1 && $scope.isAppointed==1)) {
+
       doctorService.getNextPatient(date, deptId).success(
         function (response) {
           $scope.isInit = 0;
@@ -54,8 +57,13 @@ app.controller('doctorWorkController', function ($scope, $http, doctorService, u
           $scope.isAppointed=0;
           $scope.entity = {pathography: {}, drugList: []};
           $scope.appointEntity={};
+
+
+
           //$scope.getPatients($scope.nowDate,$scope.doctorEntity.departId);
+
           $scope.currentpatient = response;
+          $scope.picture=$scope.currentpatient.patient.userAvatar;
           $scope.entity.pathography.patientId = $scope.currentpatient.patient.patientId;
           $scope.entity.pathography.appointId = $scope.currentpatient.appointment.appointmentId;
           $scope.entity.pathography.physicianId = $scope.doctorEntity.physicianId;
@@ -92,9 +100,10 @@ app.controller('doctorWorkController', function ($scope, $http, doctorService, u
     $scope.getDrug();
 
 
-  }, 100);
+  }, 100000);
 
   $scope.getDrug = function () {
+
     $scope.entity.drugList.forEach(
       function (e) {
         doctorService.getPrice(e.medicineId).success(

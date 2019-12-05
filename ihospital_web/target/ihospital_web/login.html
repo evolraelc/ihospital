@@ -28,9 +28,10 @@
     <link rel="stylesheet" href="/plugins/ionicons/css/ionicons.min.css">
     <link rel="stylesheet" href="/plugins/adminLTE/css/AdminLTE.css">
     <link rel="stylesheet" href="/plugins/iCheck/square/blue.css">
+
 </head>
 
-<body class="hold-transition login-page">
+<body class="hold-transition login-page" ng-app="ihospital" ng-controller="loginController">
     <div class="login-box">
         <div class="login-logo">
 
@@ -54,27 +55,128 @@
                 </div>
                 <div class="row">
                     <div class="col-xs-8">
-                        <div class="checkbox icheck">
-                            <label><input type="checkbox"> 记住 下次自动登录</label>
-                        </div>
+
                     </div>
                     <!-- /.col -->
                     <div class="col-xs-4">
-                        <button type="submit" class="btn btn-primary btn-block btn-flat">登录</button>
+                        <button type="submit" class="btn btn-primary btn-block btn-flat">Login</button>
                     </div>
                     <!-- /.col -->
                 </div>
             </form>
-
-
-
-            <a href="#">忘记密码</a><br>
-            <a href="all-admin-register.html" class="text-center">新用户注册</a>
+            <a class="text-center" data-toggle="modal" data-target="#NewModal" ng-click="initForm()">Register</a>
 
         </div>
         <!-- /.login-box-body -->
     </div>
     <!-- /.login-box -->
+
+    <div class="modal fade" id="NewModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form name="patientForm"  novalidate>
+                <div class="modal-header">
+                    <!--        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>-->
+                    <h3 id="myModalLabel">New Patient</h3>
+                </div>
+                <div class="modal-body">
+
+                    <table class="table table-bordered table-striped" width="800px">
+                        <tr>
+                            <td>Name</td>
+                            <td>
+                                <input name="name" class="form-control" placeholder="Patient Name" ng-model="entity.patientName"  ng-pattern="/^[\u4E00-\u9FA5A-Za-z\s]+(·[\u4E00-\u9FA5A-Za-z]+)*$/" required>
+                                <p ng-show="patientForm.name.$invalid && !patientForm.name.$pristine" class="help-block">Wrong Input</p>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Age</td>
+                            <td>
+                                <input name="age" class="form-control" placeholder="Patient Age" ng-model="entity.patientAge"ng-pattern="/^(?:[1-9][0-9]?|1[01][0-9]|120)$/" required >
+                                <p ng-show="patientForm.age.$invalid && !patientForm.age.$pristine " class="help-block">Wrong Input</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Sex</td>
+                            <!--  https://segmentfault.com/a/1190000007567520 anjularjs和下拉框 -->
+                            <td>
+                                <!--              <select class="form-control" ng-model="entity.patientGenderStr">-->
+                                <!--                <option>Male</option>-->
+                                <!--                <option>Female</option>-->
+                                <!--              </select>-->
+                                <!--              <input select2 config="sexList"  select2-model="entity.patientGenderStr" class="form-control" placeholder="Sex">-->
+                                <input type="radio" ng-model="entity.patientGenderStr" value="Male">Male
+                                <input type="radio" ng-model="entity.patientGenderStr" value="Female">Female
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td>Idcard</td>
+                            <td>
+                                <input name="idcard" class="form-control" placeholder="Patient Idcard" ng-model="entity.idcard" ng-pattern="/(^[1-9]\d{5}(18|19|([23]\d))\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{3}[0-9Xx]$)|(^[1-9]\d{5}\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{3}$)/" required>
+                                <p ng-show="patientForm.idcard.$invalid && !patientForm.idcard.$pristine" class="help-block">Wrong Input</p>
+
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td>Phone</td>
+                            <td>
+                                <input name="phone" class="form-control" placeholder="Patient Phone"ng-model="entity.phoneNumber" ng-pattern="/^[1](([3][0-9])|([4][5-9])|([5][0-3,5-9])|([6][5,6])|([7][0-8])|([8][0-9])|([9][1,8,9]))[0-9]{8}$/" required >
+                                <p ng-show="patientForm.phone.$invalid && !patientForm.phone.$pristine" class="help-block">Wrong Input</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Password</td>
+                            <td>
+                                <input name="newPwd" class="form-control" placeholder="Password" type="password"
+                                       ng-model="entity.pwd" ng-pattern="/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/" required>
+                                <p ng-show="patientForm.newPwd.$invalid && !patientForm.newPwd.$pristine " class="help-block">
+                                    Wrong Input</p>
+                            </td>
+                        </tr>
+                        <!-- 图片上传参考如果不行的话就使用老方法 https://blog.csdn.net/maple980326/article/details/51828802
+				https://www.cnblogs.com/kevin19900306/p/5459859.html  https://www.google.com/search?q=anjularjs%E6%80%8E%E4%B9%88%E4%BD%BF%E7%94%A8bootstrapFileinput&ie=utf-8  -->
+                        <tr>
+
+                            <td>
+
+                                Picture
+                            </td>
+                            <td>
+
+                                <input name="picture" type="file" id="file" class="file" />
+
+                            </td>
+
+
+                        </tr>
+                        <tr>
+                            <td>
+                                Show
+                            </td>
+                            <td><img src="{{entity.userAvatar}}" width="200px" height="200px">
+
+                                <button class="btn btn-primary" type="button" ng-click="uploadFile()">
+                                    Upload
+                                </button>
+                            </td>
+                        </tr>
+
+                    </table>
+
+                </div>
+                <div class="modal-footer">
+                    <!--        <button class="btn btn-success" data-dismiss="modal" aria-hidden="true" type="submit" ng-click="addPatient()" >Save</button>-->
+                    <button class="btn btn-success" data-dismiss="modal" aria-hidden="true" type="submit" ng-click="addPatient()" ng-disabled="patientForm.$invalid" >Save</button>
+                    <button class="btn btn-default" data-dismiss="modal" aria-hidden="true" ng-click="resetFile()">Close</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    </div>
+
 
     <!-- jQuery 2.2.3 -->
     <!-- Bootstrap 3.3.6 -->
@@ -82,15 +184,22 @@
     <script src="/plugins/jQuery/jquery-2.2.3.min.js"></script>
     <script src="/plugins/bootstrap/js/bootstrap.min.js"></script>
     <script src="/plugins/iCheck/icheck.min.js"></script>
+    <script type="text/javascript" src="/plugins/angularjs/angular.min.js"></script>
     <script>
-        $(function() {
-            $('input').iCheck({
-                checkboxClass: 'icheckbox_square-blue',
-                radioClass: 'iradio_square-blue',
-                increaseArea: '20%' // optional
-            });
-        });
+        var app = angular.module('ihospital', []);//定义医院模块
     </script>
+    <script src="/js/service/patientService.js"></script>
+    <script src="/js/service/uploadService.js"></script>
+    <script src="../../../../../../Downloads/update/js/service/loginService.js"></script>
+
+    <script src="/js/controller/loginController.js"></script>
+
+
+
+
+
+
+
 </body>
 
 </html>

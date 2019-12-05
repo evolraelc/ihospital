@@ -140,21 +140,17 @@
 			</a>
 
 			<div class="navbar-custom-menu">
-
-
 				<ul class="nav navbar-nav">
-
-
 					<!-- User Account: style can be found in dropdown.less -->
 					<li class="dropdown user user-menu">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-							<img src="../img/user2-160x160.jpg" class="user-image" alt="User Image">
+							<img src="{{doctorEntity.physicianAvatar}}" class="user-image" alt="User Image">
 							<span class="hidden-xs">{{doctorEntity.physicianName}}</span>
 						</a>
 						<ul class="dropdown-menu">
 							<!-- User image -->
 							<li class="user-header">
-								<img src="../img/user2-160x160.jpg" class="img-circle" alt="User Image">
+								<img src="{{doctorEntity.physicianAvatar}}" class="img-circle" alt="User Image">
 
 								<p>
 									{{doctorEntity.physicianName}}
@@ -182,7 +178,7 @@
 									<a href="#" class="btn btn-default btn-flat">Setting</a>
 								</div>
 								<div class="pull-right">
-									<a href="#" class="btn btn-default btn-flat">Log out</a>
+									<a href="../logout" class="btn btn-default btn-flat">Log out</a>
 								</div>
 							</li>
 						</ul>
@@ -203,7 +199,7 @@
 			<!-- Sidebar user panel -->
 			<div class="user-panel">
 				<div class="pull-left image">
-					<img src="../img/user2-160x160.jpg" class="img-circle" alt="User Image">
+					<img src="{{doctorEntity.physicianAvatar}}" class="img-circle" alt="User Image">
 				</div>
 				<div class="pull-left info">
 					<p>{{doctorEntity.physicianName}}</p>
@@ -274,7 +270,8 @@
 								<i class="fa fa-bell-o"></i>
 								<span class="label label-warning">{{list.length}}</span>
 								<button type="button" class="btn  btn-default btn-sm"
-								        ng-click="getNextPatient(nowDate,doctorEntity.departId)"><i class="fa fa-random"></i>
+								        ng-click="getNextPatient(nowDate,doctorEntity.departId)"><i
+									class="fa fa-random"></i>
 								</button>
 
 
@@ -286,24 +283,26 @@
 						<!-- /.box-header -->
 						<div class="box-body" style="height:550px;overflow-y:auto">
 							<div class="user-block">
-								<img class="img-circle" src="../img/user1-128x128.jpg" alt="User Image">
+								<img class="img-circle" src="{{picture}}" alt="">
 								<span class="username"><a href="#">{{currentpatient.patient.patientName}}</a></span>
 								<span class="description">Age:{{currentpatient.patient.patientAge}}</span>
 							</div>
-							<ul class="contacts-list">
+							<ul class="contacts-list" ng-cloak>
 								<li ng-repeat="patiententity in list">
-									<a href="#">
-										<img class="contacts-list-img" src="../img/user1-128x128.jpg" alt="User Image">
 
-										<div class="contacts-list-info">
+<!--										<img class="contacts-list-img" src="{{patiententity.patient.userAvatar}}" alt="">-->
+
+
+
+									<div class="contacts-list-info">
                             <span class="contacts-list-name">
                               {{patiententity.patient.patientName}}
                               <small class="contacts-list-date pull-right"></small>
                             </span>
-											<span class="contacts-list-msg">Age:{{patiententity.patient.patientAge}}</span>
-										</div>
-										<!-- /.contacts-list-info -->
-									</a>
+										<span class="contacts-list-msg">Age:{{patiententity.patient.patientAge}}</span>
+									</div>
+									<!-- /.contacts-list-info -->
+
 								</li>
 								<!-- End Contact Item -->
 							</ul>
@@ -344,8 +343,6 @@
 										</div>
 
 
-
-
 										<div class="col-md-1 title">Name</div>
 										<div class="col-md-2 data text">
 											{{currentpatient.patient.patientName}}
@@ -367,8 +364,9 @@
 										</div>
 
 										<div class="col-md-1 title rowHeight2x">Details</div>
-										<div class="col-md-11 data rowHeight2x" >
-											<textarea class="form-control" rows="3" placeholder="..." ng-model="entity.pathography.narrative"></textarea>
+										<div class="col-md-11 data rowHeight2x">
+											<textarea class="form-control" rows="3" placeholder="..."
+											          ng-model="entity.pathography.narrative"></textarea>
 										</div>
 
 
@@ -379,8 +377,10 @@
 
 								<div class="form-group">
 
-									<button type="button" class="btn btn-primary" ng-click="addDrugRow()">Add Drug</button>
-									<button type="button" class="btn btn-primary" ng-click="getTotalPrice()">Get Total</button>
+									<button type="button" class="btn btn-primary" ng-click="addDrugRow()">Add Drug
+									</button>
+									<button type="button" class="btn btn-primary" ng-click="getTotalPrice()">Get Total
+									</button>
 
 
 									<div class=" row data-type">
@@ -401,19 +401,25 @@
 											<tr ng-repeat="pojo in entity.drugList">
 												<td>
 
-													<input select2  ng-model="pojo.medicineId" config="medicineList" placeholder="Choose Drug" class="form-control" type="text"/>
+													<input select2 ng-model="pojo.medicineId" config="medicineList"
+													       placeholder="Choose Drug" class="form-control" type="text"/>
 												</td>
 												<td>
-													<input type="number" ng-model="pojo.num" ng-keypress="checkNum($event,pojo.num)"
-													       ng-disabled="readonly" min="1"  autocomplete="off"   οnpaste="return false;" class="form-control">
+													<input type="number" ng-model="pojo.num"
+													       ng-keypress="checkNum($event,pojo.num)"
+													       ng-disabled="readonly" min="1" autocomplete="off"
+													       οnpaste="return false;" class="form-control">
 
-<!--													<input class="form-control" placeholder="Drug Num" ng-model="pojo.num" type="number">-->
+													<!--													<input class="form-control" placeholder="Drug Num" ng-model="pojo.num" type="number">-->
 												</td>
 												<td>
-													<input class="form-control" placeholder="Drug Price"  ng-model="pojo.price" readonly="true">
+													<input class="form-control" placeholder="Drug Price"
+													       ng-model="pojo.price" readonly="true">
 												</td>
 												<td class="text-center">
-													<button type="button" class="btn btn-primary" ng-click="deleteDrugRow($index)">Delete</button>
+													<button type="button" class="btn btn-primary"
+													        ng-click="deleteDrugRow($index)">Delete
+													</button>
 												</td>
 
 											</tr>
@@ -429,12 +435,15 @@
 												{{totalPrice}} RMB
 											</div>
 											<div class="col-md-1 title rowHeight2x">Advice</div>
-											<div class="col-md-11 data rowHeight2x" >
-												<textarea class="form-control" rows="3" placeholder="..." ng-model="entity.pathography.diagnosis"></textarea>
+											<div class="col-md-11 data rowHeight2x">
+												<textarea class="form-control" rows="3" placeholder="..."
+												          ng-model="entity.pathography.diagnosis"></textarea>
 											</div>
 											<div class="col-md-1 title"></div>
 											<div class="col-md-11 data text-center">
-												<button type="button" class="btn btn-primary " ng-click="save()">Submit</button>
+												<button type="button" class="btn btn-primary " ng-click="save()">
+													Submit
+												</button>
 
 											</div>
 
@@ -446,14 +455,16 @@
 
 											<div class="col-md-1 title">Dept.</div>
 											<div class="col-md-3 data">
-												<input select2 ng-model="appointEntity.deptId" class="form-control" config="departmentList" placeholder="Choose Department" >
+												<input select2 ng-model="appointEntity.deptId" class="form-control"
+												       config="departmentList" placeholder="Choose Department">
 											</div>
 
 											<div class="col-md-1 title">Date</div>
 											<div class="col-md-3 data">
 												<div class="input-group date">
 
-													<ng-bs3-datepicker ng-model="appointEntity.treatTime" language="en" date-format="YYYY-MM-DD">
+													<ng-bs3-datepicker ng-model="appointEntity.treatTime" language="en"
+													                   date-format="YYYY-MM-DD">
 												</div>
 
 											</div>
@@ -461,13 +472,18 @@
 
 											<div class="col-md-1 title">Type</div>
 											<div class="col-md-3 data">
-												<input select2 ng-model="appointEntity.priority" class="form-control" config="typeList" placeholder="Choose Type" >
+												<input select2 ng-model="appointEntity.priority" class="form-control"
+												       config="typeList" placeholder="Choose Type">
 											</div>
 
 											<div class="col-md-1 title"></div>
 											<div class="col-md-11 data text-center">
-												<button type="button" class="btn btn-primary " ng-click="appoint()">Appoint</button>
-												<button type="button" class="btn bg-default " ng-click="justNext()">JustNext</button>
+												<button type="button" class="btn btn-primary " ng-click="appoint()">
+													Appoint
+												</button>
+												<button type="button" class="btn bg-default " ng-click="justNext()">
+													JustNext
+												</button>
 											</div>
 
 										</div>

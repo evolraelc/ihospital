@@ -9,6 +9,7 @@ import com.ihospital.pojo.PatientExample;
 import com.ihospital.service.IPatientService;
 import entity.MyException;
 import entity.PageResult;
+import entity.PatientInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -139,5 +140,39 @@ public class PatientService implements IPatientService {
             patient = list.get(0);
         }
         return patient;
+    }
+
+    @Override
+    public void updatePatient(PatientInfo patientInfo) throws MyException {
+        Patient patient=patientMapper.selectByPrimaryKey(patientInfo.getPatientId());
+        if (!patientInfo.getOldPwd().equals("")){
+            if (patient.getPwd()==null){
+                if (patientInfo.getOldPwd().equals("123456")){
+                    patient.setPatientAge(patientInfo.getPatientAge());
+                    patient.setPatientName(patientInfo.getPatientName());
+                    patient.setPwd(patientInfo.getNewPwd());
+                    patient.setUserAvatar(patientInfo.getUserAvatar());
+                    patientMapper.updateByPrimaryKey(patient);
+                } else{
+                    throw new MyException("Password is not right!");
+                }
+            }
+
+            else if (!patientInfo.getOldPwd().equals(patient.getPwd())){
+                throw new MyException("Password is not right!");
+
+            } else{
+                patient.setPatientAge(patientInfo.getPatientAge());
+                patient.setPatientName(patientInfo.getPatientName());
+                patient.setPwd(patientInfo.getNewPwd());
+                patient.setUserAvatar(patientInfo.getUserAvatar());
+                patientMapper.updateByPrimaryKey(patient);
+            }
+        } else{
+            patient.setPatientAge(patientInfo.getPatientAge());
+            patient.setPatientName(patientInfo.getPatientName());
+            patient.setUserAvatar(patientInfo.getUserAvatar());
+            patientMapper.updateByPrimaryKey(patient);
+        }
     }
 }

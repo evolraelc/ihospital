@@ -19,6 +19,15 @@ public class CommentItem implements Serializable {
     private String physicianName;
     private Date createTime;
     private String body;
+    private Integer replyCount;
+
+    public Integer getReplyCount() {
+        return replyCount;
+    }
+
+    public void setReplyCount(Integer replyCount) {
+        this.replyCount = replyCount;
+    }
 
     public String getBody() {
         return body;

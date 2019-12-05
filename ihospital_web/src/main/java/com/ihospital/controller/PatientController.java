@@ -4,6 +4,7 @@ import com.ihospital.pojo.Patient;
 import com.ihospital.service.IPatientService;
 import entity.MyException;
 import entity.PageResult;
+import entity.PatientInfo;
 import entity.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -50,6 +51,20 @@ public class PatientController {
             return new Result(false, e.getMessage());
         }
     }
+
+    @ResponseBody
+    @RequestMapping("/updatePatient.do")
+    public Result updatePatient(@RequestBody PatientInfo patientInfo) {
+        try {
+            patientService.updatePatient(patientInfo);
+            return new Result(true, "Update Success");
+
+        } catch (Exception e) {
+
+            return new Result(false, e.getMessage());
+        }
+    }
+
 
     @RequestMapping("/reversePatient.do")
     public Result reversePatient(Long id) {
@@ -102,7 +117,8 @@ public class PatientController {
         return patientService.getPatientByPhone(phone);
     }
 
-    
-
-
+    @RequestMapping("/findOne.do")
+    public Patient findOne(Long patientId) {
+        return patientService.findOne(patientId);
+    }
 }

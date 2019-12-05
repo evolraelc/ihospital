@@ -18,27 +18,23 @@ app.controller('patientReplyController', function ($scope, $controller, loginSer
             }
         )
     };
+    $scope.physicianId = 2;
+    $scope.doctorEntity = {};
+    $scope.getDoctor = function() {
+        doctorService.findOne($scope.physicianId).success(
+            function (response) {
+                $scope.doctorEntity = response;
+            }
+        );
+    };
     //初始化
     $scope.initBody = function () {
         $scope.getPhone();
+        $scope.getDoctor();
     };
-    // $scope.paginationConf = {
-    //     currentPage: 1,
-    //     totalItems: 5,
-    //     itemsPerPage: 5,
-    //     perPageOptions: [5, 10, 15, 20],
-    //     onChange: function () {
-    //         $scope.reloadList();
-    //     }
-    // };
-    // $scope.reloadList = function () {
-    //     $scope.search($scope.paginationConf.currentPage, $scope.paginationConf.itemsPerPage);
-    // };
-    $scope.physicianId = 2;
     $scope.searchEntity = {};
     $scope.commentList = {};
     $scope.search = function (pageNum, pageSize) {
-        if($scope.doctorEntity === {}) return;
         $scope.searchEntity.physicianId = $scope.physicianId;
         commentService.search(pageNum, pageSize, $scope.searchEntity).success(
             function (response) {
@@ -46,6 +42,11 @@ app.controller('patientReplyController', function ($scope, $controller, loginSer
                 $scope.paginationConf.totalItems = response.total;
                 for(let i = 0; i < response.rows.length; i++) {
                     (function(e) {
+                        patientService.findOne($scope.commentList[e].patientId).success(
+                            function (response) {
+                                $scope.commentList[e].avatar = response.userAvatar;
+                            }
+                        );
                         replyService.getReplyList($scope.commentList[e].consultId).success(
                             function (response) {
                                 $scope.commentList[e].replyList = response;

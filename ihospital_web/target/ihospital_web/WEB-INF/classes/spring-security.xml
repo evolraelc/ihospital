@@ -12,7 +12,9 @@
   <http pattern="/images/**" security="none" />
   <http pattern="/js/**" security="none" />
   <http pattern="/plugins/**" security="none" />
-  <http pattern="/user/add.do" security="none"/>
+  <http pattern="/upload2.do" security="none"/>
+  <http pattern="/patient/addPatient.do" security="none"/>
+  <http pattern="/uploads/**" security="none"/>
 
 
 
