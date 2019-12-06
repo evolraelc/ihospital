@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <base href="" />
+	<!-- Basic Page Needs
+
+     ================================================== -->
+	 
+	 <meta charset="utf-8">
+	 
+	 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    
+	 <link rel="icon" type="image/png" href="../images/favicon.png">
+	
+     <title>Medicom</title>
+    
+     <meta name="description" content="">
+    
+     <meta name="keywords" content="">
+    
+     <meta name="author" content="">
+
+	 
+	 <!-- Mobile Specific Metas
+    
+     ================================================== -->
+    
+     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+    
+     <meta name="format-detection" content="telephone=no">
+
+	 
+	 <!-- Web Font
+	 ============================================= -->
+	 <link rel="stylesheet" href="../css/googlefont.css">
+	 
+	
+	<!-- CSS
+    
+     ================================================== -->
+	 
+	 
+	<!-- Theme Color
+	============================================= -->
+	<link rel="stylesheet" id="color" href="../css/blue.css">
+    
+	
+	<!-- Medicom Style
+	============================================= -->
+    <link rel="stylesheet" href="../css/medicom.css">
+
+	
+	<!-- Bootstrap
+	============================================= -->
+    <link rel="stylesheet" href="../css/bootstrap.css">
+
+    
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.../js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+
+<!--	  <link rel="stylesheet" href="../plugins/bootstrap/css/bootstrap.min.css">-->
+<!--	  <link rel="stylesheet" href="../plugins/font-awesome/css/font-awesome.min.css">-->
+<!--	  <link rel="stylesheet" href="../plugins/ionicons/css/ionicons.min.css">-->
+<!--	  <link rel="stylesheet" href="../plugins/iCheck/square/blue.css">-->
+<!--	  <link rel="stylesheet" href="../plugins/morris/morris.css">-->
+<!--	  <link rel="stylesheet" href="../plugins/jvectormap/jquery-jvectormap-1.2.2.css">-->
+<!--	  <link rel="stylesheet" href="../plugins/datepicker/datepicker3.css">-->
+<!--	  <link rel="stylesheet" href="../plugins/daterangepicker/daterangepicker.css">-->
+<!--	  <link rel="stylesheet" href="../plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">-->
+<!--	  <link rel="stylesheet" href="../plugins/datatables/dataTables.bootstrap.css">-->
+<!--	  <link rel="stylesheet" href="../plugins/treeTable/jquery.treetable.css">-->
+<!--	  <link rel="stylesheet" href="../plugins/treeTable/jquery.treetable.theme.default.css">-->
+<!--	  <link rel="stylesheet" href="../plugins/select2/select2.css">-->
+<!--	  <link rel="stylesheet" href="../plugins/colorpicker/bootstrap-colorpicker.min.css">-->
+<!--	  <link rel="stylesheet" href="../plugins/bootstrap-markdown/css/bootstrap-markdown.min.css">-->
+<!--	  <link rel="stylesheet" href="../plugins/adminLTE/css/AdminLTE.css">-->
+<!--	  <link rel="stylesheet" href="../plugins/adminLTE/css/skins/_all-skins.min.css">-->
+<!--	  <link rel="stylesheet" href="../css/style.css">-->
+<!--	  <link rel="stylesheet" href="../plugins/ionslider/ion.rangeSlider.css">-->
+<!--	  <link rel="stylesheet" href="../plugins/ionslider/ion.rangeSlider.skinNice.css">-->
+<!--	  <link rel="stylesheet" href="../plugins/bootstrap-slider/slider.css">-->
+<!--	  <link rel="stylesheet" href="../plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.css">-->
+
+	  <link rel="stylesheet" href="../plugins/angular-datepicker/css/ng-bs3-datepicker.css">
+
+
+
+	  <!-- SCRIPTS
+
+       ================================================== -->
+	
+	<script src="../js/modernizr-2.6.2.min.js"></script>
+	
+
+
+	</head>
+    <body class="fixed-header" ng-app="ihospital3" ng-controller="displaynewsController"
+		  ng-init="findOne()">
+	
+		
+    
+		<!-- Document Wrapper
+		============================================= -->
+		<div id="wrapper" class="clearfix">
+    
+    
+			<!-- Header
+			============================================= -->
+			<!-- Header
+	============================================= -->
+			<header id="header" class="medicom-header ">
+
+				<!-- Top Row
+				============================================= -->
+				<div class="colourfull-row"></div>
+
+				<div class="container">
+
+
+					<!-- Primary Navigation
+					============================================= -->
+					<nav class="navbar navbar-default" role="navigation">
+
+						<!-- Brand and toggle get grouped for better mobile display
+						============================================= -->
+
+						<div class="navbar-header">
+
+							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#primary-nav">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+
+							<a class="navbar-brand" href="index.html"><img src="../images/logo.png" alt="" title=""></a>
+
+						</div>
+
+
+						<div class="collapse navbar-collapse navbar-right" id="primary-nav">
+
+							<ul class="nav navbar-nav">
+
+								<li class="dropdown active">
+									<a href="src/main/webapp/pages/all-patient-index.html" class="dropdown-toggle">Home</a>
+
+								</li>
+
+								<li class="dropdown">
+									<a href="src/main/webapp/pages/all-patient-departmentlist.html" class="dropdown-toggle">Department</a>
+
+								</li>
+								<li class="dropdown">
+									<a href="src/main/webapp/pages/all-patient-doctorlist.html">Doctor</a>
+
+								</li>
+								<li class="dropdown">
+
+									<a href="src/main/webapp/pages/all-patient-newslist.html" class="dropdown-toggle">News</a>
+
+								</li>
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown"></i>Record</a>
+									<ul class="dropdown-menu">
+										<li><a href="src/main/webapp/pages/all-patient-appointlist.html">Register</a></li>
+										<li><a href="src/main/webapp/pages/all-patient-medicalrecordlist.html">Diagnose</a></li>
+									</ul>
+								</li>
+
+								<li class="dropdown last">
+									<a href="../logout" class="dropdown-toggle" >Log Out</a>
+
+								</li>
+							</ul>
+
+						</div>
+
+					</nav>
+
+				</div>
+
+			</header>
+			
+			
+			
+			<!-- Sub Page Banner
+			============================================= -->
+			<section class="sub-page-banner text-center" data-stellar-background-ratio="0.3">
+				
+				
+				
+				<div class="container">
+					<h1 class="entry-title">News Detail</h1>
+					<p>Learn about hospital news anytime, anywhere</p>
+				</div>
+				
+			</section>
+    
+    
+  
+    
+			<!-- Sub Page Content
+			============================================= -->
+			<div id="sub-page-content" class="clearfix">
+        
+				<div class="container">
+					
+					<div class="row">
+					
+						<div class="col-md-12 blog-wrapper clearfix">
+							
+							<h2 class="bordered light">News <span>Single News</span></h2>
+							
+							<article class="blog-item blog-full-width blog-detail">
+								
+								<div class="blog-thumbnail2">
+									<div ng-if="entity.picurl==null||entity.picurl.length==0" >
+										<img src="../images/product-img1.jpg" alt=""  class="imgcover">
+									</div>
+									<div ng-if="entity.picurl!=null&&entity.picurl.length!=0" >
+										<img ng-src="{{entity.picurl}}" alt="" class="imgcover">
+									</div>
+
+								</div>
+								
+								<div class="blog-content">
+								<h3 class="blog-title">{{entity.title}}</h3>
+									<p><b>{{entity.time }}</b></p>
+									
+									<p>{{entity.body}}</p>
+
+									                
+								</div>
+											
+							</article>				
+						</div>		
+					</div>
+				</div>
+			</div>
+
+		</div><!--end sub-page-content-->
+    
+    
+    
+		<div class="colourfull-row"></div>
+	
+	
+	
+		<!-- Footer
+		============================================= -->
+		<footer id="footer" class="light">
+			
+			
+			
+			
+			<!-- Copyright
+			============================================= -->
+			<p class="copyright text-center">Copyright &copy; 2014 Medicom. All right reserved.</p>
+			
+			
+			
+			
+			
+		</footer>
+	
+		<!-- back to top -->
+		<a href="#." class="back-to-top" id="back-to-top"><i class="fa fa-angle-up"></i></a>
+	
+    </div><!--end #wrapper-->
+	
+		
+		
+		
+    <!-- All Javascript 
+	============================================= -->
+	<script src="../js/jquery.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.stellar.js"></script>
+	<script src="../js/jquery-ui-1.10.3.custom.js"></script>
+    <script src="../js/owl.carousel.js"></script>
+    <script src="../js/counter.js"></script>
+    <script src="../js/waypoints.js"></script>
+	<script src="../js/jquery.uniform.js"></script>
+    <script src="../js/easyResponsiveTabs.js"></script>
+	<script src="../js/jquery.fancybox.pack.js"></script>
+	<script src="../js/jquery.fancybox-media.js"></script>
+	<script src="../js/jquery.mixitup.js"></script>
+	<script src="../js/forms-validation.js"></script>
+	<script src="../js/jquery.jcarousel.min.js"></script>
+	<script src="../js/jquery.easypiechart.min.js"></script>
+	<script src="../js/scripts.js"></script>
+
+
+
+		<script type="text/javascript" src="../plugins/angularjs/angular.min.js"></script>
+		<link rel="stylesheet" href="../plugins/angularjs/pagination.css">
+		<script src="../plugins/angularjs/pagination.js"></script>
+
+		<script type="text/javascript">
+			var app = angular.module('ihospital3', []);
+
+			app.service('loginService', function ($http) {
+
+				this.loginName = function () {
+
+					return $http.get('../login/name.do');
+
+				}
+
+			});
+
+
+			app.config(['$locationProvider', function ($locationProvider) {
+				$locationProvider.html5Mode(true);
+			}])
+			app.controller('displaynewsController', function ($scope, $http, $interval, $filter, $rootScope, $location, loginService) {
+						//获取登录名
+						$scope.showLoginName = function () {
+							loginService.loginName().success(
+									function (response) {
+										$scope.loginName = response.loginName;
+									}
+							)
+						};
+
+						$scope.passednewsId = null;
+						if ($location.search().id) {
+							$scope.passednewsId = $location.search().id;
+						}
+						$scope.findOne = function () {
+
+							$scope.showLoginName();
+							if ($scope.passednewsId != null) {
+								$http.get('../news/findOne.do?id=' + $scope.passednewsId).success(
+										function (response) {
+											$scope.entity = response;
+											$scope.nowtime = $filter('date')($scope.entity.time, "yyyy-MM-dd HH:mm:ss");
+											$scope.entity.time = $filter("date")($scope.entity.time, "yyyy-MM-dd HH:mm:ss");
+										}
+								);
+							}
+						}
+
+
+				/*
+						$scope.uploadFile = function () {
+							uploadService.uploadFile().success(
+									function (response) {
+										if (response.success) {
+											$scope.entity.picurl = response.message;
+											var file = document.getElementById('file');
+											file.outerHTML = file.outerHTML;
+										} else {
+											alert("Upload Failed!")
+											var file = document.getElementById('file');
+											file.outerHTML = file.outerHTML;
+										}
+									}
+							);
+						}
+						$scope.resetFile = function () {
+							$scope.entity.picurl = "";
+							var file = document.getElementById('file');
+							file.outerHTML = file.outerHTML;
+						}
+						$scope.removeImage = function () {
+							$scope.entity.picurl = "";
+						}
+
+						$scope.save = function () {
+							var methodName = 'addNews';//方法名称
+							if ($scope.passednewsId != null) {//如果有ID
+								methodName = 'updateNews';
+								$scope.entity.newsId = $scope.passednewsId
+								//则执行修改方法
+							}
+							if ($scope.entity.title != null && $scope.entity.body != null) {
+								$http.post('../news/' + methodName + '.do', $scope.entity).success(
+										function (response) {
+											if (response.success) {
+												//重新查询
+												alert("Operation Successfully!");
+												/!*  $scope.reloadList();//重新加载*!/
+											} else {
+												alert(response.message);
+											}
+										}
+								);
+							} else {
+								alert("News's title and body can't be blank!")
+							}
+						}*/
+
+					}
+			)
+
+		</script>
+  </body>
+</html>

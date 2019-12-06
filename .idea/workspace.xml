@@ -7,160 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5aa75bbd-7191-4eeb-ae52-a6dbb5c0da90" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ihospital_pojo/src/main/java/entity/PatientInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/ihospital.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ihospital.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_pojo/src/main/java/com/ihospital/pojo/Consultation.java" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_pojo/src/main/java/com/ihospital/pojo/Consultation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_pojo/src/main/java/entity/CommentItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_pojo/src/main/java/entity/CommentItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_pojo/target/classes/com/ihospital/pojo/Consultation.class" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_pojo/target/classes/com/ihospital/pojo/Consultation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_pojo/target/classes/entity/CommentItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_pojo/target/classes/entity/CommentItem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_service/src/main/java/com/ihospital/service/IPatientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_service/src/main/java/com/ihospital/service/IPatientService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_service/src/main/java/com/ihospital/service/impl/CommentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_service/src/main/java/com/ihospital/service/impl/CommentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_service/src/main/java/com/ihospital/service/impl/PatientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_service/src/main/java/com/ihospital/service/impl/PatientService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_service/src/main/java/com/ihospital/service/impl/ReplyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_service/src/main/java/com/ihospital/service/impl/ReplyService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_service/target/classes/com/ihospital/service/IPatientService.class" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_service/target/classes/com/ihospital/service/IPatientService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_service/target/classes/com/ihospital/service/impl/CommentService.class" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_service/target/classes/com/ihospital/service/impl/CommentService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_service/target/classes/com/ihospital/service/impl/PatientService.class" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_service/target/classes/com/ihospital/service/impl/PatientService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_service/target/classes/com/ihospital/service/impl/ReplyService.class" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_service/target/classes/com/ihospital/service/impl/ReplyService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_utils/target/ihospital_utils-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_utils/target/ihospital_utils-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_utils/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_utils/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_utils/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_utils/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_utils/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_utils/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_utils/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_utils/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/java/com/ihospital/controller/PatientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/src/main/java/com/ihospital/controller/PatientController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/java/com/ihospital/controller/PhysicianController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/src/main/java/com/ihospital/controller/PhysicianController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/resources/spring-security.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/src/main/resources/spring-security.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/css/medicom.css" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/src/main/webapp/css/medicom.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/angular-select2.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/base.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/base_pagination.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/bootstrap.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/bootstrap.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/color-switcher.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/config/locationConfig.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/controller/baseController.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/controller/commentController.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/controller/departmentController.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/controller/departmentInfoController.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/controller/doctorController.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/controller/doctorReplyController.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/controller/doctorWorkController.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/controller/medicineController.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/controller/patientController.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/controller/patientReplyController.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/controller/replyController.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/counter.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/easyResponsiveTabs.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/forms-validation.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/jquery-revolution.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/jquery-ui-1.10.3.custom.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/jquery.easypiechart.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/jquery.fancybox-media.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/jquery.fancybox.pack.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/jquery.jcarousel.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/jquery.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/jquery.mixitup.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/jquery.prettyPhoto.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/jquery.stellar.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/jquery.themepunch.plugins.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/jquery.themepunch.revolution.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/jquery.uniform.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/map.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/map2.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/modernizr-2.6.2.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/owl.carousel.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/preview-fullwidth.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/scripts.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/service/commentService.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/service/doctorService.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/service/loginService.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/service/medicineService.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/service/patientService.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/service/replyService.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/service/uploadService.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/video.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/js/waypoints.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/src/main/webapp/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/pages/all-admin-login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/pages/all-administrator-commentinfo.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/pages/all-administrator-commenttable.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/pages/all-administrator-departmentinfo.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/pages/all-administrator-departmenttable.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/pages/all-administrator-doctortable.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/pages/all-administrator-drugtable.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/pages/all-administrator-medicalrecordinfo.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/pages/all-administrator-medicalrecordtable.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/pages/all-administrator-newsinfo.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/pages/all-administrator-newstable.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/pages/all-administrator-patienttable.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/pages/all-doctor-personalcenter.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/pages/all-doctor-startwork.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/pages/all-doctor-treatmentinfo.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/pages/all-doctor-treatmenttable.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/pages/all-patient-appointinfo.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/pages/all-patient-appointlist.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/pages/all-patient-departmentinfo.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/pages/all-patient-departmentlist.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/pages/all-patient-doctorinfo.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/pages/all-patient-doctorlist.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/pages/all-patient-index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/pages/all-patient-medicalinfo.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/pages/all-patient-medicalrecordinfo.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/pages/all-patient-medicalrecordlist.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/pages/all-patient-newsinfo.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/pages/all-patient-newslist.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/pages/all-patient-search1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/pages/all-patient-search2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/pages/all-patient-search3.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/pages/department-show.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/pages/patient-login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/pages/patient-register.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/src/main/webapp/pages/registration-information.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/target/classes/com/ihospital/controller/PatientController.class" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/target/classes/com/ihospital/controller/PatientController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/target/classes/com/ihospital/controller/PhysicianController.class" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/target/classes/com/ihospital/controller/PhysicianController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/target/classes/spring-security.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/target/classes/spring-security.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/WEB-INF/classes/com/ihospital/controller/PatientController.class" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/WEB-INF/classes/com/ihospital/controller/PatientController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/WEB-INF/classes/com/ihospital/controller/PhysicianController.class" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/WEB-INF/classes/com/ihospital/controller/PhysicianController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/WEB-INF/classes/spring-security.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/WEB-INF/classes/spring-security.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/WEB-INF/lib/ihospital_dao-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/WEB-INF/lib/ihospital_dao-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/WEB-INF/lib/ihospital_pojo-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/WEB-INF/lib/ihospital_pojo-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/WEB-INF/lib/ihospital_service-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/WEB-INF/lib/ihospital_service-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/WEB-INF/lib/ihospital_utils-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/WEB-INF/lib/ihospital_utils-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/css/medicom.css" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/css/medicom.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/js/controller/doctorReplyController.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/js/controller/doctorWorkController.js" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/js/controller/doctorWorkController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/js/controller/patientController.js" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/js/controller/patientController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/js/controller/patientReplyController.js" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/js/controller/patientReplyController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/js/jquery.easypiechart.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/js/jquery.easypiechart.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/js/service/doctorService.js" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/js/service/doctorService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/js/service/patientService.js" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/js/service/patientService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/js/service/uploadService.js" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/js/service/uploadService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/js/waypoints.js" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/js/waypoints.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/pages/all-doctor-personalcenter.html" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/pages/all-doctor-personalcenter.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/pages/all-doctor-startwork.html" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/pages/all-doctor-startwork.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/pages/all-patient-appointinfo.html" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/pages/all-patient-appointinfo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/pages/all-patient-appointlist.html" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/pages/all-patient-appointlist.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/pages/all-patient-departmentinfo.html" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/pages/all-patient-departmentinfo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/pages/all-patient-departmentlist.html" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/pages/all-patient-departmentlist.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/pages/all-patient-doctorinfo.html" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/pages/all-patient-doctorinfo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/pages/all-patient-doctorlist.html" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/pages/all-patient-doctorlist.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/pages/all-patient-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/pages/all-patient-index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/pages/all-patient-medicalrecordinfo.html" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/pages/all-patient-medicalrecordinfo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/pages/all-patient-medicalrecordlist.html" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/pages/all-patient-medicalrecordlist.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/pages/all-patient-newsinfo.html" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/pages/all-patient-newsinfo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/pages/all-patient-newslist.html" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/pages/all-patient-newslist.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/pages/all-patient-search2.html" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/pages/all-patient-search2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/pages/all-patient-search3.html" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/pages/all-patient-search3.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/pages/patient-login.html" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/pages/patient-login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/pages/patient-register.html" beforeDir="false" afterPath="$PROJECT_DIR$/ihospital_web/target/ihospital_web/pages/patient-register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -461,8 +308,16 @@
       <workItem from="1575442501198" duration="834000" />
       <workItem from="1575443352825" duration="537000" />
       <workItem from="1575443906150" duration="6407000" />
-      <workItem from="1575519092675" duration="11325000" />
+      <workItem from="1575519092675" duration="11579000" />
     </task>
+    <task id="LOCAL-00001" summary="update">
+      <created>1575561274107</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1575561274107</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TodoView">
@@ -579,6 +434,10 @@
     </state>
     <state x="221" y="67" key="SettingsEditor/0.23.1440.810@0.23.1440.810" timestamp="1575451344002" />
     <state x="221" y="67" key="SettingsEditor/0.23.1440.811@0.23.1440.811" timestamp="1575533638598" />
+    <state x="320" y="161" key="Vcs.Push.Dialog.v2" timestamp="1575561279246">
+      <screen x="0" y="23" width="1440" height="811" />
+    </state>
+    <state x="320" y="161" key="Vcs.Push.Dialog.v2/0.23.1440.811@0.23.1440.811" timestamp="1575561279246" />
     <state x="372" y="246" key="com.intellij.ide.util.TipDialog" timestamp="1575519096561">
       <screen x="0" y="23" width="1440" height="811" />
     </state>
