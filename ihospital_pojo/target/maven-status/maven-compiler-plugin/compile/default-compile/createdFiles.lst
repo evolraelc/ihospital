@@ -26,6 +26,7 @@ com\ihospital\pojo\ReplyExample$Criteria.class
 com\ihospital\pojo\AppointmentExample$Criterion.class
 com\ihospital\pojo\NewsExample$Criteria.class
 com\ihospital\pojo\NewsExample.class
+entity\PatientInfo.class
 com\ihospital\pojo\DiseasesExample$Criteria.class
 com\ihospital\pojo\ScheduleExample.class
 com\ihospital\pojo\Schedule.class

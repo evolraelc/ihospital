@@ -40,7 +40,7 @@ app.controller('patientReplyController', function ($scope, $controller, loginSer
             function (response) {
                 $scope.commentList = response.rows;
                 $scope.paginationConf.totalItems = response.total;
-                for(let i = 0; i < response.rows.length; i++) {
+                for( i = 0; i < response.rows.length; i++) {
                     (function(e) {
                         patientService.findOne($scope.commentList[e].patientId).success(
                             function (response) {
@@ -95,7 +95,7 @@ app.controller('patientReplyController', function ($scope, $controller, loginSer
             alert("你不能回复他人的评论");
             return;
         }
-        let reply = {};
+        reply = {};
         reply.body =  prompt("输入回复:");
         if(!reply.body || reply.body === "") {
             alert("回复不能为空");

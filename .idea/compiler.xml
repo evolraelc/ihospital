@@ -8,11 +8,10 @@
         <outputRelativeToContentRoot value="true" />
         <module name="ihospital_web" />
         <module name="ihospital_dao" />
+        <module name="ihospital_pojo" />
         <module name="ihospital_service" />
         <module name="ihospital_utils" />
-        <module name="ihospital_pojo" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="8" />
   </component>
 </project>

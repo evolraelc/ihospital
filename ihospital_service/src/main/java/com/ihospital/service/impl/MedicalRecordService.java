@@ -1,7 +1,9 @@
 package com.ihospital.service.impl;
 
+
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
+import java.text.SimpleDateFormat;
 import com.ihospital.mapper.*;
 import com.ihospital.pojo.*;
 import com.ihospital.service.IMedicalRecordService;
@@ -9,7 +11,6 @@ import entity.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -361,4 +362,96 @@ public class MedicalRecordService implements IMedicalRecordService {
         return departSelect2List;
     }
 
+
+    /**
+    * @description: 查询病人的预约列表
+    * @Param: patientId
+    * @return: List<AppointInfo>
+    * @author: Cheng
+    * @created: 2019/12/9/15:38
+    **/
+    @Override
+    public List<AppointInfo> findAppointmentList(Long patientId){
+
+        //初始化列表
+        List<AppointInfo> appointInfoList=new ArrayList<>();
+        List<Department> departmentsOrderedByPatientId=new ArrayList<>();
+//        List<List<Appointment>> appointmentsOrderedByDepartId=new ArrayList<>();
+
+        //存放病人的就诊时间
+        List<Integer> treatTime=new ArrayList<>();
+        //存放病人的就诊序号
+        List<Integer> num=new ArrayList<>();
+
+        //按病人id查询预约表appointments
+        AppointmentExample appointmentExample = new AppointmentExample();
+        AppointmentExample.Criteria criteria = appointmentExample.createCriteria();
+        criteria.andPatientIdEqualTo(patientId);
+        List<Appointment> appointList = appointmentMapper.selectByExample(appointmentExample);
+
+        //将appointments中的科室通过departId筛选出来
+        //筛选科室是为了将科室的一些信息也显示出来
+        for (Integer i=0;i<appointList.size();i++){
+            departmentsOrderedByPatientId.add(departmentMapper.selectByPrimaryKey(appointList.get(i).getDeptId()));
+        }
+
+
+        //将病人在不同科室挂的号分离出来，并将所挂每个科室现存的所有等待病人搜索出来
+        //所有数据放入一个List<List<Appointment>>中，每一个List<Appointment>中存放
+        //某个科室的所有当前病人列表
+        for (Integer i=0;i<departmentsOrderedByPatientId.size();i++){
+
+            //patientId对应病人在所有病人中的物理位置
+            Integer patientLocationInList=0;
+            //patientId对应病人在所有病人中的等待位置
+            Integer patientWaitingNum=0;
+
+            AppointmentExample appointmentExample2 = new AppointmentExample();
+            AppointmentExample.Criteria criteria2 = appointmentExample.createCriteria();
+            criteria2.andDeptIdEqualTo(departmentsOrderedByPatientId.get(i).getDepartId());
+            List<Appointment> partAppointments = appointmentMapper.selectByExample(appointmentExample2);
+
+            //记录patientId在所有病人中的物理顺序,并且将其中一个科室的就诊列表
+            //里面的病人的就诊时间转换成Int型数据存入List num里面
+            for (Integer j=0;j<partAppointments.size();j++){
+                SimpleDateFormat simpleDateFormat= new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                String dateString = simpleDateFormat.format(partAppointments.get(j).getTreatTime());
+                treatTime.add(j,Integer.parseInt(dateString));
+
+                if(partAppointments.get(j).getPatientId().equals(patientId)) {
+                    patientLocationInList=j;
+                }
+            }
+
+            //计算病人前面还需等待的人数
+            for (Integer k=0;k<treatTime.size();k++){
+                patientWaitingNum=treatTime.get(patientLocationInList);
+                if(treatTime.get(k)<patientWaitingNum) {
+                    patientWaitingNum++;
+                }
+            }
+            num.add(i,patientWaitingNum);
+//            appointmentsOrderedByDepartId.add(i,partAppointments);
+        }
+
+
+        //将来自不同地方的消息传进appointInfoList里面
+        for (Integer i=0;i<appointList.size();i++){
+            appointInfoList.add(i,new AppointInfo());
+
+            //从departmentsOrderedByPatientId中获取的数据
+            appointInfoList.get(i).setDepartmentName(departmentsOrderedByPatientId.get(i).getDepartName());
+            appointInfoList.get(i).setAddress(departmentsOrderedByPatientId.get(i).getPosition());
+
+            //从appointList中获取的数据
+            appointInfoList.get(i).setTreatTime(appointList.get(i).getTreatTime());
+            appointInfoList.get(i).setAppointTime(appointList.get(i).getAppointTime());
+            appointInfoList.get(i).setType(appointList.get(i).getPriority());
+
+            //从list num中获取数据
+            appointInfoList.get(i).setNum(num.get(i));
+        }
+
+        return appointInfoList;
+    }
 }

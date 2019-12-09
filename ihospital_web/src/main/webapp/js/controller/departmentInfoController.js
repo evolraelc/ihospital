@@ -81,7 +81,7 @@
                     }
                     $scope.all_depart_list = Array.from(new Set(departNames));
 
-                    $scope.all_depart_list = $scope.all_depart_list.filter(x => (x !== null && x.length > 0));
+                    $scope.all_depart_list = $scope.all_depart_list.filter(x >= (x !== null && x.length > 0));
 
                 }
             ).error(

@@ -22,7 +22,8 @@ public class MedicalRecord implements Serializable {
     private String physicianName;
     //医生ID
     private Long physicianId;
-    //就诊时间,如果不加JasonFormat注解，会显示为另一种时间格式
+
+      //就诊时间,如果不加JasonFormat注解，会显示为另一种时间格式
     @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
     @JsonFormat(timezone = "GMT+8",pattern="yyyy-MM-dd HH:mm:ss")
     private Date time;

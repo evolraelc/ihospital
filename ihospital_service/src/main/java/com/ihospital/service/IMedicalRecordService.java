@@ -48,6 +48,9 @@ public interface IMedicalRecordService {
     public Appointment findAppointmentByPathoId(Long id);
     //用于匹配select2的config
     public List<departSelect2> findConfigOfDepartment();
+
+    //查询病人的预约列表
+    public List<AppointInfo> findAppointmentList(Long patientId);
 }
 
 

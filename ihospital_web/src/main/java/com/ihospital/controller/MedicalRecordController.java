@@ -8,6 +8,7 @@ import entity.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -77,6 +78,11 @@ public class MedicalRecordController {
     @RequestMapping("findConfigOfDepartment.do")
     public List<departSelect2> findConfigOfDepartment(){
         return medicalRecordService.findConfigOfDepartment();
+    }
+
+    @RequestMapping("findAppointmentList.do")
+    public  List<AppointInfo> findAppointmentList(Long patientId){
+        return medicalRecordService.findAppointmentList(patientId);
     }
 
 }

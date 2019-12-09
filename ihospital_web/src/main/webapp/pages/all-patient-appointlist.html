@@ -196,8 +196,8 @@
 				<div class="search clearfix">
 									
 									
-										<input type="text" placeholder="Search...">
-										<button type="submit" class="search-icon"><i class="fa fa-search"></i></button>
+												<input type="text" placeholder="Search...">
+												<button type="submit" class="search-icon"><i class="fa fa-search"></i></button>
 									
 								</div>
 				</div>
@@ -218,10 +218,8 @@
 					
 					<div class="col-md-12 clearfix">
 						<ol class="commentlist">
-								
-								
-								
-								<li class="comment">
+
+								<li class="comment" ng-repeat="appointment in appointmentList">
 									
 									<article class="comment-wrapper clearfix"> 
 					
@@ -246,85 +244,7 @@
 									</article>
 									
 								</li>
-								<li class="comment">
-									
-									<article class="comment-wrapper clearfix"> 
-					
-					
-										
-										   
-											<div class="comment-head">
-												<span class="comment-author">Department Name</span>
-												<span class="comment-date">Treat Time:</span>
-												<span class="comment-date">Appointment Time:</span>
-												<span class="comment-reply">
-													<button class="comment-reply-link" ><i class="fa fa-reply"></i>More</button>
-													
-												</span> 
-											</div>
-					
-											<div class="comment-message">
-											Address:fhvboifhrbhrnoeidtrhboswrn
-											</div>                        
-										
-										
-									</article>
-									
-								</li>
-								<li class="comment">
-									
-									<article class="comment-wrapper clearfix"> 
-					
-					
-										
-										   
-											<div class="comment-head">
-												<span class="comment-author">Department Name</span>
-												<span class="comment-date">Treat Time:</span>
-												<span class="comment-date">Appointment Time:</span>
-												<span class="comment-reply">
-													<button class="comment-reply-link" ><i class="fa fa-reply"></i>More</button>
-													
-												</span> 
-											</div>
-					
-											<div class="comment-message">
-											Address:fhvboifhrbhrnoeidtrhboswrn
-											</div>                        
-										
-										
-									</article>
-									
-								</li>
-								<li class="comment">
-									
-									<article class="comment-wrapper clearfix"> 
-					
-					
-										
-										   
-											<div class="comment-head">
-												<span class="comment-author">Department Name</span>
-												<span class="comment-date">Treat Time:</span>
-												<span class="comment-date">Appointment Time:</span>
-												<span class="comment-reply">
-													<button class="comment-reply-link" ><i class="fa fa-reply"></i>More</button>
-													
-												</span> 
-											</div>
-					
-											<div class="comment-message">
-											Address:fhvboifhrbhrnoeidtrhboswrn
-											</div>                        
-										
-										
-									</article>
-									
-								</li>
-								
-								
-								
-								
+
 						</ol>
 						
 				
@@ -362,33 +282,6 @@
 
 	
 	</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 	<!-- All Javascript
@@ -453,16 +346,24 @@
 			checkWidth();
 			// Bind event listener
 			$(window).resize(checkWidth);
-			
-			
-			
-			
 
-			
-			
+
+
+
+
+
+
 		
 		})(jQuery);
 
 	</script>
+		 <script>
+			 var app =angular.module('ihospital111',['pagination'])
+
+			 app.controller('patientReplyController', function ($scope, $http){
+			 	$scope.appointmentList={};
+
+			 }
+		 </script>
 </body>
 </html>

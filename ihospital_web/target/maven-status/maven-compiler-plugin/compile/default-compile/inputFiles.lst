@@ -1,15 +1,15 @@
-D:\IdeaProjects\ihospital\ihospital_web\src\main\java\com\ihospital\controller\ReplyController.java
-D:\IdeaProjects\ihospital\ihospital_web\src\main\java\com\ihospital\controller\PatientController.java
-D:\IdeaProjects\ihospital\ihospital_web\src\main\java\com\ihospital\controller\UploadController.java
-D:\IdeaProjects\ihospital\ihospital_web\src\main\java\com\ihospital\controller\LoginSuccessHandle.java
-D:\IdeaProjects\ihospital\ihospital_web\src\main\java\com\ihospital\loginservice\PatientDetailsServiceImpl.java
-D:\IdeaProjects\ihospital\ihospital_web\src\main\java\com\ihospital\controller\CommentController.java
-D:\IdeaProjects\ihospital\ihospital_web\src\main\java\com\ihospital\controller\MedicalRecordController.java
-D:\IdeaProjects\ihospital\ihospital_web\src\main\java\com\ihospital\controller\TreatController.java
-D:\IdeaProjects\ihospital\ihospital_web\src\main\java\com\ihospital\controller\TreatmentController.java
-D:\IdeaProjects\ihospital\ihospital_web\src\main\java\com\ihospital\controller\MedicineController.java
-D:\IdeaProjects\ihospital\ihospital_web\src\main\java\com\ihospital\controller\LoginController.java
-D:\IdeaProjects\ihospital\ihospital_web\src\main\java\com\ihospital\controller\PhysicianController.java
-D:\IdeaProjects\ihospital\ihospital_web\src\main\java\com\ihospital\loginservice\DoctorDetailsServiceImpl.java
-D:\IdeaProjects\ihospital\ihospital_web\src\main\java\com\ihospital\controller\DepartmentController.java
-D:\IdeaProjects\ihospital\ihospital_web\src\main\java\com\ihospital\controller\NewsController.java
+C:\Users\linpx\Documents\GitHub\Medical System\ihospital\ihospital_web\src\main\java\com\ihospital\controller\UploadController.java
+C:\Users\linpx\Documents\GitHub\Medical System\ihospital\ihospital_web\src\main\java\com\ihospital\controller\MedicalRecordController.java
+C:\Users\linpx\Documents\GitHub\Medical System\ihospital\ihospital_web\src\main\java\com\ihospital\controller\PatientController.java
+C:\Users\linpx\Documents\GitHub\Medical System\ihospital\ihospital_web\src\main\java\com\ihospital\controller\LoginSuccessHandle.java
+C:\Users\linpx\Documents\GitHub\Medical System\ihospital\ihospital_web\src\main\java\com\ihospital\loginservice\DoctorDetailsServiceImpl.java
+C:\Users\linpx\Documents\GitHub\Medical System\ihospital\ihospital_web\src\main\java\com\ihospital\controller\NewsController.java
+C:\Users\linpx\Documents\GitHub\Medical System\ihospital\ihospital_web\src\main\java\com\ihospital\controller\CommentController.java
+C:\Users\linpx\Documents\GitHub\Medical System\ihospital\ihospital_web\src\main\java\com\ihospital\controller\DepartmentController.java
+C:\Users\linpx\Documents\GitHub\Medical System\ihospital\ihospital_web\src\main\java\com\ihospital\controller\TreatController.java
+C:\Users\linpx\Documents\GitHub\Medical System\ihospital\ihospital_web\src\main\java\com\ihospital\controller\TreatmentController.java
+C:\Users\linpx\Documents\GitHub\Medical System\ihospital\ihospital_web\src\main\java\com\ihospital\loginservice\PatientDetailsServiceImpl.java
+C:\Users\linpx\Documents\GitHub\Medical System\ihospital\ihospital_web\src\main\java\com\ihospital\controller\LoginController.java
+C:\Users\linpx\Documents\GitHub\Medical System\ihospital\ihospital_web\src\main\java\com\ihospital\controller\MedicineController.java
+C:\Users\linpx\Documents\GitHub\Medical System\ihospital\ihospital_web\src\main\java\com\ihospital\controller\PhysicianController.java
+C:\Users\linpx\Documents\GitHub\Medical System\ihospital\ihospital_web\src\main\java\com\ihospital\controller\ReplyController.java

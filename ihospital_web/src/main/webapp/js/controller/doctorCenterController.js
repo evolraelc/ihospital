@@ -32,7 +32,7 @@ app.controller('doctorCenterController', function ($scope, $controller, loginSer
             function (response) {
                 $scope.commentList = response.rows;
                 $scope.paginationConf.totalItems = response.total;
-                for(let i = 0; i < response.rows.length; i++) {
+                for( i = 0; i < response.rows.length; i++) {
                     (function(e) {
                         $scope.commentList[e].show = false;
                         replyService.getReplyList($scope.commentList[e].consultId).success(
@@ -51,7 +51,7 @@ app.controller('doctorCenterController', function ($scope, $controller, loginSer
         );
     };
     $scope.showReply = function(comment) {
-        for(let i = 0;i < $scope.commentList.length;i++) {
+        for(i = 0;i < $scope.commentList.length;i++) {
             if($scope.commentList[i].consultId === comment.consultId) {
                 $scope.commentList[i].show = !$scope.commentList[i].show
             }
